@@ -1,3 +1,4 @@
+const port = process.env.PORT || 5000
 /******/ (function(modules) { // webpackBootstrap
 /*** ***/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -156,7 +157,7 @@ app.use((0, _cors2.default)());
 app.use(_express2.default.static("public"));
 
 app.get("*", function (req, res, next) {
-  const port = process.env.PORT || 5000
+
   var activeRoute = _routes2.default.find(function (route) {
     return (0, _reactRouterDom.matchPath)(req.url, route);
   }) || {};

@@ -9,12 +9,12 @@ import routes from '../shared/routes'
 
 
 const app = express()
-
+const port = process.env.PORT || 5000
 app.use(cors())
 app.use(express.static("public"))
 
 app.get("*", (req, res, next) => {
-  const port = process.env.PORT || 5000
+  
   const activeRoute = routes.find((route) => matchPath(req.url, route)) || {}
 
   const promise = activeRoute.fetchInitialData
