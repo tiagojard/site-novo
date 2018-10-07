@@ -32,9 +32,12 @@ app.get("*", (req, res, next) => {
 
     res.send(`
       <!DOCTYPE html>
-      <html>
+      <html lang="pt-br">
         <head>
           <title>Tiago jardim</title>
+          <meta charset="utf-8"><meta http-equiv="Content-Language" content="pt-br">
+          <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+          <meta name="robots" content="index, follow">
           <script src="/bundle.js" defer></script>
           <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
         </head>
