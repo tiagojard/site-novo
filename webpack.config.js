@@ -6,7 +6,7 @@ var browserConfig = {
   entry: './src/browser/index.js',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js',
+    filename: './src/browser/index.js',
     publicPath: '/'
   },
   module: {
