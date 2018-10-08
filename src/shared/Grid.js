@@ -46,7 +46,6 @@ class Grid extends Component {
     if (loading === true) {
       return <p>LOADING</p>
     }
-
     return (
       <ul style={{display: 'flex', flexWrap: 'wrap'}}>
         {repos.map(({ name, owner, stargazers_count, html_url }) => (

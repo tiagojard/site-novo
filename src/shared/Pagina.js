@@ -19,6 +19,7 @@ class pagina extends Component {
 
     this.fetchRepos = this.fetchRepos.bind(this)
   }
+
 	fetchRepos (lang) {
     this.setState(() => ({
       loading: true
@@ -37,22 +38,6 @@ class pagina extends Component {
       this.fetchRepos(this.props.match.params.id)
     }
 		/*
-          fetch("https://tiagojardim.000webhostapp.com/getPagina.php?pagina="+this.props.match.params.id)
-            .then(res => res.json())
-            .then(
-              (result) => {
-                //document.getElementById("busca").value = result.pesquisa;
-                if(result != null)
-                {
-                    document.title = result.titulo;
-                    document.getElementById("conteudo").innerHTML = result.conteudo;
-                }
-              },
-              (error) => {
-             
-              }
-            );
-
             fetch("https://tiagojardim.000webhostapp.com/setVisualizacaoPagina.php?id_pagina="+this.props.match.params.id)
             .then(res => res.json())
             .then(
@@ -65,18 +50,21 @@ class pagina extends Component {
             )
         */
   }
-    componentDidUpdate (prevProps, prevState) {
+
+  componentDidUpdate (prevProps, prevState) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.fetchRepos(this.props.match.params.id)
     }
   }
+
 	render(){
     const { loading, repos } = this.state
 
     if (loading === true) {
       return <p>LOADING</p>
     }
-		document.title = repos.titulo;
+    document.title = repos.titulo;
+    //document.getElementById("conteudo").innerHTML = repos.conteudo;
 		return (<div className="corpo-pagina">
                     <div className="anuncio-topo">
                     
@@ -85,7 +73,7 @@ class pagina extends Component {
                    
                     </div>
                     <div className="conteudo">
-                      <div id="conteudo">{repos.conteudo}</div>
+                      <div id="conteudo" dangerouslySetInnerHTML={{__html:repos.conteudo }} />
                     </div>
                     <div className="destaque-direito">
                     <div className="titulo-destaque">
