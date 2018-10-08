@@ -2,6 +2,7 @@ import Home from './Home'
 import Grid from './Grid'
 import Pagina from './Pagina'
 import { fetchPopularRepos } from './api'
+import { fetchPaginaRepos } from './apiPagina'
 
 const routes =  [
   {
@@ -12,7 +13,7 @@ const routes =  [
   {
     path: '/pagina/:id/:titulo',
     component: Pagina,
-    fetchInitialData: (path = '') => fetchPopularRepos(path.split('/').pop())
+    fetchInitialData: (path = '') => fetchPaginaRepos(path.split('/').pop())
   },
   {
     path: '/popular/:id',
