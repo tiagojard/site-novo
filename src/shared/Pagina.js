@@ -76,6 +76,7 @@ class pagina extends Component {
     if (loading === true) {
       return <p>LOADING</p>
     }
+		document.title = repos.titulo;
 		return (<div className="corpo-pagina">
                     <div className="anuncio-topo">
                     
