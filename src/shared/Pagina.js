@@ -36,6 +36,7 @@ class pagina extends Component {
 		if (!this.state.repos) {
       this.fetchRepos(this.props.match.params.id)
     }
+		/*
           fetch("https://tiagojardim.000webhostapp.com/getPagina.php?pagina="+this.props.match.params.id)
             .then(res => res.json())
             .then(
@@ -51,7 +52,7 @@ class pagina extends Component {
              
               }
             );
-/*
+
             fetch("https://tiagojardim.000webhostapp.com/setVisualizacaoPagina.php?id_pagina="+this.props.match.params.id)
             .then(res => res.json())
             .then(
@@ -70,7 +71,11 @@ class pagina extends Component {
     }
   }
 	render(){
-   
+    const { loading, repos } = this.state
+
+    if (loading === true) {
+      return <p>LOADING</p>
+    }
 		return (<div className="corpo-pagina">
                     <div className="anuncio-topo">
                     
@@ -79,7 +84,7 @@ class pagina extends Component {
                    
                     </div>
                     <div className="conteudo">
-                      <div id="conteudo"></div>
+                      <div id="conteudo">{repos.conteudo}</div>
                     </div>
                     <div className="destaque-direito">
                     <div className="titulo-destaque">
