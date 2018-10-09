@@ -42,7 +42,7 @@ class Grid extends Component {
   }
   render() {
     const { loading, repos } = this.state
-
+    console.log(repos);
     if (loading === true) {
       return <p>LOADING</p>
     }

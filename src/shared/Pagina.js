@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class pagina extends Component {
+class Pagina extends Component {
 	constructor(props) {
       super(props);
 		
@@ -20,22 +20,11 @@ class pagina extends Component {
     this.fetchRepos = this.fetchRepos.bind(this)
   }
 
-	fetchRepos (lang) {
-    this.setState(() => ({
-      loading: true
-    }))
-
-    this.props.fetchInitialData(lang)
-      .then((repos) => this.setState(() => ({
-        repos,
-        loading: false,
-      })))
-  }
-
-	componentDidMount() {
-        
-		if (!this.state.repos) {
+  componentDidMount() {
+    if (!this.state.repos) {
       this.fetchRepos(this.props.match.params.id)
+    }else{
+      document.title = "Guia desenvolvedor - "+ this.state.repos.titulo;//this.props.match.params.titulo.replace('-',' ');
     }
 		/*
             fetch("https://tiagojardim.000webhostapp.com/setVisualizacaoPagina.php?id_pagina="+this.props.match.params.id)
@@ -50,21 +39,28 @@ class pagina extends Component {
             )
         */
   }
-
   componentDidUpdate (prevProps, prevState) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.fetchRepos(this.props.match.params.id)
     }
   }
+	fetchRepos (lang) {
+    this.setState(() => ({
+      loading: true
+    }))
 
+    this.props.fetchInitialData(lang)
+      .then((repos) => this.setState(() => ({
+        repos,
+        loading: false,
+      })))
+  }
 	render(){
     const { loading, repos } = this.state
-
+    
     if (loading === true) {
       return <p>LOADING</p>
     }
-    document.title = repos.titulo;
-    //document.getElementById("conteudo").innerHTML = repos.conteudo;
 		return (<div className="corpo-pagina">
                     <div className="anuncio-topo">
                     
@@ -84,4 +80,4 @@ class pagina extends Component {
                 </div>);
 	}
 }
-export default pagina;
+export default Pagina;

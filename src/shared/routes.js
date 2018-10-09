@@ -13,7 +13,7 @@ const routes =  [
   {
     path: '/pagina/:id/:titulo',
     component: Pagina,
-    fetchInitialData: (path = '') => fetchPaginaRepos(path.split('/').pop())
+    fetchInitialData: (path = '') => fetchPaginaRepos(path.replace("/"+path.split('/').pop(),'').split('/').pop())
   },
   {
     path: '/popular/:id',
@@ -21,5 +21,4 @@ const routes =  [
     fetchInitialData: (path = '') => fetchPopularRepos(path.split('/').pop())
   }
 ]
-
 export default routes
