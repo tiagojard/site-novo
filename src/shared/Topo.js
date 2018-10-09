@@ -3,7 +3,7 @@ export default function Topo () {
  
   return (
     <div>
-           <div id="busca-mobile" className="topo-busca-mobile">
+        <div id="busca-mobile" className="topo-busca-mobile">
                 <img id="topo-busca-arrow-icon" className="topo-busca-arrow-icon" src="/left-arrow.svg" />
                 <input type="text" id="input-busca-mobile" placeholder="O que você procura?" className="topo-busca-input-mobile" />
                 <img id="limpar-input-mobile" className="limpar-input-mobile" src="/error.svg" />
@@ -17,7 +17,7 @@ export default function Topo () {
               <a href="/"><img className="logo" src="/knowledge.svg" /></a>
             </div>
             <div className="topo-busca">
-                <span className="topo-busca-nome-site">Nome site</span>
+                <span className="topo-busca-nome-site">Guia do desenvolvedor</span>
                 <div className="busca">
                   <input id="busca" type="text" placeholder="O que você procura?" className="topo-busca-input" />
                 </div>

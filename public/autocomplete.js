@@ -180,3 +180,46 @@ document.addEventListener("click", function (e) {
     closeAllLists(e.target);
 });
 }
+
+function EscondeLimparBusca(){
+  $("#limpar-input-mobile").css("display","none")
+}
+
+function MostrarLimparBusca(){
+  $("#limpar-input-mobile").css("display","block");
+}
+
+function FocusBuscaMobile(){
+  $("#input-busca-mobile").focus();
+}
+
+/* abrir aba consulta */
+$("#topo-busca-search-icon").click(function() {
+  $("#busca-mobile").addClass("topo-busca-mobile-ativo");
+  $("#input-busca-mobile").css("display","block");
+  if($("#input-busca-mobile").val().length > 0)
+      MostrarLimparBusca();
+      FocusBuscaMobile();
+});
+
+/* sair consulta mobile */
+$("#topo-busca-arrow-icon").click(function() {
+  $("#busca-mobile").removeClass("topo-busca-mobile-ativo");
+  $("#input-busca-mobile").css("display","none");
+  EscondeLimparBusca();
+});
+
+/* limpar consulta */
+$("#limpar-input-mobile").click(function() {
+  $("#input-busca-mobile").val("");
+  EscondeLimparBusca();
+  FocusBuscaMobile();
+});
+
+/* quando digitar mostrar botão limpar consulta */
+$("#input-busca-mobile").keyup(function() {
+  if($(this).val().length > 0)
+      MostrarLimparBusca();
+  else
+      EscondeLimparBusca();
+});

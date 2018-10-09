@@ -51,49 +51,6 @@ app.get("*", (req, res, next) => {
           <div id="app">${markup}</div>
           <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
           <script src="/autocomplete.js" defer></script>
-          <script>
-          function EscondeLimparBusca(){
-              $("#limpar-input-mobile").css("display","none")
-          }
-          
-          function MostrarLimparBusca(){
-              $("#limpar-input-mobile").css("display","block");
-          }
-
-          function FocusBuscaMobile(){
-              $("#input-busca-mobile").focus();
-          }
-
-          /* abrir aba consulta */
-          $("#topo-busca-search-icon").click(function() {
-              $("#busca-mobile").addClass("topo-busca-mobile-ativo");
-              if($("#input-busca-mobile").val().length > 0)
-                  MostrarLimparBusca();
-                  FocusBuscaMobile();
-          });
-
-          /* sair consulta mobile */
-          $("#topo-busca-arrow-icon").click(function() {
-              $("#busca-mobile").removeClass("topo-busca-mobile-ativo");
-              EscondeLimparBusca();
-          });
-
-          /* limpar consulta */
-          $("#limpar-input-mobile").click(function() {
-              $("#input-busca-mobile").val("");
-              EscondeLimparBusca();
-              FocusBuscaMobile();
-          });
-
-          /* quando digitar mostrar botão limpar consulta */
-          $("#input-busca-mobile").keyup(function() {
-              if($(this).val().length > 0)
-                  MostrarLimparBusca();
-              else
-                  EscondeLimparBusca();
-          });
-
-      </script>
         </body>
       </html>
     `)

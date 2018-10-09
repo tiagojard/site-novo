@@ -1,5 +1,8 @@
 body{
     margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+    color: #333;
+    font-size: 15px;
 }
 .topo{
     width: 100%;
@@ -30,7 +33,9 @@ body{
 .topo-busca-nome-site{
     display: none;
     font-size: 20px;
-    margin: 8px;
+    margin: 5px;
+    color: white;
+    font-weight: 500;
 }
 
 .topo-busca-input{
@@ -59,34 +64,42 @@ body{
 
 .topo-busca-mobile{
     position: absolute;
-    right: 0;
+    right: 0px;
     width: 0px;
     height: 100%;
     -webkit-transition: width 2s, height 2s; /* For Safari 3.1 to 6.0 */
-    transition: width 0.3s, height 0.3s;
+    transition: width 0.7s, height 0.7s;
     background-color: #ffffff;
+    border-left: solid #c7c7c7  1px;
 }
 
+.result-mobile{
+    border-top: solid #c7c7c7 1px;
+}
 
 .topo-busca-mobile-ativo{
     background-color: #ffffff;
     width: 100%;
     height: 100%;
+    position: fixed;
 }
 
 .topo-busca-arrow-icon{
   width: 5%;
   float: left;
-  margin-top: 10px;
+  margin-top: 13px;
   margin-left: 5px;
 }
 
 .topo-busca-input-mobile{
-    width: 88%;
+    width: 78%;
     height: 35px;
     font-size: 20px;
     border: 0;
     outline: none;
+    display: none;
+    font-weight: 100;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
 }
 
 .limpar-input-mobile{

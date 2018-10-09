@@ -1,6 +1,8 @@
-
+pre.codigo {
+    overflow-x: scroll;
+}
 .corpo-pagina{
-    margin: 10px;
+	margin: 10px;
 }
 
 .anuncio-topo{
@@ -38,16 +40,12 @@
 
 @media only screen and (max-width: 600px) {
 	.conteudo {
-		width: 66%;
-		
+		width: 97%;
 	}
-	.anuncio-topo,.anuncio-esquerdo{
+	.anuncio-topo,.anuncio-esquerdo,.destaque-direito,.titulo-destaque{
 		display: none;
-
 	}
 }
-
-
 
 .conteudo p{
 	color: black;
@@ -56,12 +54,13 @@
 }
 
 .conteudo h1 {
-	font-size: 50px;
-	color: #282c34;
+	font-size: 35px;
+	color: #000000;
 }
 
 .conteudo h2{
 	font-size: 25px;
+	color: #000000;
 }
 
 .sub-titulo{
