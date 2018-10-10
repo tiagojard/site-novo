@@ -24,11 +24,7 @@ class Grid extends Component {
       this.fetchRepos(this.props.match.params.id)
     }
   }
-  componentDidUpdate (prevProps, prevState) {
-    if (prevProps.match.params.id !== this.props.match.params.id) {
-      this.fetchRepos(this.props.match.params.id)
-    }
-  }
+  
   fetchRepos (lang) {
     this.setState(() => ({
       loading: true
@@ -42,7 +38,6 @@ class Grid extends Component {
   }
   render() {
     const { loading, repos } = this.state
-    console.log(repos);
     if (loading === true) {
       return <p>LOADING</p>
     }

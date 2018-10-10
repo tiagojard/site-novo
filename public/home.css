@@ -41,10 +41,19 @@
 
 .conteudo-home-detalhe{
     width: 80%;
-    height: 150px;
+    min-height: 150px;
+    height: auto;
     float: right;
     padding-left: 10px;
 }
+
+.anuncio-direito{
+    width: 160px;
+    height: 600px;
+    float: right;
+    margin-top: 10px;
+}
+
 
 .conteudo-home-info{
     color: #999;
@@ -53,4 +62,15 @@
 .destaque-direito-home img{
     width: 160px;
     height: 600px;
+}
+
+@media only screen and (max-width: 600px) {
+	.img-destaque,.conteudo-home-img{
+        width: 50px;
+        height: 50px;
+    }
+    .conteudo-home{
+        width: 100%;
+        margin:0;
+    }
 }

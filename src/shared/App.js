@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import routes from './routes'
 import { Route, Link, Redirect, Switch } from 'react-router-dom'
 import Topo from './Topo'
-import Navbar from './Navbar'
 import NoMatch from './NoMatch'
 
-class App extends Component {
+class App extends Component {    
   render() {
     return (
       <div>
