@@ -64,7 +64,7 @@
     font-size: 20px;
     font-weight: 400;
     display: inline-block;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .conteudo-home-detalhe h3, h4{
@@ -97,10 +97,17 @@
     height: 600px;
 }
 
+/* destaque */
+.img-destaque{
+    width: 50px;
+    margin: 20px;
+}
+
 @media only screen and (max-width: 600px) {
 	.img-destaque,.conteudo-home-img{
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        margin: 0;
+        margin-top: 5px;
     }
     .conteudo-home{
         width: 100%;

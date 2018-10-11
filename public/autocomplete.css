@@ -8,6 +8,12 @@
   float: left;
 }
 
+.img-resultado img{
+  width: 33px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
 .resultado{
   display: inline-block;
   width: 100%;
