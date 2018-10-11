@@ -1,4 +1,34 @@
 
+.autocomplete-items .resultado:hover{
+  background-color: #e7e7e8;
+}
+
+.img-resultado{
+  width: 60px;
+  float: left;
+}
+
+.resultado{
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid #e0e0e0 1px;
+}
+
+.pesquisa-resultado{
+  float: left;
+  width: 75%;
+  color: black;
+}
+
+.pesquisa-assunto{
+  float: left;
+  width: 75%;
+  color: red;
+}
+
 .busca{
   margin-left: 30%;
   width: 30%;
@@ -30,24 +60,11 @@
   border: 1px solid #d4d4d4;
   border-top: none;
   z-index: 99;
-  width: 102.2%;
+  width: 102.5%;
   margin-top: -4px;  
   background-color: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-}
-.autocomplete-items div {
-  color: #333;
-  padding: 4px;
-  cursor: pointer;
-  border-bottom: 1px solid #d4d4d4;
-  text-align: left;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.autocomplete-items div:hover {
-  /*when hovering an item:*/
-  background-color: #e9e9e9; 
 }
 .autocomplete-active {
   /*when navigating through the items using the arrow keys:*/

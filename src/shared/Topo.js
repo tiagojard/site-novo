@@ -4,9 +4,11 @@ export default function Topo () {
   return (
     <div>
         <div id="busca-mobile" className="topo-busca-mobile">
-                <img id="topo-busca-arrow-icon" className="topo-busca-arrow-icon" src="/left-arrow.svg" />
-                <input type="text" id="input-busca-mobile" placeholder="O que você procura?" className="topo-busca-input-mobile" />
-                <img id="limpar-input-mobile" className="limpar-input-mobile" src="/error.svg" />
+                <div className="barra-topo">
+                  <img id="topo-busca-arrow-icon" className="topo-busca-arrow-icon" src="/left-arrow.svg" />
+                  <input type="text" id="input-busca-mobile" placeholder="O que você procura?" className="topo-busca-input-mobile" />
+                  <img id="limpar-input-mobile" className="limpar-input-mobile" src="/error.svg" />
+                </div>
                 <div id="result-mobile" className="result-mobile">
 
                 </div>

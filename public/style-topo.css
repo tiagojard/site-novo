@@ -58,7 +58,7 @@ body{
 .topo-busca-search-icon{
     float: right;
     display: none;
-    margin-top: -31px;
+    margin-top: -28px;
     margin-right: 10px;
 }
 
@@ -74,7 +74,7 @@ body{
 }
 
 .result-mobile{
-    border-top: solid #c7c7c7 1px;
+    border-top: solid #e2e2e2 1px;
 }
 
 .topo-busca-mobile-ativo{
@@ -92,13 +92,14 @@ body{
 }
 
 .topo-busca-input-mobile{
+    background-color: #f1f1f1;
     width: 78%;
     height: 35px;
     font-size: 20px;
     border: 0;
     outline: none;
     display: none;
-    font-weight: 100;
+    font-weight: 200;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
 }
 
@@ -107,6 +108,10 @@ body{
     position: absolute;
     right: 13px;
     top: 11px;
+}
+
+.barra-topo{
+    background-color: #f1f1f1;
 }
 
 @media only screen and (max-width: 600px) {

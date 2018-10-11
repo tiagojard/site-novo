@@ -46,27 +46,30 @@ class Home extends Component {
         if (loading === true) {
           return <p>LOADING</p>
         }
+        var adsTopoGabriel = '<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5825646877386493" data-ad-slot="5291356734"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var adsTopo = '<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="8091665402"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>';
         var adsEsquerdo = '<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="7212185231"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var adsDireito = '<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="6680443014"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({}); </script>';
         return (<div className="corpo-pagina">
-                    <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }} />
+                    <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopoGabriel }} />
                     <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }} />
                     <div className="conteudo-home">
+                    <h3 className="titulo-home">Conteúdos mais acessados</h3>
+                    <h1 className="sub-titulo-home">Guia desenvolvedor</h1>
                     {
                         repos.map((item, index) =>
                         <div key={index}>
-                            <div  className="conteudo-home-container">
+                            <div className="conteudo-home-container">
                                 <div className="conteudo-home-img">
-                                    <img src="" className="img-destaque" />
+                                    <img src={item.imagem} className="img-destaque" alt={item.assunto} />
                                 </div>
                                 <div className="conteudo-home-detalhe">
-                                    <a href={"/pagina"+item.url}>{item.titulo}</a>
-                                    <div><br/>
-                                        {item.descricao} First, let’s review how you transform lists in JavaScript. Given the code below, we use the map() function to take an array of numbers and double their values. We assign the new array returned by map() to the variable doubled and log it
+                                    <a href={"/pagina"+item.url}><h2>{item.titulo}</h2></a>
+                                    <div>
+                                    <h3>{item.descricao}</h3>
                                     </div>
                                     <div className="conteudo-home-info">
-                                    {item.qtdeAcesso} | <span className="assunto">{item.assunto}</span> | {new Date(item.data).toLocaleDateString()}
+                                    {item.qtdeAcesso} | <span className="assunto"><h4>{item.assunto}</h4></span> | {item.data}
                                     </div>
                                 </div>
                             </div>

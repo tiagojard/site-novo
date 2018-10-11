@@ -22,10 +22,11 @@ function autocompleteMobile(){
   function getListAutoCompleteMobile(element,result){
     var val = element.value.toLowerCase();
     var div_resultado = document.getElementById("result-mobile");
-    var html = "<ul>";
+    var html = "<div>";
     if(result != null){
       for (i = 0; i < result.length; i++) {
-        html += "<li><a href='/pagina"+result[i].url+"'>";
+        html += ""
+        html += "<div class='resultado'><a href='/pagina"+result[i].url+"'><div class='img-resultado'><img src='"+result[i].imagem+"'></div><div class='pesquisa-resultado'>";
         var indexOfBusca = result[i].pesquisa.toLowerCase().indexOf(val);
         html +=  result[i].pesquisa.substr(0, indexOfBusca);
       
@@ -33,10 +34,10 @@ function autocompleteMobile(){
           
         html +=  result[i].pesquisa.substr(indexOfBusca+val.length, result[i].pesquisa.length );
       
-        html += "</a></li>";
+        html += "</div><div class='pesquisa-assunto'>"+result[i].assunto+"</div></a></div>";
       }
     }
-    html += "</ul>";
+    html += "</div>";
     div_resultado.innerHTML = html; 
   }
 
@@ -57,7 +58,7 @@ function autocomplete() {
   var currentFocus;
 
   function getListAutoComplete(element,arr){
-    var a, b, i, val = element.value;
+    var a, b, c, e, f, g, i, val = element.value;
     /*close any already open lists of autocompleted values*/
     closeAllLists();
     if (!val) { return false;}
@@ -73,19 +74,37 @@ function autocomplete() {
     for (i = 0; i < arr.length; i++) {
       /*check if the item starts with the same letters as the text field value:*/
         /*create a DIV element for each matching element:*/
+        
+        f = document.createElement("DIV");
+        f.className = "resultado";
+
         b = document.createElement("DIV");
+        b.className = "img-resultado";
+        b.innerHTML = "<img src='"+arr[i].imagem+"'/>";
+        
+        
+        
+        
+        c = document.createElement("DIV");
+        c.className = "pesquisa-resultado";
+        
+        g = document.createElement("DIV");
+        g.className = "pesquisa-assunto";
+        g.innerHTML = arr[i].assunto;
+
+        e = document.createElement("DIV");
         /*make the matching letters bold:*/
         var indexOfBusca = arr[i].pesquisa.indexOf(val);
-        b.innerHTML =  arr[i].pesquisa.substr(0, indexOfBusca);
-        b.innerHTML += "<strong>" + arr[i].pesquisa.substr(indexOfBusca, val.length )+ "</strong>";
-        b.innerHTML +=  arr[i].pesquisa.substr(indexOfBusca+val.length, arr[i].pesquisa.length );
+        e.innerHTML +=  arr[i].pesquisa.substr(0, indexOfBusca);
+        e.innerHTML += "<strong>" + arr[i].pesquisa.substr(indexOfBusca, val.length )+ "</strong>";
+        e.innerHTML +=  arr[i].pesquisa.substr(indexOfBusca+val.length, arr[i].pesquisa.length );
         //b.innerHTML = "<strong>" + arr[i].pesquisa.substr(0, val.length) + "</strong>";
         //b.innerHTML += arr[i].pesquisa.substr(val.length);
         /*insert a input field that will hold the current array item's value:*/
-        b.innerHTML += "<input type='hidden' value='" + arr[i].url + "'>";
-        b.innerHTML += "<input type='hidden' value='" + arr[i].pesquisa + "'>";
+        e.innerHTML += "<input type='hidden' value='" + arr[i].url + "'>";
+        e.innerHTML += "<input type='hidden' value='" + arr[i].pesquisa + "'>";
         /*execute a function when someone clicks on the item value (DIV element):*/
-            b.addEventListener("click", function(e) {
+        f.addEventListener("click", function(e) {
             /*insert the value for the autocomplete text field:*/
             inp.value = this.getElementsByTagName("input")[1].value;
             /*close the list of autocompleted values,
@@ -96,7 +115,11 @@ function autocomplete() {
             window.location.href = "/pagina"+this.getElementsByTagName("input")[0].value;
             //location.reload();
         });
-        a.appendChild(b);
+        f.appendChild(b);
+        c.appendChild(e);
+        f.appendChild(c);
+        f.appendChild(g);
+        a.appendChild(f);
       }
   }
 
@@ -214,6 +237,7 @@ $("#limpar-input-mobile").click(function() {
   $("#input-busca-mobile").val("");
   EscondeLimparBusca();
   FocusBuscaMobile();
+  $("#result-mobile").html("");
 });
 
 /* quando digitar mostrar botão limpar consulta */
