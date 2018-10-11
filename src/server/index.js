@@ -57,7 +57,6 @@ app.get("*", (req, res, next) => {
           <div id="app">${markup}</div>
           <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
           <script src="/autocomplete.js" defer></script>
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </body>
       </html>
     `)
