@@ -43,7 +43,7 @@ app.get("*", (req, res, next) => {
           <link rel="stylesheet" type="text/css" href="/autocomplete.css">
           <link rel="stylesheet" type="text/css" href="/home.css">
           <script src="/bundle.js" defer></script>
-          <script src="/autocomplete.js" defer></script>
+          
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <script>
             (adsbygoogle = window.adsbygoogle || []).push({
@@ -57,7 +57,8 @@ app.get("*", (req, res, next) => {
         <body>
           <div id="app">${markup}</div>
           <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        </body>
+          <script src="/autocomplete.js" defer></script>
+          </body>
       </html>
     `)
   }).catch(next)
