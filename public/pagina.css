@@ -65,6 +65,8 @@ pre.codigo {
 
 .sub-titulo{
 	color: #6d6d6d !important;
+    font-weight: 300;
+    font-size: 22px !important;
 }
 
 .codigo{
@@ -114,18 +116,6 @@ pre.codigo {
 	border: 0.7px solid #e1e4e8;
 }
 
-
-
-
-
-
-
-
-/* destaque */
-.img-destaque{
-    width: 50px;
-    margin: 20px;
-}
 
 
 
