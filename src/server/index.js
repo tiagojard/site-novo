@@ -43,7 +43,13 @@ app.get("*", (req, res, next) => {
           <link rel="stylesheet" type="text/css" href="/autocomplete.css">
           <link rel="stylesheet" type="text/css" href="/home.css">
           <script src="/bundle.js" defer></script>
-          
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-9476507678736435",
+              enable_page_level_ads: true
+            });
+          </script>
           <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
         </head>
 
