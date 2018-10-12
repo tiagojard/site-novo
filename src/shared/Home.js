@@ -91,7 +91,17 @@ class Home extends Component {
         var adsDireito = "";//'<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="6680443014"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({}); </script>';
         return (<div className="corpo-pagina">
                     <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopoGabriel }} />
-                    <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }} />
+                    <div className="container-esquerdo">
+                        <div className="menu-esquerdo">
+                            <div className="menu-esquerdo-titulo">Assuntos</div>
+                            <ul>
+                                <li><a href="/pagina/1/como-criar-site-react-js" title="React js">React js</a></li>
+                                <li><a href="/pagina/3/jquery-ready-documentacao" title="Jquery">Jquery</a></li>
+                                <li><a href="/pagina/2/como-utilizar-map-react-array-list" title="javaScript">javaScript</a></li>
+                            </ul>
+                        </div>
+                        <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }} />
+                    </div>
                     <div className="conteudo-home">
                     <h3 className="titulo-home">Conteúdos mais acessados</h3>
                     <h1 className="sub-titulo-home">Guia desenvolvedor</h1>

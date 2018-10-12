@@ -114,6 +114,38 @@ body{
     background-color: #f1f1f1;
 }
 
+.menu-esquerdo{
+    width: 160px;
+    height: 200px;
+    margin-top: 10px;
+    float: left;
+    border-right: 1px dotted #cccccc;
+}
+.menu-esquerdo a{
+    text-decoration: none;
+    color: #7d7d7d;
+}
+
+.menu-esquerdo a:hover {
+    color: #333;
+}
+
+
+
+.menu-esquerdo-titulo{
+    border-bottom: 1px dotted #c3c4c5;
+    padding-bottom: 7px;
+    font-weight: 400;
+    width: 84%;
+}
+
+.menu-esquerdo ul{
+    list-style: none;
+    padding-left: 7px;
+    line-height: 25px;
+    margin-top: 12px;
+}
+
 @media only screen and (max-width: 600px) {
     .topo-busca-search-icon{
         display: block;

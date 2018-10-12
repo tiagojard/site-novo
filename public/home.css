@@ -103,6 +103,12 @@
     margin: 20px;
 }
 
+.container-esquerdo{
+    width: 160px;
+    height: auto;
+    float: left;
+}
+
 @media only screen and (max-width: 600px) {
 	.img-destaque,.conteudo-home-img{
         width: 35px;
@@ -114,7 +120,7 @@
         margin:0;
     }
 
-    .anuncio-direito{
+    .container-esquerdo{
         display: none;
     }
 
