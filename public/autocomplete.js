@@ -230,6 +230,8 @@ $("#topo-busca-arrow-icon").click(function() {
   $("#busca-mobile").removeClass("topo-busca-mobile-ativo");
   $("#input-busca-mobile").css("display","none");
   EscondeLimparBusca();
+  $("#result-mobile").html("");
+  $("#input-busca-mobile").val("");
 });
 
 /* limpar consulta */

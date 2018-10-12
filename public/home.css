@@ -3,7 +3,7 @@
     min-height: 400px;
     margin: 10px;
     float: left;
-    border-top: 1px solid #e1e4e8;
+    border-top: 1px dotted #cccccc;
 }
 
 .conteudo-home a{

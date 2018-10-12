@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Destaque from './Destaque'
 
 class Pagina extends Component {
 	constructor(props) {
@@ -73,9 +74,9 @@ class Pagina extends Component {
                     </div>
                     <div className="destaque-direito">
                     <div className="titulo-destaque">
-                      Destaques
+                     Destaque
                     </div>
-                      
+                    <Destaque idPagina={repos.id} />
                     </div>
                 </div>);
 	}

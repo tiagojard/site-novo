@@ -5,6 +5,14 @@ pre.codigo {
 	margin: 10px;
 }
 
+.conteudo p code{
+	background-color: #d9dbe8;
+}
+
+.conteudo a{
+	color: red;
+}
+
 .anuncio-topo{
 	height: 90px;
 	width: 728px;
@@ -35,15 +43,36 @@ pre.codigo {
     margin-left: 2%;
     margin-right: 1%;
     float: left;
-    border-top: 1px solid #e1e4e8;
+    border-top: 1px dotted #cccccc;
 }
 
 @media only screen and (max-width: 600px) {
 	.conteudo {
 		width: 97%;
 	}
-	.anuncio-topo,.anuncio-esquerdo,.destaque-direito,.titulo-destaque{
+	.anuncio-topo,.anuncio-esquerdo{
 		display: none;
+	}
+	.destaque-direito{
+		float: none !important;
+		width: auto !important;
+		border-left: 0 !important;
+		display: inline-block;
+		margin-top: 50px !important;
+	}
+
+	.item-destaque{
+		padding-left: 0 !important;
+	}
+
+	.hr-destaque{
+		width: 100% !important;
+		margin-left: 0 !important;
+	}
+	.titulo-destaque{
+		width: 100% !important;
+		margin-left: 0 !important;
+		font-weight: 600 !important;
 	}
 }
 
@@ -82,12 +111,12 @@ pre.codigo {
 	width: 220px;
 	margin-top: 10px;
 	float: right;
-	border-left: 2px solid #e1e4e8;
-    
+    border-left: 1px dotted #b1b0b0;
 }
 
 .item-destaque{
 	min-height: 100px;
+	padding-left: 20px;
 }
 
 .item-destaque a{
@@ -101,19 +130,17 @@ pre.codigo {
 }
 
 .titulo-destaque{
-	border-top: 1px solid #e1e4e8;
-	border-left: 2px solid #0366d6;
-	border-bottom: 1px solid #e1e4e8;
+	border-bottom: 1px dotted #c3c4c5;
     width: 90%;
 	margin-left: 5%;
 	padding: 7px;
-	font-weight: 500;
+	font-weight: 400;
 }
 
 .hr-destaque{
 	width: 95%;
 	margin-left: 5%;
-	border: 0.7px solid #e1e4e8;
+	border: 0.7px dotted #c3c4c5;
 }
 
 
@@ -148,10 +175,14 @@ pre.codigo {
 .item-destaque-anuncio{
 	width: 200px;
 	height: 200px;
-	background-color: red;
 	margin-left: 5%;
 }
 
+.img-pagina-destaque{
+	width: 50px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
 
 /* relacionados */
 .item-relacionado{
