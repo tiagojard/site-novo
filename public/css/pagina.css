@@ -13,29 +13,6 @@ pre.codigo {
 	color: red;
 }
 
-.anuncio-topo{
-	height: 90px;
-	width: 728px;
-	margin: auto;
-}
-
-.anuncio-topo img{
-	width: 728px;
-    height: 90px;
-}
-
-.anuncio-esquerdo{
-	width: 160px;
-	height: 600px;
-	margin-top: 10px;
-	float: left;
-}
-
-.anuncio-esquerdo img{
-	width: 160px;
-	height: 600px;
-}
-
 .conteudo{
 	width: 67%;
     min-height: 400px;
@@ -50,9 +27,7 @@ pre.codigo {
 	.conteudo {
 		width: 97%;
 	}
-	.anuncio-topo,.anuncio-esquerdo{
-		display: none;
-	}
+
 	.destaque-direito{
 		float: none !important;
 		width: auto !important;
@@ -154,10 +129,12 @@ pre.codigo {
 	margin:5%;
 }
 
+/*
 .anuncios-conteudo-esquerdo img{
 	width: 300px;
 	height: 250px;
 }
+*/
 
 .anuncios-conteudo-direito{
 	width: 40%;
@@ -166,11 +143,13 @@ pre.codigo {
 	margin:5%;
 }
 
+/*
 .anuncios-conteudo-direito img{
 	width: 300px;
 	height: 250px;
 	margin-left: 18%;
 }
+*/
 
 .item-destaque-anuncio{
 	width: 200px;

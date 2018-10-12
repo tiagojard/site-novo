@@ -109,6 +109,40 @@
     float: left;
 }
 
+.menu-esquerdo{
+    height: 200px;
+    margin-top: 10px;
+    padding-left: 15px;
+    border-right: 1px dotted #cccccc;
+}
+.menu-esquerdo a{
+    text-decoration: none;
+    color: #7d7d7d;
+}
+
+.menu-esquerdo a:hover {
+    color: #333;
+}
+
+
+
+.menu-esquerdo-titulo{
+    border-bottom: 1px dotted #c3c4c5;
+    padding-bottom: 7px;
+    font-weight: 400;
+    width: 84%;
+    top: -5px;
+    position: relative;
+}
+
+.menu-esquerdo ul{
+    list-style: none;
+    padding-left: 0;
+    line-height: 25px;
+    margin-top: 0;
+}
+
+
 @media only screen and (max-width: 600px) {
 	.img-destaque,.conteudo-home-img{
         width: 35px;
@@ -116,11 +150,10 @@
         margin-top: 5px;
     }
     .conteudo-home{
-        width: 100%;
-        margin:0;
+        width: 95%;
     }
 
-    .container-esquerdo{
+    .container-esquerdo,.anuncio-direito{
         display: none;
     }
 

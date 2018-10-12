@@ -25,7 +25,7 @@ class Home extends Component {
      "data": "29/09/2018",
      "qtdeAcesso": "67",
      "assunto": "React js",
-     "imagem": "/react.svg"
+     "imagem": "/img/react-min.svg"
      },
      {
      "url": "/2/como-utilizar-map-react-array-list",
@@ -34,7 +34,7 @@ class Home extends Component {
      "data": "30/09/2018",
      "qtdeAcesso": "62",
      "assunto": "React js",
-     "imagem": "/react.svg"
+     "imagem": "/img/react.svg"
      },
      {
      "url": "/3/jquery-ready-documentacao",
@@ -43,7 +43,7 @@ class Home extends Component {
      "data": "10/10/2018",
      "qtdeAcesso": "0",
      "assunto": "jQuery",
-     "imagem": "/jquery.svg"
+     "imagem": "/img/jquery-min.svg"
      }
      ]
      };

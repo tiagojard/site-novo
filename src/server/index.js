@@ -36,9 +36,17 @@ app.get("*", (req, res, next) => {
     var description = "";
     if(data != undefined){
       titulo = (data.titulo != "" ?  data.titulo + " - ": "")+ "Guia desenvolvedor";
-      //description = data.description;
+      description = data.description;
     }
 
+    var style = '<link rel="stylesheet" type="text/css" href="/css/style.min.css">';
+
+    if(req.url == "/"){
+      style += '<link rel="stylesheet" type="text/css" href="/css/home.min.css">';
+    }else{
+      style += '<link rel="stylesheet" type="text/css" href="/css/pagina.min.css">';
+    }
+    
     /*
     
      <link rel="stylesheet" type="text/css" href="/css/style-topo.css">
@@ -57,10 +65,10 @@ app.get("*", (req, res, next) => {
           <meta charset="utf-8"><meta http-equiv="Content-Language" content="pt-br">
           <meta name="robots" content="index, follow">
           <meta name="description" content="${description}">
-          <meta name="keywords" content="HTML,CSS,XML,JavaScript">
           <meta name="author" content="Tiago Jardim">
           <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-          <link rel="stylesheet" type="text/css" href="/css/style.css">
+          <link rel="shortcut icon" href="/favicon.ico">
+          ${style}
          
           <script src="/bundle.js" defer></script>
           
