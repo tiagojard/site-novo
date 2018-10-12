@@ -36,6 +36,17 @@ app.get("*", (req, res, next) => {
       titulo = (data.titulo != "" ?  data.titulo + " - ": "")+ "Guia desenvolvedor";
       //description = data.description;
     }
+
+    /*
+    
+     <link rel="stylesheet" type="text/css" href="/css/style-topo.css">
+          <link rel="stylesheet" type="text/css" href="/css/pagina.css">
+          <link rel="stylesheet" type="text/css" href="/css/autocomplete.css">
+          <link rel="stylesheet" type="text/css" href="/css/home.css">
+    
+    <script src="/js/autocomplete.js" defer></script>
+    */
+
     res.send(`
       <!DOCTYPE html>
       <html lang="pt-br">
@@ -47,10 +58,8 @@ app.get("*", (req, res, next) => {
           <meta name="keywords" content="HTML,CSS,XML,JavaScript">
           <meta name="author" content="Tiago Jardim">
           <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-          <link rel="stylesheet" type="text/css" href="/style-topo.css">
-          <link rel="stylesheet" type="text/css" href="/pagina.css">
-          <link rel="stylesheet" type="text/css" href="/autocomplete.css">
-          <link rel="stylesheet" type="text/css" href="/home.css">
+          <link rel="stylesheet" type="text/css" href="/css/style.css">
+         
           <script src="/bundle.js" defer></script>
           
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -66,7 +75,7 @@ app.get("*", (req, res, next) => {
         <body>
           <div id="app">${markup}</div>
           <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-          <script src="/autocomplete.js" defer></script>
+          <script src="/js/js.js" defer></script>
           </body>
       </html>
     `)
