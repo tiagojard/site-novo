@@ -57,7 +57,7 @@ class Home extends Component {
                     <h3 className="titulo-home">Conteúdos mais acessados</h3>
                     <h1 className="sub-titulo-home">Guia desenvolvedor</h1>
                     {
-                        repos.map((item, index) =>
+                        repos.destaques.map((item, index) =>
                         <div key={index}>
                             <div className="conteudo-home-container">
                                 <div className="conteudo-home-img">

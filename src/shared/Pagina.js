@@ -24,8 +24,6 @@ class Pagina extends Component {
   componentDidMount() {
     if (!this.state.repos) {
       this.fetchRepos(this.props.match.params.id)
-    }else{
-      document.title = "Guia desenvolvedor - "+ this.state.repos.titulo;//this.props.match.params.titulo.replace('-',' ');
     }
 		/*
             fetch("https://tiagojardim.000webhostapp.com/setVisualizacaoPagina.php?id_pagina="+this.props.match.params.id)

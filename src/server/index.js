@@ -30,14 +30,23 @@ app.get("*", (req, res, next) => {
       </StaticRouter>
     )
 
+    var titulo = "";
+    var description = "";
+    if(data != undefined){
+      titulo = (data.titulo != "" ?  data.titulo + " - ": "")+ "Guia desenvolvedor";
+      //description = data.description;
+    }
     res.send(`
       <!DOCTYPE html>
       <html lang="pt-br">
         <head>
-          <title>Guia desenvolvedor</title>
+          <title>${titulo}</title>
           <meta charset="utf-8"><meta http-equiv="Content-Language" content="pt-br">
-          <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
           <meta name="robots" content="index, follow">
+          <meta name="description" content="${description}">
+          <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+          <meta name="author" content="Tiago Jardim">
+          <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
           <link rel="stylesheet" type="text/css" href="/style-topo.css">
           <link rel="stylesheet" type="text/css" href="/pagina.css">
           <link rel="stylesheet" type="text/css" href="/autocomplete.css">

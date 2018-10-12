@@ -54,7 +54,7 @@ class Destaque extends Component {
 
 		return (<div>
 					{
-                        this.state.result.map((item, index) =>
+                        this.state.result.destaques.map((item, index) =>
                         <div key={index}>
                             <div className="item-destaque">
                                 <a href={"/pagina"+item.url} title={item.titulo}>
