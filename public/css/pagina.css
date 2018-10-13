@@ -3,6 +3,8 @@ pre.codigo {
 }
 .corpo-pagina{
 	margin: 10px;
+    top: 70px;
+    position: relative;
 }
 
 .conteudo p code{
@@ -53,14 +55,16 @@ pre.codigo {
     list-style: decimal;
     color: #0366d6;
     padding-left: 15px;
-	font-size: 14px;
-	width: 68%;
-	margin-top: 5px;
+    font-size: 14px;
+    width: 67%;
+    margin-top: 5px;
 }
 
 .produtos{
-	width: 50%;
-	padding: 30px;
+	width: 47%;
+    padding: 10px;
+    float: left;
+    margin: 0;
 }
 
 .conteudo{

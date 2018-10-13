@@ -2,7 +2,7 @@ import React from 'react'
 export default function Topo () {
  
   return (
-    <div>
+    <div className="conteiner-topo">
         <div id="busca-mobile" className="topo-busca-mobile">
                 <div className="barra-topo">
                   <svg id="topo-busca-arrow-icon" className="topo-busca-arrow-icon" xmlns="http://www.w3.org/2000/svg" width="18.533" height="18.533"><rect width="100%" height="100%" fill="none"/><g className="currentLayer"><path d="M17.37 7.92l.028.006H5.072l3.875-3.883c.19-.19.294-.447.294-.716 0-.27-.104-.525-.294-.715l-.603-.603a1 1 0 0 0-.712-.295 1 1 0 0 0-.712.294L.278 8.65a.998.998 0 0 0-.294.713c0 .271.104.525.294.715L6.92 16.72a1 1 0 0 0 .712.294 1 1 0 0 0 .712-.294l.603-.603a.998.998 0 0 0 .294-.712.968.968 0 0 0-.294-.698l-3.919-3.905h12.355c.555 0 1.022-.478 1.022-1.033v-.853c0-.555-.48-.996-1.036-.996z" fill="#757575"/></g></svg>
