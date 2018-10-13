@@ -79,6 +79,18 @@ app.get("*", (req, res, next) => {
               enable_page_level_ads: true
             });
           </script>
+
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127383120-1"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-127383120-1');
+          </script>
+
+
           <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
         </head>
 
