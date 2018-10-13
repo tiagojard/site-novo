@@ -142,9 +142,9 @@ class Home extends Component {
                 
 
 
-
+<h1>Curso react js</h1>
+<h2>Vendas de curso online, compre os melhores cursos react js.</h2>
 <p>
-
 Começando
 Esta página é uma visão geral da documentação do React e recursos relacionados.
 
