@@ -228,7 +228,10 @@ body{
     background-color:white;
     color: #333;
   }
-  
+  .hr{
+    border: 0px;
+    border-top: 1px dotted #cccccc;
+}
   .autocomplete {
     /*the container must be positioned relative:*/
     position: relative;
