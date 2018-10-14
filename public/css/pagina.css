@@ -1,11 +1,7 @@
 pre.codigo {
     overflow-x: scroll;
 }
-.corpo-pagina{
-	margin: 10px;
-    top: 70px;
-    position: relative;
-}
+
 
 .conteudo p code{
 	background-color: #d9dbe8;
@@ -77,21 +73,89 @@ pre.codigo {
     border-top: 1px dotted #cccccc;
 }
 
+
+@media only screen and (max-width: 1290px) {
+	.conteudo{
+		width: 66%;
+	}
+}
+
+@media only screen and (max-width: 1249px) {
+	.conteudo{
+		width: 65%;
+	}
+}
+
+@media only screen and (max-width: 1240px) {
+	.conteudo{
+		width: 64%;
+	}
+}
+
+@media only screen and (max-width: 1174px) {
+	.conteudo{
+		width: 62%;
+	}
+}
+
+@media only screen and (max-width: 1108px) {
+	.conteudo{
+		width: 60%;
+	}
+}
+
+@media only screen and (max-width: 1049px) {
+	.conteudo{
+		width: 58%;
+	}
+}
+
+@media only screen and (max-width: 996px) {
+	.conteudo{
+		width: 55%;
+	}
+}
+
+@media only screen and (max-width: 927px) {
+	.conteudo {
+		width: 77%;
+	}
+	.destaque-direito{
+		border-left: 0!important;
+		display: inline-block;
+		margin: 2%!important;
+		width: 80% !important;
+	}
+}
+
+@media only screen and (max-width: 816px) {
+	.conteudo {
+		width: 74%;
+	}
+	.destaque-direito{
+		width: 78% !important;
+	}
+}
+@media only screen and (max-width: 744px) {
+    .destaque-direito{
+		width: 99% !important;
+	}
+	.conteudo {
+		width: 96%;
+	}
+}
+
 @media only screen and (max-width: 600px) {
 	.conteudo {
 		width: 97%;
 	}
 
 	.destaque-direito{
-		float: none !important;
-		width: auto !important;
-		border-left: 0 !important;
-		display: inline-block;
-		margin-top: 50px !important;
+		width: 95% !important;
 	}
 
 	.item-destaque{
-		padding-left: 0 !important;
+		padding: 10px!important;
 	}
 
 	.hr-destaque{
@@ -99,7 +163,7 @@ pre.codigo {
 		margin-left: 0 !important;
 	}
 	.titulo-destaque{
-		width: 100% !important;
+		width: 96% !important;
 		margin-left: 0 !important;
 		font-weight: 600 !important;
 	}
@@ -114,6 +178,10 @@ pre.codigo {
 
 	.titulo-produto strong{
 		font-size: 27px;
+	}
+
+	.conteudo h1 {
+		font-size: 27px !important;
 	}
 }
 
@@ -152,12 +220,14 @@ pre.codigo {
 	width: 220px;
 	margin-top: 10px;
 	float: right;
-    border-left: 1px dotted #b1b0b0;
+	border-left: 1px dotted #b1b0b0;
+	margin-right: 1px;
 }
 
 .item-destaque{
 	min-height: 100px;
 	padding-left: 20px;
+	padding-right: 2px;
 }
 
 .item-destaque a{
@@ -172,7 +242,7 @@ pre.codigo {
 
 .titulo-destaque{
 	border-bottom: 1px dotted #c3c4c5;
-    width: 90%;
+    width: 88%;
 	margin-left: 5%;
 	padding: 7px;
 	font-weight: 400;

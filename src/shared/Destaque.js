@@ -64,7 +64,7 @@ class Destaque extends Component {
                                 </a>
                             </div>
                             <hr className="hr-destaque"/>
-                            { index % 2 != 0 ?<div className="item-destaque-anuncio"></div>:"" }
+                            { /*index % 2 != 0 ?<div className="item-destaque-anuncio"></div>:"" */}
                         </div>)
                     }
                 </div>);

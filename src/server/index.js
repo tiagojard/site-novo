@@ -97,7 +97,7 @@ app.get("*", (req, res, next) => {
         <body>
           <div id="app">${markup}</div>
           <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-          <script src="/js/js.js" defer></script>
+          <script src="/js/autocomplete.js" defer></script>
           </body>
       </html>
     `)

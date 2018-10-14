@@ -6,17 +6,19 @@ body{
 }
 
 .conteiner-topo{
-    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1;
 }
 
 .topo{
+    position: fixed;
     width: 100%;
-    height: 66px;
+    height: 60px;
     background-color:#4e5682;
     border-bottom: solid #d06363 2px;
+    z-index: 1;
+    top: 0;
 }
 .topo-logo{
     width: 10%;
@@ -28,13 +30,13 @@ body{
 
 .logo{
     width: 35px;
-    margin: 10px;
+    margin: 6px;
 }
 
 .topo-busca{
     width: 85%;
     height: 45px;
-    margin-top: 20px;
+    margin-top: 15px;
     float: left;
 }
 
@@ -79,6 +81,8 @@ body{
     transition: width 0.7s, height 0.7s;
     background-color: #ffffff;
     border-left: solid #c7c7c7  1px;
+    z-index: 2;
+    top: 0;
 }
 
 .result-mobile{
@@ -122,6 +126,57 @@ body{
     background-color: #f1f1f1;
 }
 
+@media only screen and (max-width: 1292px) {
+    .busca{
+        width: 32% !important;
+        margin-left: 25% !important;
+    }
+}
+
+@media only screen and (max-width: 1152px) {
+    .busca{
+        width: 32% !important;
+        margin-left: 23% !important;
+    }
+}
+
+@media only screen and (max-width: 1102px) {
+    .busca{
+        width: 40% !important;
+        margin-left: 23% !important;
+    }
+}
+
+@media only screen and (max-width: 744px) {
+    .anuncio-topo,.anuncio-esquerdo{
+		display: none;
+    }
+    .topo-busca-search-icon{
+        display: block;
+    }
+    .topo-busca-input{
+        display: none;
+    }
+    .topo-logo{
+        width: 40px;
+        height: 40px;
+        margin-left: 5px;
+    }
+    .topo-busca{
+        margin-top: 5px;
+        height: 40px;
+    }
+    .topo{
+        height: 50px;
+    }
+    .topo-busca-nome-site{
+        display: inline-flex;
+    }
+    .logo {
+        width: 23px;
+        margin: 8px;
+    }
+}
 
 @media only screen and (max-width: 600px) {
     .topo-busca-search-icon{
@@ -149,12 +204,19 @@ body{
         width: 23px;
         margin: 8px;
     }
-    .anuncio-topo,.anuncio-esquerdo{
-		display: none;
-	}
 }
+
+@media only screen and (max-width: 1292px) {
+    .topo-busca{
+        width: 80% !important; 
+    }
+    .topo-busca-nome-site{
+        font-size: 19px;
+    }
+}
+
+
 .corpo-pagina{
-	margin: 10px;
     top: 70px;
     position: relative;
 }
@@ -193,6 +255,7 @@ body{
   .img-resultado{
     width: 60px;
     float: left;
+    height: 60px;
   }
   
   .img-resultado img{
@@ -206,7 +269,6 @@ body{
     width: 100%;
     cursor: pointer;
     padding-top: 10px;
-    padding-bottom: 10px;
     border-bottom: solid #e0e0e0 1px;
   }
   
