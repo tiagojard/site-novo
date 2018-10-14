@@ -54,7 +54,7 @@ app.get("*", (req, res, next) => {
           <link rel="stylesheet" type="text/css" href="/css/autocomplete.css">
           <link rel="stylesheet" type="text/css" href="/css/home.css">
     
-    <script src="/js/autocomplete.js" defer></script>
+    <script defer src="/js/autocomplete.js"></script>
     */
 
     res.send(`
@@ -63,11 +63,20 @@ app.get("*", (req, res, next) => {
         <head>
           <title>${titulo}</title>
           <meta charset="utf-8"><meta http-equiv="Content-Language" content="pt-br">
-          <meta name="robots" content="index, follow">
+          <meta name="robots" content="index, follow"><meta name="googlebot" content="index, follow">
           <meta name="description" content="${description}">
           <meta name="author" content="Tiago Jardim">
+          <meta name="copyright" content="(c) 2018 Guia desenvolvedor">	
+          <meta name="google-site-verification" content="xZHQJyeiCyglwwCIB4n9Uuc845s-2aqiKNvfd13sgAw" />
+          <meta name="distribution" content="global">
           <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
           <link rel="shortcut icon" href="/favicon.ico">
+
+          <meta property="og:url" content='https://guiadesenvolvedor.herokuapp.com${req.url}'>
+          <meta property="og:type" content="website">
+          <meta property="og:title" content="${titulo}">
+          <meta property="og:description" content="${description}">
+        
           ${style}
          
           <script src="/bundle.js" defer></script>
@@ -96,8 +105,8 @@ app.get("*", (req, res, next) => {
 
         <body>
           <div id="app">${markup}</div>
-          <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-          <script src="/js/autocomplete.js" defer></script>
+          <script defer  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+          <script defer src="/js/js.js"></script>
           </body>
       </html>
     `)
