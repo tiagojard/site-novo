@@ -178,6 +178,35 @@ body{
     }
 }
 
+
+@media only screen and (max-width: 1294px) {
+    .topo-busca{
+        width: 92% !important; 
+    }
+}
+
+@media only screen and (max-width: 1292px) {
+    .topo-busca{
+        width: 85% !important; 
+    }
+    .topo-busca-nome-site{
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 744px) {
+    .topo-busca{
+        width: 92% !important; 
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .topo-busca{
+        width: 91% !important; 
+    }
+}
+
+
 @media only screen and (max-width: 600px) {
     .topo-busca-search-icon{
         display: block;
@@ -193,6 +222,7 @@ body{
     .topo-busca{
         margin-top: 5px;
         height: 40px;
+        width: 90% !important; 
     }
     .topo{
         height: 50px;
@@ -206,15 +236,17 @@ body{
     }
 }
 
-@media only screen and (max-width: 1292px) {
+@media only screen and (max-width: 518px) {
     .topo-busca{
-        width: 80% !important; 
-    }
-    .topo-busca-nome-site{
-        font-size: 19px;
+        width: 87% !important; 
     }
 }
 
+@media only screen and (max-width: 384px) {
+    .topo-busca{
+        width: 84% !important; 
+    }
+}
 
 .corpo-pagina{
     top: 70px;
