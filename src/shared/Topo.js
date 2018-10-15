@@ -33,7 +33,7 @@ class Topo extends Component {
             <div id="busca-mobile" className="topo-busca-mobile">
                     <div className="barra-topo">
                       <svg id="topo-busca-arrow-icon" onClick={this.handleLimpaConsulta} className="topo-busca-arrow-icon" xmlns="http://www.w3.org/2000/svg" width="18.533" height="18.533"><rect width="100%" height="100%" fill="none"/><g className="currentLayer"><path d="M17.37 7.92l.028.006H5.072l3.875-3.883c.19-.19.294-.447.294-.716 0-.27-.104-.525-.294-.715l-.603-.603a1 1 0 0 0-.712-.295 1 1 0 0 0-.712.294L.278 8.65a.998.998 0 0 0-.294.713c0 .271.104.525.294.715L6.92 16.72a1 1 0 0 0 .712.294 1 1 0 0 0 .712-.294l.603-.603a.998.998 0 0 0 .294-.712.968.968 0 0 0-.294-.698l-3.919-3.905h12.355c.555 0 1.022-.478 1.022-1.033v-.853c0-.555-.48-.996-1.036-.996z" fill="#757575"/></g></svg>
-                      <input type="text" id="input-busca-mobile" onKeyUp={this.handleAutoComplete} placeholder="O que você procura?" className="topo-busca-input-mobile" />
+                      <input type="text" autoComplete="off" id="input-busca-mobile" onKeyUp={this.handleAutoComplete} placeholder="O que você procura?" className="topo-busca-input-mobile" />
                       <svg id="limpar-input-mobile" onClick={this.handleLimpaConsulta} className="limpar-input-mobile" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><rect width="100%" height="100%" fill="none"/><g className="currentLayer"><path d="M15.239 2.693C11.758-.79 6.093-.79 2.611 2.693c-3.482 3.481-3.481 9.146 0 12.628s9.146 3.481 12.628 0c3.481-3.482 3.481-9.147 0-12.628zm-2.793 9.835a.687.687 0 0 1-.971 0l-2.55-2.55-2.671 2.671a.687.687 0 1 1-.971-.971l2.67-2.671-2.55-2.55a.687.687 0 1 1 .972-.972l2.55 2.55 2.428-2.428a.687.687 0 1 1 .972.971L9.896 9.007l2.55 2.55a.687.687 0 0 1 0 .97z" fill="gray"/></g></svg>
                     </div>
                     <div id="result-mobile" className="result-mobile">
@@ -50,7 +50,7 @@ class Topo extends Component {
                 <div className="topo-busca">
                     <span className="topo-busca-nome-site">Guia do desenvolvedor</span>
                     <div className="busca">
-                      <input id="busca" type="text"  onKeyUp={this.handleAutoComplete} onBlur={this.handleLimpaConsulta} placeholder="O que você procura?" className="topo-busca-input" />
+                      <input id="busca" type="text" autoComplete="off" onKeyUp={this.handleAutoComplete} placeholder="O que você procura?" className="topo-busca-input" />
                       <BuscaMobile pesquisa={this.state.pesquisa} />
                     </div>
                     <svg id="topo-busca-search-icon" className="topo-busca-search-icon" xmlns="http://www.w3.org/2000/svg" fill="#fff" height="24" width="24"><rect width="100%" height="100%" fill="none"/><g className="currentLayer"><path d="M16.867 14.788h-1.052l-.373-.36a8.616 8.616 0 0 0 2.09-5.631c0-4.78-3.874-8.654-8.654-8.654S.224 4.017.224 8.797 4.1 17.45 8.878 17.45a8.616 8.616 0 0 0 5.632-2.09l.36.372v1.052l6.657 6.644 1.983-1.984-6.643-6.657zm-7.989 0c-3.315 0-5.99-2.676-5.99-5.991s2.675-5.991 5.99-5.991 5.992 2.676 5.992 5.99-2.676 5.992-5.992 5.992z"/></g></svg>

@@ -8,6 +8,16 @@ class BuscaMobile extends Component {
           }
     }
 
+    componentDidMount() {
+        var comp = this;
+        document.onclick = function(e) {
+            if(e.target.className != "resultado"){
+                comp.setState({
+                    resultado:null
+                });
+            }
+        }
+    }
     componentDidUpdate (prevProps, prevState) {
         if(this.props.pesquisa != prevProps.pesquisa){
             fetch("https://tiagojardim.000webhostapp.com/getPesquisa.php?pesquisa="+this.props.pesquisa)
@@ -28,10 +38,8 @@ class BuscaMobile extends Component {
     }
 
     render(){
-        console.log(this.props.pesquisa);
         if(this.state.resultado == null || this.props.pesquisa == "")
             return <div></div>
-        
         var pesquisa = this.props.pesquisa.toLowerCase(); 
         return <div className="autocomplete-items">
                 {this.state.resultado.map((item, index) => (
@@ -41,9 +49,9 @@ class BuscaMobile extends Component {
                                 <div className="img-resultado"><img src={item.imagem} /></div>
                                 <div className='pesquisa-resultado' dangerouslySetInnerHTML={
                                     {
-                                        __html:item.pesquisa.substr(0, item.pesquisa.toLowerCase().indexOf(pesquisa))+  
-                                        "<strong>"+ item.pesquisa.substr(item.pesquisa.toLowerCase().indexOf(this.props.pesquisa), pesquisa.length)+ "</strong>"+
-                                        item.pesquisa.substr(item.pesquisa.toLowerCase().indexOf(this.props.pesquisa)+pesquisa.length, item.pesquisa.length )
+                                        __html:item.pesquisa.substr(0, item.pesquisa.toLowerCase().indexOf(pesquisa))+ 
+                                        "<strong>"+ item.pesquisa.substr(item.pesquisa.toLowerCase().indexOf(pesquisa), pesquisa.length)+ "</strong>"+
+                                        item.pesquisa.substr(item.pesquisa.toLowerCase().indexOf(pesquisa)+pesquisa.length, item.pesquisa.length )
                                     }}/>
                                 <div className="pesquisa-assunto">{item.assunto}</div>
                             </a>
