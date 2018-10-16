@@ -104,6 +104,7 @@ body{
 }
 
 .topo-busca-input-mobile{
+    padding-left: 5px;
     background-color: #f1f1f1;
     width: 78%;
     height: 35px;

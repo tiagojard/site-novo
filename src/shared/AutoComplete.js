@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-class BuscaMobile extends Component {
+class AutoComplete extends Component {
     constructor(props) {
         super(props);
         this.state = {
             resultado: null
           }
+         
     }
-
+ 
     componentDidMount() {
         var comp = this;
         document.onclick = function(e) {
@@ -63,12 +64,12 @@ class BuscaMobile extends Component {
 }
 
 
-BuscaMobile.propTypes = {
+AutoComplete.propTypes = {
 	pesquisa: PropTypes.string
 };
 
-BuscaMobile.defaultProps = {
+AutoComplete.defaultProps = {
 	pesquisa:''
 };
 
-export default BuscaMobile;
+export default AutoComplete
