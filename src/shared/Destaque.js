@@ -10,6 +10,7 @@ class Destaque extends Component {
 	}
 
     componentDidMount() {
+        /*
         //+this.props.idPagina
         fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json")
         .then(res => res.json())
@@ -26,9 +27,11 @@ class Destaque extends Component {
             });
             }
         );
+        */
     }
 
 	componentDidUpdate(prevProps){
+        /*
         if(this.props.idPagina != prevProps.idPagina){
             //+this.props.idPagina
             fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json")
@@ -47,6 +50,7 @@ class Destaque extends Component {
             }
         );
         }
+        */
 	}
 
 	render(){

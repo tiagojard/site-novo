@@ -1,0 +1,50 @@
+.conteudo{
+    width: 100% !important;
+}
+
+.container{
+    position: relative;
+    top: 100px;
+}
+.form-conteudo{
+    width: 45%;
+    float: left;
+    margin-left: 50px;
+}
+
+.resultado-conteudo{
+    width: 45%;
+    height: 200px;
+    float: right;
+    margin-right: 50px;
+    top: 450px;
+    position: relative;
+}
+
+
+.form-conteudo label{
+    margin-left: 10px;
+}
+
+.form-input{
+    width: 95%;
+    margin: 10px;
+    border-radius: 4px;
+    border: solid gray 1px;
+    height: 25px;
+    padding-left: 5px;
+    outline: 0;
+}
+
+.form-text{
+    width: 95%;
+    margin: 10px;
+    border-radius: 4px;
+    border: solid gray 1px;
+    outline: 0;
+    padding-left: 5px;
+}
+
+.container-botoes button{
+    margin-left: 10px;
+}
