@@ -25,18 +25,6 @@ class Pagina extends Component {
     if (!this.state.repos) {
       this.fetchRepos(this.props.match.params.id)
     }
-		/*
-            fetch("https://tiagojardim.000webhostapp.com/setVisualizacaoPagina.php?id_pagina="+this.props.match.params.id)
-            .then(res => res.json())
-            .then(
-              (result) => {
-
-              },
-              (error) => {
-                
-              }
-            )
-        */
   }
   componentDidUpdate (prevProps, prevState) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
@@ -55,11 +43,16 @@ class Pagina extends Component {
       })))
   }
 	render(){
-    const { loading, repos } = this.state
+    var { loading, repos  } = this.state;
     
     if (loading === true) {
       return <p>LOADING</p>
     }
+
+    if(Object.keys(repos).length == 0){
+      return <div></div>
+    }
+    repos = Object.values(repos)[0];
 		return (<div className="corpo-pagina">
                     <div className="anuncio-topo">
                     

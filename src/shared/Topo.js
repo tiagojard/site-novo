@@ -12,6 +12,8 @@ class Topo extends Component {
     this.handleAutoComplete = this.handleAutoComplete.bind(this);
     this.handleLimpaConsulta = this.handleLimpaConsulta.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.timeout = null;
   }
 
   handleSubmit(e){
@@ -27,10 +29,17 @@ class Topo extends Component {
   }
 
   handleAutoComplete(e){
-    this.setState({
-      pesquisa: e.target.id == "busca" ? e.target.value : "",
-      pesquisaMoblie: e.target.id == "input-busca-mobile" ? e.target.value : ""
-    });
+    var pesquisa = e.target.value;
+    var context = this;
+    var id = e.target.id;
+    clearTimeout(this.timeout);
+
+    this.timeout = setTimeout(function () {
+      context.setState({
+        pesquisa: id == "busca" ? pesquisa : "",
+        pesquisaMoblie: id == "input-busca-mobile" ? pesquisa : ""
+      });
+    }, 500);
   }
   
   render(){

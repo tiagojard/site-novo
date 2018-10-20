@@ -34,15 +34,21 @@ app.get("*", (req, res, next) => {
 
     var titulo = "";
     var description = "";
-    if(data != undefined){
-      titulo = (data.titulo != "" ?  data.titulo + " - ": "")+ "Guia desenvolvedor";
-      description = data.description;
+    if(Object.keys(data).length > 0){
+      var dataObject = Object.values(data)[0];
+      titulo = dataObject.title +" - Guia desenvolvedor";
+      description = dataObject.description;
     }
     var indexing = "index, follow";
     var style = "";//'<link rel="stylesheet" type="text/css" href="/css/style.css">';
-    if(req.url == "/")
+    if(req.url == "/"){
+      titulo = "Guia desenvolvedor";
+      description = "Com o guia do desenvolvedor você aprende a programar react js, c#, javaScript e jQuery";
       style += '<link async rel="stylesheet" type="text/css" href="/css/home.min.css">';
+    }
     if(req.url.indexOf("/busca/") > -1){
+      titulo = "Guia desenvolvedor";
+      description = "Com o guia do desenvolvedor você aprende a programar react js, c#, javaScript e jQuery";
       style += '<link async rel="stylesheet" type="text/css" href="/css/home.min.css">';
       indexing = "noindex";
     }

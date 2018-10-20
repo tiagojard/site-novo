@@ -10,7 +10,8 @@ class Destaque extends Component {
 	}
 
     componentDidMount() {
-        fetch("https://tiagojardim.000webhostapp.com/getDestaque.php?id_pagina="+this.props.idPagina)
+        //+this.props.idPagina
+        fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json")
         .then(res => res.json())
         .then(
             (result) => {
@@ -29,7 +30,8 @@ class Destaque extends Component {
 
 	componentDidUpdate(prevProps){
         if(this.props.idPagina != prevProps.idPagina){
-            fetch("https://tiagojardim.000webhostapp.com/getDestaque.php?id_pagina="+this.props.idPagina)
+            //+this.props.idPagina
+            fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json")
         .then(res => res.json())
         .then(
             (result) => {
@@ -51,24 +53,33 @@ class Destaque extends Component {
         if(this.state.loading == true){
             return <div></div>;
         }
-
-		return (<div>
-					{
-                        this.state.result.destaques.map((item, index) =>
-                        <div key={index}>
-                            <div className="item-destaque">
-                                <a href={"/pagina"+item.url} title={item.titulo}>
+        //if(Object.keys(repos).length == 0){
+            //return <div></div>
+          //}
+          //repos = Object.values(repos)[0];
+		return (<div>{
+                        this.state.result.map((item, index) =>
+                            <div key={index}>
+                            { 
+                            this.props.idPagina != item.id ? 
+                            <div>
+ <div className="item-destaque">
+                                <a href={"/pagina"+item.url} title={item.title}>
                                     <p>
-                                        <img src={item.imagem} className="img-pagina-destaque" align="left" alt={item.titulo}/>{item.titulo}. {item.descricao}
+                                        <img src={item.assunto[0].imagem} className="img-pagina-destaque" align="left" alt={item.title}/>{item.title}. {item.descricao}
                                     </p>
                                 </a>
                             </div>
                             <hr className="hr-destaque"/>
+
+                            </div>:
+                            <div></div>
+                            }
+                           
                             { /*index % 2 != 0 ?<div className="item-destaque-anuncio"></div>:"" */}
                         </div>)
-                    }
+        }
                 </div>);
 	}	
-
 }
 export default Destaque;
