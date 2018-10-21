@@ -10,7 +10,6 @@ class Destaque extends Component {
 	}
 
     componentDidMount() {
-        /*
         //+this.props.idPagina
         fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json")
         .then(res => res.json())
@@ -27,11 +26,9 @@ class Destaque extends Component {
             });
             }
         );
-        */
     }
 
 	componentDidUpdate(prevProps){
-        /*
         if(this.props.idPagina != prevProps.idPagina){
             //+this.props.idPagina
             fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json")
@@ -50,19 +47,15 @@ class Destaque extends Component {
             }
         );
         }
-        */
 	}
 
 	render(){
         if(this.state.loading == true){
             return <div></div>;
         }
-        //if(Object.keys(repos).length == 0){
-            //return <div></div>
-          //}
-          //repos = Object.values(repos)[0];
+        const result = Object.values(this.state.result);
 		return (<div>{
-                        this.state.result.map((item, index) =>
+            result.map((item, index) =>
                             <div key={index}>
                             { 
                             this.props.idPagina != item.id ? 

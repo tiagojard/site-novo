@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Destaque from './Destaque'
+import Produto from './Produto'
 
 class Pagina extends Component {
 	constructor(props) {
@@ -62,6 +63,10 @@ class Pagina extends Component {
                     </div>
                     <div className="conteudo">
                       <div id="conteudo" dangerouslySetInnerHTML={{__html:repos.conteudo }} />
+                      <br/>
+                    <hr className="hr"/>
+                    <p className="titulo-produto"><strong>Top cursos</strong> tá todo mundo clicando</p>
+                      <Produto />
                     </div>
                     <div className="destaque-direito">
                     <div className="titulo-destaque">

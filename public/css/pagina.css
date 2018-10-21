@@ -21,48 +21,6 @@ pre.codigo {
     font-weight: 400;
 }
 
-.link-produto h3{
-	font-size: 15px;
-    margin: 0;
-    color: black;
-    font-weight: 500;
-}
-
-.link-produto{
-	text-decoration: none;
-}
-
-.link-produto p{
-	display: inline-block;
-    margin-top: 0;
-    line-height: 1.2 !important;
-    font-size: 14px !important;
-}
-
-.link-produto img{
-	float: left;
-    width: 100px;
-    margin-right: 20px;
-    margin-top: 5px;
-}
-
-.link-produto ul{
-	float: left;
-    list-style: decimal;
-    color: #0366d6;
-    padding-left: 15px;
-    font-size: 14px;
-    width: 67%;
-    margin-top: 5px;
-}
-
-.produtos{
-	width: 47%;
-    padding: 10px;
-    float: left;
-    margin: 0;
-}
-
 .conteudo{
 	width: 67%;
     min-height: 400px;
@@ -147,7 +105,7 @@ pre.codigo {
 
 @media only screen and (max-width: 600px) {
 	.conteudo {
-		width: 97%;
+		width: 95%;
 	}
 
 	.destaque-direito{
@@ -168,20 +126,16 @@ pre.codigo {
 		font-weight: 600 !important;
 	}
 
-	.produtos{
-		padding: 0;
-		width: 100%;
-	}
-	.link-produto img {
-		width: 70px;
-	}
-
 	.titulo-produto strong{
 		font-size: 27px;
 	}
 
 	.conteudo h1 {
 		font-size: 27px !important;
+	}
+
+	.item-produto{
+		width: 95% !important;
 	}
 }
 
@@ -238,6 +192,7 @@ pre.codigo {
 
 .item-destaque a:hover{
 	color:#333;
+	text-decoration: underline;
 }
 
 .titulo-destaque{
@@ -338,6 +293,50 @@ pre.codigo {
 }
 
 
+.item-produto{
+	margin: 10px;
+	float: left;
+	width: 300px;
+	border-radius: 3px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+.item-produto p {
+	margin: 10px;
+	font-size: 13px;
+	color:#0366d6;
+	line-height: 19px;
+}
 
+.item-produto span {
+	position: relative;
+    top: 5px;
+    margin-left: 10px;
+    font-size: 17px;
+    color: black;
+    font-weight: 500;
+}
 
+.item-produto ul {
+    font-size: 13px;
+    color: black;
+}
 
+.item-produto a {
+  text-decoration: none;
+}
+
+.item-produto a:hover p {
+	text-decoration: underline;
+	color:#333;
+}
+
+.item-imagem{
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	text-align: center;
+}
+
+.item-descricao{
+	padding: 10px;
+	min-height: 220px;
+}
