@@ -30,13 +30,14 @@ app.get("*", (req, res, next) => {
         <App />
       </StaticRouter>
     )
-
+    //res.status(404)   
+    //.send('Not found')
     var titulo = "";
     var description = "";
-    if(data != undefined  && Object.keys(data).length > 0){
-      var dataObject = Object.values(data)[0];
-      titulo = dataObject.title +" - Guia desenvolvedor";
-      description = dataObject.description;
+    if(data != null){
+      //var dataObject = Object.values(data)[0];
+      titulo = data.title +" - Guia desenvolvedor";
+      description = data.description;
     }
     var indexing = "index, follow";
     var style = "";//'<link rel="stylesheet" type="text/css" href="/css/style.css">';
@@ -46,6 +47,9 @@ app.get("*", (req, res, next) => {
       style += '<link async rel="stylesheet" type="text/css" href="/css/home.min.css">';
     }else if(req.url.indexOf("/pagina/") > -1){
         style += '<link async rel="stylesheet" type="text/css" href="/css/pagina.min.css">';
+        if(data == null){
+          res.status(404);
+        }
     }
     else if(req.url.indexOf("/busca/") > -1){
       titulo = "Guia desenvolvedor";
@@ -109,7 +113,7 @@ app.get("*", (req, res, next) => {
 })
 
 app.listen(port, () => {
-  console.log(`Server is listening on port: 3000`)
+  console.log(`Server is listening on port: 5000`)
 })
 
 /*

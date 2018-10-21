@@ -49,10 +49,10 @@ class Pagina extends Component {
       return <p>LOADING</p>
     }
 
-    if(Object.keys(repos).length == 0){
+    if(repos == null){
       return <div></div>
     }
-    repos = Object.values(repos)[0];
+    //repos = Object.values(repos)[0];
 		return (<div className="corpo-pagina">
                     <div className="anuncio-topo">
                     
