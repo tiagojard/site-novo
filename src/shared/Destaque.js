@@ -10,7 +10,7 @@ class Destaque extends Component {
 	}
 
     componentDidMount() {
-        /*
+        
         //+this.props.idPagina
         fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json")
         .then(res => res.json())
@@ -27,7 +27,7 @@ class Destaque extends Component {
             });
             }
         );
-        */
+        
     }
 
 	componentDidUpdate(prevProps){
@@ -55,9 +55,9 @@ class Destaque extends Component {
 
 	render(){
       
-            return <div></div>;
+           // return <div></div>;
      
-        if(this.state.loading == true){
+        if(this.state.loading == true || Object.keys(this.state.result).length == 0){
             return <div></div>;
         }
         const result = Object.values(this.state.result);
@@ -65,7 +65,7 @@ class Destaque extends Component {
             result.map((item, index) =>
                             <div key={index}>
                             { 
-                            this.props.idPagina != item.id ? 
+                            this.props.idPagina != 0 ? 
                             <div>
  <div className="item-destaque">
                                 <a href={"/pagina"+item.url} title={item.title}>
