@@ -26,7 +26,7 @@ class AutoComplete extends Component {
             .then(
             (result) => {
                 this.setState({
-                    resultado:result
+                    resultado: result != null ? Object.values(result): null
                 });
             },
             (error) => {
@@ -51,11 +51,9 @@ class AutoComplete extends Component {
         if(this.state.resultado == null || this.props.pesquisa == "")
             return <div></div>
 
-        const result = Object.values(this.state.resultado);
-        console.log(result);
-        var pesquisa = this.props.pesquisa.toLowerCase(); 
+        //var pesquisa = this.props.pesquisa.toLowerCase(); 
         return <div className="autocomplete-items">
-                {result.map((item, index) => (
+                {this.state.resultado.map((item, index) => (
                     <div key={item.id}>
                         <div className="resultado">
                             <a href={"/pagina"+item.url}>

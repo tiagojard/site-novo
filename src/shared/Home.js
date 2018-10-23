@@ -48,7 +48,6 @@ class Home extends Component {
         if (loading === true) {
           return <p>LOADING</p>
         }
-        console.log(repos);
         //var result =Object.values(repos);
 
 

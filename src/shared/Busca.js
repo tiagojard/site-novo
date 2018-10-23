@@ -47,7 +47,6 @@ class Busca extends Component {
         if (loading === true) {
           return <p>LOADING</p>
         }
-        const result = Object.values(repos);
         var adsTopoGabriel = "";//'<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5825646877386493" data-ad-slot="5291356734"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var adsTopo = "";//'<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="8091665402"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>';
         var adsEsquerdo = "";//'<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="7212185231"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
@@ -69,7 +68,7 @@ class Busca extends Component {
         <h3 className="titulo-home">Resultados encontrados para "{this.props.match.params.pesquisa}"</h3>
         <h1 className="sub-titulo-home">Guia desenvolvedor</h1>
             {
-                        result.map((item, index) =>
+                        repos.map((item, index) =>
                         <div key={index}>
                             <div className="conteudo-home-container">
                                 <div className="conteudo-home-img">
