@@ -47,6 +47,7 @@ class Busca extends Component {
         if (loading === true) {
           return <p>LOADING</p>
         }
+        const result = Object.values(repos);
         var adsTopoGabriel = "";//'<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5825646877386493" data-ad-slot="5291356734"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var adsTopo = "";//'<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="8091665402"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>';
         var adsEsquerdo = "";//'<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="7212185231"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
@@ -68,19 +69,19 @@ class Busca extends Component {
         <h3 className="titulo-home">Resultados encontrados para "{this.props.match.params.pesquisa}"</h3>
         <h1 className="sub-titulo-home">Guia desenvolvedor</h1>
             {
-                        repos.resultado.map((item, index) =>
+                        result.map((item, index) =>
                         <div key={index}>
                             <div className="conteudo-home-container">
                                 <div className="conteudo-home-img">
-                                    <img src={item.imagem} className="img-destaque" alt={item.titulo} />
+                                    <img src={item.assunto[0].imagem} className="img-destaque" alt={item.title} />
                                 </div>
                                 <div className="conteudo-home-detalhe">
-                                    <a href={"/pagina"+item.url}><h2>{item.titulo}</h2></a>
+                                    <a href={"/pagina"+item.url}><h2>{item.title}</h2></a>
                                     <div>
                                     <h3>{item.descricao}</h3>
                                     </div>
                                     <div className="conteudo-home-info">
-                                    {item.qtdeAcesso} | <span className="assunto"><h4>{item.assunto}</h4></span> | {item.data}
+                                    <span className="assunto"><h4>{item.assunto[0].nome}</h4></span>
                                     </div>
                                 </div>
                             </div>

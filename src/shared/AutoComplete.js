@@ -21,7 +21,7 @@ class AutoComplete extends Component {
     }
     componentDidUpdate (prevProps, prevState) {
         if(this.props.pesquisa != prevProps.pesquisa){
-            fetch("https://tiagojardim.000webhostapp.com/getPesquisa.php?pesquisa="+this.props.pesquisa)
+            fetch('https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy="pesquisa"&endAt="'+this.props.pesquisa+'\uf8ff"&limitToLast=5')
             .then(res => res.json())
             .then(
             (result) => {
@@ -39,22 +39,32 @@ class AutoComplete extends Component {
     }
 
     render(){
+        /**
+         * 
+         *  __html:item.pesquisa.substr(0, item.pesquisa.toLowerCase().indexOf(pesquisa))+ 
+                                        "<strong>"+ item.pesquisa.substr(item.pesquisa.toLowerCase().indexOf(pesquisa), pesquisa.length)+ "</strong>"+
+                                        item.pesquisa.substr(item.pesquisa.toLowerCase().indexOf(pesquisa)+pesquisa.length, item.pesquisa.length )
+         * 
+         */
+
+
         if(this.state.resultado == null || this.props.pesquisa == "")
             return <div></div>
+
+        const result = Object.values(this.state.resultado);
+        console.log(result);
         var pesquisa = this.props.pesquisa.toLowerCase(); 
         return <div className="autocomplete-items">
-                {this.state.resultado.map((item, index) => (
+                {result.map((item, index) => (
                     <div key={item.id}>
                         <div className="resultado">
                             <a href={"/pagina"+item.url}>
-                                <div className="img-resultado"><img src={item.imagem} /></div>
+                                <div className="img-resultado"><img src={item.assunto[0].imagem} /></div>
                                 <div className='pesquisa-resultado' dangerouslySetInnerHTML={
                                     {
-                                        __html:item.pesquisa.substr(0, item.pesquisa.toLowerCase().indexOf(pesquisa))+ 
-                                        "<strong>"+ item.pesquisa.substr(item.pesquisa.toLowerCase().indexOf(pesquisa), pesquisa.length)+ "</strong>"+
-                                        item.pesquisa.substr(item.pesquisa.toLowerCase().indexOf(pesquisa)+pesquisa.length, item.pesquisa.length )
+                                        __html:item.pesquisa
                                     }}/>
-                                <div className="pesquisa-assunto">{item.assunto}</div>
+                                <div className="pesquisa-assunto">{item.assunto[0].nome}</div>
                             </a>
                         </div>
                     </div>

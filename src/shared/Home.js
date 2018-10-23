@@ -3,7 +3,6 @@ class Home extends Component {
     constructor(props) {
         super(props);
        
-        /*
         let repos
         if (__isBrowser__) {
           repos = window.__INITIAL_DATA__
@@ -11,52 +10,16 @@ class Home extends Component {
         } else {
           repos = this.props.staticContext.data
         }
-    */
-
-   const repos =
-   {
-     "titulo": "pagina",
-     "description": "sdfsdf",
-     "destaques": [
-     {
-     "url": "/1/como-criar-site-react-js",
-     "titulo": "Como criar site react js",
-     "descricao": "React js é uma biblioteca javaScript mais popular da atualidade, criado pelo Facebook para construir interfaces de usuário. Nesse tutorial vamos mostrar como criar um app react js.",
-     "data": "29/09/2018",
-     "qtdeAcesso": "67",
-     "assunto": "React js",
-     "imagem": "/img/react-min.svg"
-     },
-     {
-     "url": "/2/como-utilizar-map-react-array-list",
-     "titulo": "Como utilizar map react array list",
-     "descricao": "Veja vários exemplos de utilização do map react js",
-     "data": "30/09/2018",
-     "qtdeAcesso": "62",
-     "assunto": "React js",
-     "imagem": "/img/react.svg"
-     },
-     {
-     "url": "/3/jquery-ready-documentacao",
-     "titulo": "jquery ready documentação",
-     "descricao": "Documentação como utilizar ready jquery ",
-     "data": "10/10/2018",
-     "qtdeAcesso": "0",
-     "assunto": "jQuery",
-     "imagem": "/img/jquery-min.svg"
-     }
-     ]
-     };
 
         this.state = {
           repos:repos,
           loading: repos ? false : true,
         }
     
-        //this.fetchRepos = this.fetchRepos.bind(this)
+        this.fetchRepos = this.fetchRepos.bind(this)
     }
 
-    /*
+    
     componentDidMount() {
         if (!this.state.repos) {
             this.fetchRepos(this.props.match.params.id)
@@ -79,42 +42,20 @@ class Home extends Component {
             loading: false,
           })))
       }
-      */
+
     render(){
         const { loading, repos } = this.state;
         if (loading === true) {
           return <p>LOADING</p>
         }
+        var result = Object.values(repos);
 
+    
 
-        /*
-        
-
-            {
-                        repos.destaques.map((item, index) =>
-                        <div key={index}>
-                            <div className="conteudo-home-container">
-                                <div className="conteudo-home-img">
-                                    <img src={item.imagem} className="img-destaque" alt={item.titulo} />
-                                </div>
-                                <div className="conteudo-home-detalhe">
-                                    <a href={"/pagina"+item.url}><h2>{item.titulo}</h2></a>
-                                    <div>
-                                    <h3>{item.descricao}</h3>
-                                    </div>
-                                    <div className="conteudo-home-info">
-                                    {item.qtdeAcesso} | <span className="assunto"><h4>{item.assunto}</h4></span> | {item.data}
-                                    </div>
-                                </div>
-                            </div>
-                            <hr className="hr-margin"/>
-                        </div>
-                        )
-                    }
+            
 
         
         
-        */
 
 
         //<li><a href="/pagina/1/como-criar-site-react-js" title="React js">React js</a></li>
@@ -139,7 +80,27 @@ class Home extends Component {
                     <div className="conteudo-home">
                     <h3 className="titulo-home">Conteúdos mais acessados</h3>
                     <h1 className="sub-titulo-home">Guia desenvolvedor</h1>
-                
+                    {
+                result.map((item, index) =>
+                        <div key={index}>
+                            <div className="conteudo-home-container">
+                                <div className="conteudo-home-img">
+                                    <img src={item.assunto[0].imagem} className="img-destaque" alt={item.title} />
+                                </div>
+                                <div className="conteudo-home-detalhe">
+                                    <a href={"/pagina"+item.url}><h2>{item.title}</h2></a>
+                                    <div>
+                                    <h3>{item.descricao}</h3>
+                                    </div>
+                                    <div className="conteudo-home-info">
+                                    <span className="assunto"><h4>{item.assunto[0].nome}</h4></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr className="hr-margin"/>
+                        </div>
+                        )
+                    }
 
 
 <h1>Curso react js</h1>
