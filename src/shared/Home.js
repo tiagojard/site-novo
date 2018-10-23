@@ -48,14 +48,9 @@ class Home extends Component {
         if (loading === true) {
           return <p>LOADING</p>
         }
-        var result = Object.values(repos);
+        console.log(repos);
+        //var result =Object.values(repos);
 
-    
-
-            
-
-        
-        
 
 
         //<li><a href="/pagina/1/como-criar-site-react-js" title="React js">React js</a></li>
@@ -81,7 +76,7 @@ class Home extends Component {
                     <h3 className="titulo-home">Conteúdos mais acessados</h3>
                     <h1 className="sub-titulo-home">Guia desenvolvedor</h1>
                     {
-                result.map((item, index) =>
+                repos.map((item, index) =>
                         <div key={index}>
                             <div className="conteudo-home-container">
                                 <div className="conteudo-home-img">

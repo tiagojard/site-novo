@@ -4,7 +4,7 @@ export function fetchHomeRepos (id) {
   const encodedURI = encodeURI(`https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json`)
   return fetch(encodedURI)
     .then((data) => data.json())
-    .then((repos) => repos)
+    .then((repos) => Object.values(repos))
     .catch((error) => {
       console.warn(error)
       return null
