@@ -18,7 +18,7 @@ class Destaque extends Component {
             (result) => {
             this.setState({
                 loading: result ? false : true,
-                result: result
+                result: Object.values(result)
             });
             },
             (error) => {
@@ -40,7 +40,7 @@ class Destaque extends Component {
             (result) => {
             this.setState({
                 loading: result ? false : true,
-                result: result
+                result:  Object.values(result)
             });
             },
             (error) => {
@@ -60,9 +60,8 @@ class Destaque extends Component {
         if(this.state.loading == true || Object.keys(this.state.result).length == 0){
             return <div></div>;
         }
-        const result = Object.values(this.state.result);
 		return (<div>{
-            result.map((item, index) =>
+            this.state.result.map((item, index) =>
                             <div key={index}>
                             { 
                             this.props.idPagina != 0 ? 
