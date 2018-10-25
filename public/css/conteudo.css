@@ -14,11 +14,12 @@
 
 .resultado-conteudo{
     width: 45%;
-    height: 200px;
     float: right;
     margin-right: 50px;
     top: 450px;
     position: relative;
+    height: 450px;
+    overflow-y: scroll;
 }
 
 

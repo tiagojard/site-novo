@@ -21,7 +21,7 @@ class AutoComplete extends Component {
     }
     componentDidUpdate (prevProps, prevState) {
         if(this.props.pesquisa != prevProps.pesquisa){
-            fetch('https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy="pesquisa"&endAt="'+this.props.pesquisa+'\uf8ff"&limitToLast=5')
+            fetch('https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy="pesquisa"&endAt="'+this.props.pesquisa.toLowerCase()+'\uf8ff"&limitToLast=5')
             .then(res => res.json())
             .then(
             (result) => {

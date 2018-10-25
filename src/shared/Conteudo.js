@@ -137,9 +137,11 @@ class Conteudo extends Component {
 
                     <label>Assunto</label>
                     <select name="assunto" className="form-input">
-                        <option data-imagem="/img/react.svg" value="React js">React js</option>
+                        <option data-imagem="/img/javascript.svg" value="JavaScript">JavaScript</option>
                         <option data-imagem="/img/jquery.svg" value="Jquery">Jquery</option>
+                        <option data-imagem="/img/sql-server.svg" value="SQL Server">SQL Server</option>
                         <option data-imagem="/img/node.js.svg" value="Node.js">Node.js</option>
+                        <option data-imagem="/img/react.svg" value="React js">React js</option>
                     </select>
                     <label>Pesquisa</label>
                     <input type="text" name="pesquisa" autoComplete="off" className="form-input" />
