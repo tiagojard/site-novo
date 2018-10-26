@@ -4,6 +4,7 @@ import Busca from './Busca'
 import Conteudo from './Conteudo'
 import { fetchHomeRepos } from './apiHome'
 import { fetchPaginaRepos } from './apiPagina'
+import { fetchBuscaAssuntoRepos } from './apiBuscaAssunto'
 import { fetchBuscaRepos } from './apiBusca'
 
 const routes =  [
@@ -17,6 +18,11 @@ const routes =  [
     path: '/pagina/:id/:titulo',
     component: Pagina,
     fetchInitialData: (path = '') => fetchPaginaRepos(path.replace("/"+path.split('/').pop(),'').split('/').pop())
+  },
+  {
+    path: '/busca/assunto/:pesquisa',
+    component: Busca,
+    fetchInitialData: (path = '') => fetchBuscaAssuntoRepos(path.split('/').pop())
   },
   {
     path: '/busca/:pesquisa',

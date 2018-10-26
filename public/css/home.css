@@ -34,7 +34,7 @@
 }
 
 .assunto{
-    color: #ff0000;
+    color: red !important;
 }
 
 .titulo-home{

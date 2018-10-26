@@ -66,7 +66,11 @@ class Home extends Component {
                         <div className="menu-esquerdo">
                             <div className="menu-esquerdo-titulo">Assuntos</div>
                             <ul>
-                                
+                                <li><a href="/busca/assunto/Node.js" title="Node.js">Node.js</a></li>
+                                <li><a href="/busca/assunto/JavaScript" title="javaScript">javaScript</a></li>
+                                <li><a href="/busca/assunto/SQL Server" title="SQL Server">SQL Server</a></li>
+                                <li><a href="/busca/assunto/Jquery" title="Jquery">Jquery</a></li>
+                                <li><a href="/busca/assunto/React js" title="React js">React js</a></li>
                             </ul>
                         </div>
                         <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }} />
@@ -87,7 +91,7 @@ class Home extends Component {
                                     <h3>{item.descricao}</h3>
                                     </div>
                                     <div className="conteudo-home-info">
-                                    <span className="assunto"><h4>{item.assunto[0].nome}</h4></span>
+                                    <a href={"/busca/assunto/"+item.assunto[0].nome} title={item.assunto[0].nome} className="assunto"><h4>{item.assunto[0].nome}</h4></a>
                                     </div>
                                 </div>
                             </div>

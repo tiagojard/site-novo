@@ -48,8 +48,22 @@ app.get("*", (req, res, next) => {
     }else if(req.url.indexOf("/pagina/") > -1){
         style += '<link async rel="stylesheet" type="text/css" href="/css/pagina.min.css">';
         if(data == null){
+          indexing = "noindex";
           res.status(404);
         }
+    }else if(req.url.indexOf("/assunto/") > -1){
+      style += '<link async rel="stylesheet" type="text/css" href="/css/home.min.css">';
+      if(data != null && data.length > 0)
+      {
+        titulo = data[0].assunto[0].nome+" - Guia desenvolvedor";
+        description = "Com o guia do desenvolvedor você aprende como programar usando "+data[0].assunto[0].nome+", aqui tem varios exemplos que podem te ajudar.";
+      }
+      else{
+        titulo = "Guia desenvolvedor";
+        description = "Com o guia do desenvolvedor você aprende a programar react js, c#, javaScript e jQuery";
+        indexing = "noindex";
+        res.status(404);
+      }
     }
     else if(req.url.indexOf("/busca/") > -1){
       titulo = "Guia desenvolvedor";
