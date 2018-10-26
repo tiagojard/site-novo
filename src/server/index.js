@@ -99,14 +99,14 @@ app.get("*", (req, res, next) => {
           <meta property="og:description" content="${description}">
           <style>${styleInLine}</style>
           ${style}
-          <script src="/bundle.js" defer></script>
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <script>
             (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-9476507678736435",
+              google_ad_client: "ca-pub-9280026867797270",
               enable_page_level_ads: true
             });
           </script>
+          <script src="/bundle.js" defer></script>
           <!-- Global site tag (gtag.js) - Google Analytics -->
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127383120-1"></script>
           <script>
