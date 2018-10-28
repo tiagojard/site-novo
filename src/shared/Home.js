@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Produto from './Produto'
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -100,7 +101,7 @@ class Home extends Component {
                         )
                     }
 
-
+<Produto />
 <h1>Curso react js</h1>
 <h2>Vendas de curso online, compre os melhores cursos react js.</h2>
 <p>

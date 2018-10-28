@@ -30,6 +30,12 @@ class Conteudo extends Component {
                     form.children.pesquisa.value = result.pesquisa;
                     form.children.descricao.value = result.descricao;
                     form.children.conteudo.value = result.conteudo;
+                    document.getElementById("resultado-conteudo").innerHTML = result.conteudo;
+                    var codes = document.getElementById("resultado-conteudo").querySelectorAll("pre code");
+                    for(var i=0; i < codes.length; i++){
+                        CodeColor(codes[i], "js");
+                        CodeColor(codes[i], "html");
+                    }
                 }
             },
             (error) => {
@@ -40,9 +46,10 @@ class Conteudo extends Component {
 
     handleSubmit(e){
         e.preventDefault();
+        var conteudo = document.getElementById("resultado-conteudo").innerHTML;
         var Objeto = { 
             "assunto":[{"nome":e.target.assunto.value, "imagem": e.target.assunto.selectedOptions[0].dataset.imagem}],
-            "conteudo": e.target.conteudo.value,
+            "conteudo": conteudo,
             "descricao": e.target.descricao.value,
             "description":e.target.description.value,
             "pesquisa":e.target.pesquisa.value,
@@ -111,6 +118,11 @@ class Conteudo extends Component {
 
     handleKeyUp(e){
         document.getElementById("resultado-conteudo").innerHTML = document.getElementById("conteudo").value;
+        var codes = document.getElementById("resultado-conteudo").querySelectorAll("pre code");
+        for(var i=0; i < codes.length; i++){
+            CodeColor(codes[i], "js");
+            CodeColor(codes[i], "html");
+        }
     }
 
     render(){

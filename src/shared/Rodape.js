@@ -3,7 +3,15 @@ export default function Rodape () {
  
   return (
     <div className="rodape">
-       Copyright © 2018 Guia desenvolvedor
+    <div className="link">
+      <a href="/" title="Guia do desenvolvedor">Guia do desenvolvedor</a>
+    </div>
+    <ul>
+      <li><a href="/curso" title="Cursos">Cursos</a></li>
+    </ul>
+    <div className="rodape-info">
+      Copyright © 2018 Guia desenvolvedor
+    </div>
     </div>
   )
 }

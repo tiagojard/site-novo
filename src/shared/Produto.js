@@ -15,7 +15,7 @@ class Produto extends Component {
         .then(
             (result) => {
             this.setState({
-                loading: result ? false : true,
+                loading: shuffle(result) ? false : true,
                 result: result
             });
             },
@@ -35,7 +35,7 @@ class Produto extends Component {
         .then(
             (result) => {
             this.setState({
-                loading: result ? false : true,
+                loading: shuffle(result) ? false : true,
                 result: result
             });
             },
@@ -52,9 +52,10 @@ class Produto extends Component {
         if(this.state.loading == true){
             return <div></div>;
         }
+        var result = this.state.result.slice(0,3);
         return <div className="produtos">
             {
-                 this.state.result.map((item, index) =>
+                 result.map((item, index) =>
                     <div key={index} className="item-produto">
                         <a href={item.link} title="Clique aqui e saiba mais." rel="nofollow" target="_blank">
                             <div className="item-imagem" style={{backgroundColor: item.cor}}>

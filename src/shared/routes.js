@@ -2,10 +2,12 @@ import Home from './Home'
 import Pagina from './Pagina'
 import Busca from './Busca'
 import Conteudo from './Conteudo'
+import Curso from './Curso'
 import { fetchHomeRepos } from './apiHome'
 import { fetchPaginaRepos } from './apiPagina'
 import { fetchBuscaAssuntoRepos } from './apiBuscaAssunto'
 import { fetchBuscaRepos } from './apiBusca'
+import { fetchCursoRepos } from './apiCurso'
 
 const routes =  [
   {
@@ -32,6 +34,11 @@ const routes =  [
   {
     path: '/cadastro/conteudo',
     component: Conteudo
+  },
+  {
+    path: '/curso',
+    component: Curso,
+    fetchInitialData: (path = '') => fetchCursoRepos()
   }
 ]
 export default routes
