@@ -2,26 +2,27 @@ function CodeColor(elmnt, mode) {
     var lang = (mode || "html");
     var elmntObj = (document.getElementById(elmnt) || elmnt);
     var elmntTxt = elmntObj.innerHTML;
-    var tagcolor = "mediumblue";
-    var tagnamecolor = "brown";
-    var attributecolor = "red";
-    var attributevaluecolor = "mediumblue";
+    var tagcolor = "#73c6b3";
+    var tagnamecolor = "#fc929e";
+    var attributecolor = "#c5a5c5";
+    var attributevaluecolor = "#c5a5c5";
     var commentcolor = "green";
     var cssselectorcolor = "brown";
     var csspropertycolor = "red";
-    var csspropertyvaluecolor = "mediumblue";
+    var csspropertyvaluecolor = "#c5a5c5";
     var cssdelimitercolor = "black";
     var cssimportantcolor = "red";  
-    var jscolor = "black";
-    var jskeywordcolor = "mediumblue";
-    var jsstringcolor = "brown";
-    var jsnumbercolor = "red";
-    var jspropertycolor = "black";
+    var jscolor = "white";
+    var jskeywordcolor = "#c5a5c5";
+    var jsstringcolor = "#2cc160";
+    var jsnumbercolor = "#79b6f2";
+    var jspropertycolor = "#79b6f2";
     elmntObj.style.fontFamily = "Consolas,'Courier New', monospace";
     if (!lang) {lang = "html"; }
     if (lang == "html") {elmntTxt = htmlMode(elmntTxt);}
     if (lang == "css") {elmntTxt = cssMode(elmntTxt);}
     if (lang == "js") {elmntTxt = jsMode(elmntTxt);}
+    
     elmntObj.innerHTML = elmntTxt;
   
     function extract(str, start, end, func, repl) {
@@ -43,10 +44,12 @@ function CodeColor(elmnt, mode) {
       this.arr = a;
     }
     function htmlMode(txt) {
+      
       var rest = txt, done = "", php, comment, angular, startpos, endpos, note, i;
       comment = new extract(rest, "&lt;!--", "--&gt;", commentMode, "W3HTMLCOMMENTPOS");
       rest = comment.rest;
       while (rest.indexOf("&lt;") > -1) {
+       
         note = "";
         startpos = rest.indexOf("&lt;");
         if (rest.substr(startpos, 9).toUpperCase() == "&LT;STYLE") {note = "css";}
@@ -55,6 +58,11 @@ function CodeColor(elmnt, mode) {
         if (endpos == -1) {endpos = rest.length;}
         done += rest.substring(0, startpos);
         done += tagMode(rest.substring(startpos, endpos + 4));
+        debugger;
+        done = done.replace('<span </span>style<span style=color:#c5a5c5>="color:#79b6f2"</span>>','<span style=color:#79b6f2>');
+        done = done.replace("</span>>",">");
+        done = done.replace('>="color:#79b6f2">','>');
+
         rest = rest.substr(endpos + 4);
         if (note == "css") {
           endpos = rest.indexOf("&lt;/style&gt;");
@@ -247,6 +255,7 @@ function CodeColor(elmnt, mode) {
       s = txt.indexOf(".");
       if (s > -1) {
         x = txt.substr(s + 1);
+       
         for (j = 0; j < x.length; j++) {
           cc = x[j];
           for (i = 0; i < arr.length; i++) {

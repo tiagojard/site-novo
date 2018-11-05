@@ -24,8 +24,9 @@ class Pagina extends Component {
 
   componentDidMount() {
     if (!this.state.repos) {
-      this.fetchRepos(this.props.match.params.id)
+      this.fetchRepos(this.props.match.params.id);
     }
+    
   }
   componentDidUpdate (prevProps, prevState) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
@@ -62,6 +63,10 @@ class Pagina extends Component {
                    
                     </div>
                     <div className="conteudo">
+                      <h1>{repos.title}</h1>
+                      <div className="tag">
+                        <a href={"/busca/assunto/"+repos.assunto[0].nome} title={repos.assunto[0].nome} className="assunto"><h4>{repos.assunto[0].nome}</h4></a>
+                      </div>
                       <div id="conteudo" dangerouslySetInnerHTML={{__html:repos.conteudo }} />
                       <br/>
                     <hr className="hr"/>

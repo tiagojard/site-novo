@@ -31,6 +31,7 @@ class Conteudo extends Component {
                     form.children.descricao.value = result.descricao;
                     form.children.conteudo.value = result.conteudo;
                     document.getElementById("resultado-conteudo").innerHTML = result.conteudo;
+                    
                     var codes = document.getElementById("resultado-conteudo").querySelectorAll("pre code");
                     for(var i=0; i < codes.length; i++){
                         CodeColor(codes[i], "js");
@@ -47,6 +48,7 @@ class Conteudo extends Component {
     handleSubmit(e){
         e.preventDefault();
         var conteudo = document.getElementById("resultado-conteudo").innerHTML;
+        //e.target.conteudo.value
         var Objeto = { 
             "assunto":[{"nome":e.target.assunto.value, "imagem": e.target.assunto.selectedOptions[0].dataset.imagem}],
             "conteudo": conteudo,
@@ -118,11 +120,13 @@ class Conteudo extends Component {
 
     handleKeyUp(e){
         document.getElementById("resultado-conteudo").innerHTML = document.getElementById("conteudo").value;
+       
         var codes = document.getElementById("resultado-conteudo").querySelectorAll("pre code");
         for(var i=0; i < codes.length; i++){
             CodeColor(codes[i], "js");
             CodeColor(codes[i], "html");
         }
+    
     }
 
     render(){

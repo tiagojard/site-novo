@@ -11,6 +11,10 @@ body{
     z-index: 1;
 }
 
+.topo-hide{
+    top: -60px !important;
+}
+
 .topo{
     position: fixed;
     width: 100%;
@@ -19,6 +23,7 @@ body{
     border-bottom: solid #d06363 2px;
     z-index: 1;
     top: 0;
+    transition: top 0.3s;
 }
 .topo-logo{
     width: 10%;
@@ -149,6 +154,12 @@ body{
 }
 
 @media only screen and (max-width: 744px) {
+    .topo-busca{
+        width: 92% !important; 
+    }
+    .topo-hide{
+        top: -50px !important;
+    }
     .anuncio-topo,.anuncio-esquerdo{
 		display: none;
     }
@@ -195,11 +206,7 @@ body{
     }
 }
 
-@media only screen and (max-width: 744px) {
-    .topo-busca{
-        width: 92% !important; 
-    }
-}
+
 
 @media only screen and (max-width: 650px) {
     .topo-busca{
@@ -415,4 +422,17 @@ body{
   
   .result-mobile ul{
     padding-left: 10px;
+  }
+
+  a h4{
+    background-color: #a2a7c7;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 3px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  a h4:hover{
+    background-color:#9199d0;
   }
