@@ -60,3 +60,18 @@ function shuffle(array) {
 
   return array;
 }
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("topo").classList.remove("topo-hide");
+  } else {
+    document.getElementById("topo").classList.add("topo-hide");
+  }
+  if(currentScrollPos < 2){
+    document.getElementById("topo").classList.remove("topo-hide");
+  }
+  prevScrollpos = currentScrollPos;
+}

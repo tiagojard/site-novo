@@ -52,7 +52,7 @@ class Produto extends Component {
         if(this.state.loading == true){
             return <div></div>;
         }
-        var result = this.state.result.slice(0,3);
+        var result = this.state.result.slice(0,4);
         return <div className="produtos">
             {
                  result.map((item, index) =>

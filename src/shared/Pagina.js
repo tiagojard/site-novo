@@ -57,10 +57,10 @@ class Pagina extends Component {
     //repos = Object.values(repos)[0];
 		return (<div className="corpo-pagina">
                     <div className="anuncio-topo">
-                    
+                      <a href="https://go.hotmart.com/H9422393Q" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-javascript.png" alt="javascript"/></a>
                     </div>
                     <div className="anuncio-esquerdo">
-                   
+                      <a href="https://go.hotmart.com/K9423178A" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-templates.png" alt="template" /></a>
                     </div>
                     <div className="conteudo">
                       <h1>{repos.title}</h1>

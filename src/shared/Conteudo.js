@@ -35,7 +35,7 @@ class Conteudo extends Component {
                     var codes = document.getElementById("resultado-conteudo").querySelectorAll("pre code");
                     for(var i=0; i < codes.length; i++){
                         CodeColor(codes[i], "js");
-                        CodeColor(codes[i], "html");
+                        //CodeColor(codes[i], "html");
                     }
                 }
             },
@@ -124,7 +124,7 @@ class Conteudo extends Component {
         var codes = document.getElementById("resultado-conteudo").querySelectorAll("pre code");
         for(var i=0; i < codes.length; i++){
             CodeColor(codes[i], "js");
-            CodeColor(codes[i], "html");
+            //CodeColor(codes[i], "html");
         }
     
     }

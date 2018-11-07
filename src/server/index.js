@@ -44,7 +44,7 @@ app.get("*", (req, res, next) => {
     var style = "";//'<link rel="stylesheet" type="text/css" href="/css/style.css">';
     if(req.url == "/"){
       titulo = "Guia desenvolvedor";
-      description = "Com o guia do desenvolvedor você aprende a programar react js, c#, javaScript e jQuery";
+      description = "Com o guia do desenvolvedor você aprende a programar react js, c#, javaScript, jQuery, sql server, seo, html, e css. Aqui você encontra melhores cursos online de programação.";
       style += '<link async rel="stylesheet" type="text/css" href="/css/home.min.css">';
     }else if(req.url.indexOf("/pagina/") > -1){
         style += '<link async rel="stylesheet" type="text/css" href="/css/pagina.min.css">';
