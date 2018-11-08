@@ -52,7 +52,9 @@ class Busca extends Component {
         var adsEsquerdo = "";//'<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="7212185231"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var adsDireito = "";//'<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="6680443014"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({}); </script>';
         return <div className="corpo-pagina">
-        <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopoGabriel }} />
+        <div className="anuncio-topo">
+            <a href="https://go.hotmart.com/H9422393Q" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-javascript.png" alt="javascript"/></a>
+        </div>
         <div className="container-esquerdo">
             <div className="menu-esquerdo">
                 <div className="menu-esquerdo-titulo">Assuntos</div>
@@ -64,7 +66,9 @@ class Busca extends Component {
                     <li><a href="/busca/assunto/React js" title="React js">React js</a></li>
                 </ul>
             </div>
-            <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }} />
+            <div className="anuncio-esquerdo">
+            <a href="https://go.hotmart.com/K9423178A" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-templates.png" alt="template" /></a>
+            </div>
         </div>
         <div className="conteudo-home">
         <h3 className="titulo-home">Resultados encontrados para "{this.props.match.params.pesquisa}"</h3>
@@ -91,7 +95,9 @@ class Busca extends Component {
                         )
                     }
             </div>
-            <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }} />
+            <div className="anuncio-direito">
+                <a href="https://go.hotmart.com/K9423178A" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-templates.png" alt="template" /></a>
+            </div>
         </div>
     }
 

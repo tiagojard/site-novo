@@ -2,6 +2,7 @@ import Home from './Home'
 import Pagina from './Pagina'
 import Busca from './Busca'
 import Conteudo from './Conteudo'
+import Aprovacao from './Aprovacao'
 import Curso from './Curso'
 import { fetchHomeRepos } from './apiHome'
 import { fetchPaginaRepos } from './apiPagina'
@@ -34,6 +35,10 @@ const routes =  [
   {
     path: '/cadastro/conteudo',
     component: Conteudo
+  },
+  {
+    path: '/cadastro/aprovacao',
+    component: Aprovacao
   },
   {
     path: '/curso',

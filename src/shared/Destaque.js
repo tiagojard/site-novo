@@ -12,7 +12,7 @@ class Destaque extends Component {
     componentDidMount() {
         
         //+this.props.idPagina
-        fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json")
+        fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22ativo%22&equalTo=true")
         .then(res => res.json())
         .then(
             (result) => {
@@ -34,7 +34,7 @@ class Destaque extends Component {
         
         if(this.props.idPagina != prevProps.idPagina){
             //+this.props.idPagina
-            fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json")
+            fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22ativo%22&equalTo=true")
         .then(res => res.json())
         .then(
             (result) => {
