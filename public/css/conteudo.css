@@ -21,10 +21,28 @@
     height: 450px;
     overflow-y: scroll;
 }
+.form-conteudo-pergunta{
+    width: 50%;
+    margin: auto;
+}
 
-
-.form-conteudo label{
+.form-conteudo label, .form-conteudo-pergunta label{
     margin-left: 10px;
+}
+
+.form-conteudo-pergunta button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: #d06363;
+    color: #ffff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.form-conteudo-pergunta button:hover{
+    background-color: #4e5682;
+    color: #ffff;
 }
 
 .form-input{
@@ -48,4 +66,30 @@
 
 .container-botoes button{
     margin-left: 10px;
+}
+
+#mensagem {
+    width: 93%;
+    border-radius: 3px;
+    font-weight: 500;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 100px;
+}
+
+.form-conteudo-pergunta h1{
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 50px;
+    margin-top: -20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .form-conteudo-pergunta {
+        width: 95%!important;
+        margin: 0;
+    }
 }

@@ -9,6 +9,9 @@ export default function Rodape () {
     <ul>
       <li><a href="/curso" title="Cursos">Cursos</a></li>
     </ul>
+    <ul>
+      <li><a href="/cadastro/conteudo" title="Perguntar">Perguntar</a></li>
+    </ul>
     <div className="rodape-info">
       Copyright © 2018 Guia desenvolvedor
     </div>
