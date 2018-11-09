@@ -63,6 +63,7 @@ class Topo extends Component {
                   </a>
                 </div>
                 <form className="topo-busca" onSubmit={this.handleSubmit}>
+                    <div className="logo-nome">Guia do desenvolvedor</div>
                     <span className="topo-busca-nome-site">Guia do desenvolvedor</span>
                     <div className="busca">
                       <input id="busca" type="text" autoComplete="off" onKeyUp={this.handleAutoComplete}  placeholder="O que você procura?" className="topo-busca-input" />

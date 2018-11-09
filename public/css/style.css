@@ -238,6 +238,9 @@ body{
     .topo-busca-nome-site{
         display: inline-flex;
     }
+    .logo-nome{
+        display: none;
+    }
     .logo {
         width: 23px;
         margin: 8px;
@@ -437,4 +440,13 @@ body{
 
   a h4:hover{
     background-color:#9199d0;
+  }
+
+  .logo-nome{
+    color: #ffff;
+    font-size: 19px;
+    font-family: sans-serif;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -80px;
   }
