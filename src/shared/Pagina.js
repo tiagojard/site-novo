@@ -67,7 +67,7 @@ class Pagina extends Component {
                       <div className="tag">
                         <a href={"/busca/assunto/"+repos.assunto[0].nome} title={repos.assunto[0].nome} className="assunto"><h4>{repos.assunto[0].nome}</h4></a>
                       </div>
-                      <div id="conteudo" dangerouslySetInnerHTML={{__html:repos.conteudo }} />
+                      <div id="conteudo" dangerouslySetInnerHTML={{__html:repos.conteudo_site }} />
                       <br/>
                     <hr className="hr"/>
                     <p className="titulo-produto"><strong>Top cursos</strong> tá todo mundo clicando</p>

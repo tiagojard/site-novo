@@ -16,10 +16,10 @@ class Destaque extends Component {
         .then(res => res.json())
         .then(
             (result) => {
-            this.setState({
-                loading: result ? false : true,
-                result: Object.values(result)
-            });
+                this.setState({
+                    loading: result ? false : true,
+                    result: Object.values(result)
+                });
             },
             (error) => {
             this.setState({

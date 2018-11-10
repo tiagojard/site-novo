@@ -443,10 +443,14 @@ body{
   }
 
   .logo-nome{
-    color: #ffff;
     font-size: 19px;
     font-family: sans-serif;
     position: absolute;
     margin-top: 5px;
     margin-left: -80px;
+  }
+
+  .logo-nome a{
+    color: #ffff;
+    text-decoration: none;
   }

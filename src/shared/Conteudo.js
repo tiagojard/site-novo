@@ -6,43 +6,64 @@ class Conteudo extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    validacao(e){
+        var campos = "";
+        if(e.target.titulo.value == "")
+            campos += "<li>Título</li>";
+        if(e.target.assunto.value == "")
+            campos += "<li>Assunto</li>";
+        if(e.target.conteudo.value == "" )
+            campos += "<li>Pergunta</li>";
+        return campos;
+    }
+
     handleSubmit(e){
         e.preventDefault();
-        var Objeto = { 
-            "assunto":[{"nome":e.target.assunto.value, "imagem": e.target.assunto.selectedOptions[0].dataset.imagem}],
-            "conteudo": e.target.conteudo.value,
-            "title":e.target.titulo.value,
-        }
 
-        fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json", {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(Objeto)
-        })
-        .then(res => res.json())
-        .then(
-            (result) => {
-                try {
-                    console.log(result.name);
-                    if(result.name != ""){
-                        var mensagem = document.getElementById("mensagem");
-                        mensagem.innerHTML = "Pergunta enviada com sucesso. Sua pergunta será passada pela aprovação!";
-                        mensagem.style.backgroundColor = "#4caf509c";
-                    }
-                } catch (error) {
-                    console.log(error);
-                    var mensagem = document.getElementById("mensagem");
-                    mensagem.innerHTML = "Não foi possível enviar a pergunta, por favor tente mais tarde!";
-                    mensagem.style.backgroundColor = "#ff000080";
-                }
-            },
-            (error) => {
-            
+        var validacao = this.validacao(e);
+        if(validacao == ""){
+            var Objeto = { 
+                "assunto":[{"nome":e.target.assunto.value, "imagem": e.target.assunto.selectedOptions[0].dataset.imagem}],
+                "conteudo": e.target.conteudo.value,
+                "title":e.target.titulo.value,
+                "ativo":false
             }
-        );
+    
+            fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json", {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Objeto)
+            })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    try {
+                        console.log(result.name);
+                        if(result.name != ""){
+                            var mensagem = document.getElementById("mensagem");
+                            mensagem.innerHTML = "Pergunta enviada com sucesso. Sua pergunta será passada pela aprovação!";
+                            mensagem.style.backgroundColor = "#4caf509c";
+                        }
+                    } catch (error) {
+                        console.log(error);
+                        var mensagem = document.getElementById("mensagem");
+                        mensagem.innerHTML = "Preencha os campos abaixo para enviar a pergunta!";
+                        mensagem.style.backgroundColor = "#ff000080";
+                    }
+                },
+                (error) => {
+                
+                }
+            );
+        }
+        else{
+            var mensagem = document.getElementById("mensagem");
+            mensagem.innerHTML = "Não foi possível enviar a pergunta, por favor tente mais tarde!<br>"+ validacao;
+            mensagem.style.backgroundColor = "#f997047a";
+        }
     }
     
     render(){
