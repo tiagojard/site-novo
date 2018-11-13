@@ -58,7 +58,6 @@ function CodeColor(elmnt, mode) {
         if (endpos == -1) {endpos = rest.length;}
         done += rest.substring(0, startpos);
         done += tagMode(rest.substring(startpos, endpos + 4));
-        debugger;
         done = done.replace('<span </span>style<span style=color:#c5a5c5>="color:#79b6f2"</span>>','<span style=color:#79b6f2>');
         done = done.replace("</span>>",">");
         done = done.replace('>="color:#79b6f2">','>');

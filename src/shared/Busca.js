@@ -76,6 +76,7 @@ class Busca extends Component {
             {
                         repos.map((item, index) =>
                         <div key={index}>
+                            { item.ativo == true ? 
                             <div className="conteudo-home-container">
                                 <div className="conteudo-home-img">
                                     <img src={item.assunto[0].imagem} className="img-destaque" alt={item.title} />
@@ -90,6 +91,7 @@ class Busca extends Component {
                                     </div>
                                 </div>
                             </div>
+                               :<div></div> }
                             <hr className="hr-margin"/>
                         </div>
                         )

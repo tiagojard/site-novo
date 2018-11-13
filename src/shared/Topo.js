@@ -64,13 +64,31 @@ class Topo extends Component {
                 </div>
                 <form className="topo-busca" onSubmit={this.handleSubmit}>
                     <div className="logo-nome"><a href="/">Guia do desenvolvedor</a></div>
-                    <span className="topo-busca-nome-site">Guia do desenvolvedor</span>
+                    <span className="topo-busca-nome-site"><a href="/">Guia do desenvolvedor</a></span>
                     <div className="busca">
                       <input id="busca" type="text" autoComplete="off" onKeyUp={this.handleAutoComplete}  placeholder="O que você procura?" className="topo-busca-input" />
                       <AutoComplete pesquisa={this.state.pesquisa} />
                     </div>
                     <svg id="topo-busca-search-icon" className="topo-busca-search-icon" xmlns="http://www.w3.org/2000/svg" fill="#fff" height="24" width="24"><rect width="100%" height="100%" fill="none"/><g className="currentLayer"><path d="M16.867 14.788h-1.052l-.373-.36a8.616 8.616 0 0 0 2.09-5.631c0-4.78-3.874-8.654-8.654-8.654S.224 4.017.224 8.797 4.1 17.45 8.878 17.45a8.616 8.616 0 0 0 5.632-2.09l.36.372v1.052l6.657 6.644 1.983-1.984-6.643-6.657zm-7.989 0c-3.315 0-5.99-2.676-5.99-5.991s2.675-5.991 5.99-5.991 5.992 2.676 5.992 5.99-2.676 5.992-5.992 5.992z"/></g></svg>
                 </form >
+                <div className="menu">
+                <ul>
+                  <li><a href="/curso">Cursos</a></li>
+                  <li><a href="/cadastro/conteudo">Pergunta</a></li>
+                  <li>
+                    <div className="dropdown">
+                      <div className="dropbtn">Assunto</div>
+                      <div className="dropdown-content">
+                        <a href="/busca/assunto/Node.js">Node.js</a>
+                        <a href="/busca/assunto/JavaScript">javaScript</a>
+                        <a href="/busca/assunto/SQL Server">SQL Server</a>
+                        <a href="/busca/assunto/Jquery">Jquery</a>
+                        <a href="/busca/assunto/React js">React js</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                </div>
             </div>
         </div>
       ) 
