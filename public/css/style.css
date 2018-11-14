@@ -173,7 +173,7 @@ body{
         top: -50px !important;
     }
     .anuncio-topo,.anuncio-esquerdo{
-		display: none;
+        width: 90% !important;
     }
     .topo-busca-search-icon{
         display: block;
@@ -330,7 +330,8 @@ body{
 /**********************  banner *************************************/
 .anuncio-topo{
     height: 90px;
-    width: 728px;
+    max-width: 728px;
+    width: 90%;
     margin: auto;
 }
 

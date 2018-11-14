@@ -55,13 +55,11 @@ class Pagina extends Component {
       return <div></div>
     }
     //repos = Object.values(repos)[0];
+    var adsTopo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="1911584022" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+    var adsEsquerdo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="4048762396" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
 		return (<div className="corpo-pagina">
-                    <div className="anuncio-topo">
-                      <a href="https://go.hotmart.com/H9422393Q" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-javascript.png" alt="javascript"/></a>
-                    </div>
-                    <div className="anuncio-esquerdo">
-                      <a href="https://go.hotmart.com/K9423178A" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-templates.png" alt="template" /></a>
-                    </div>
+                    <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
+                    <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
                     <div className="conteudo">
                       <h1>{repos.title}</h1>
                       <div className="tag">

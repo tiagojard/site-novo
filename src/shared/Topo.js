@@ -74,7 +74,7 @@ class Topo extends Component {
                 <div className="menu">
                 <ul>
                   <li><a href="/curso">Cursos</a></li>
-                  <li><a href="/cadastro/conteudo">Pergunta</a></li>
+                  <li><a href="/cadastro/conteudo">Perguntar</a></li>
                   <li>
                     <div className="dropdown">
                       <div className="dropbtn">Assunto</div>
