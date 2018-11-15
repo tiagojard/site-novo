@@ -6,6 +6,7 @@ class Aprovacao extends Component {
     
         this.handleClickButton = this.handleClickButton.bind(this);
         this.handleClickBuscar = this.handleClickBuscar.bind(this);
+        this.handleClickBuscarAlteracao = this.handleClickBuscarAlteracao.bind(this);
         this.handleKeyUp = this.handleKeyUp.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -26,6 +27,32 @@ class Aprovacao extends Component {
                     loading: result ? false : true,
                     result: Object.entries(result) 
                 });
+            },
+            (error) => {
+           
+            }
+        );
+    }
+
+    handleClickBuscarAlteracao(e){
+        var form = document.getElementById("form");
+        var id = form.children.id.value;
+        console.log(id);
+        fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo/"+id+".json")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                if(result != null){
+                    form.children.titulo.value = result.title;
+                    form.children.description.value = result.description;
+                    form.children.url.value = result.url;
+                    form.children.pesquisa.value = result.pesquisa;
+                    form.children.descricao.value = result.descricao;
+                    form.children.assunto.value = result.assunto[0].nome;
+                    form.children.conteudo.value = result.conteudo;
+                    document.getElementById("resultado-conteudo").innerHTML = result.conteudo;
+                    this.atualizaCodigo();
+                }
             },
             (error) => {
            
@@ -61,28 +88,30 @@ class Aprovacao extends Component {
 
     handleSubmit(e){
         e.preventDefault();
-        var conteudo = document.getElementById("resultado-conteudo").innerHTML;
-        var Objeto = { 
-            "assunto":[{"nome":e.target.assunto.value, "imagem": e.target.assunto.selectedOptions[0].dataset.imagem}],
-            "conteudo_site": conteudo,
-            "conteudo":e.target.conteudo.value,
-            "descricao": e.target.descricao.value,
-            "description":e.target.description.value,
-            "pesquisa":e.target.pesquisa.value,
-            "title":e.target.titulo.value,
-            "url":e.target.url.value,
-            "ativo":true
+        if(e.target.id.value != ""){
+            var conteudo = document.getElementById("resultado-conteudo").innerHTML;
+            var Objeto = { 
+                "assunto":[{"nome":e.target.assunto.value, "imagem": e.target.assunto.selectedOptions[0].dataset.imagem}],
+                "conteudo_site": conteudo,
+                "conteudo":e.target.conteudo.value,
+                "descricao": e.target.descricao.value,
+                "description":e.target.description.value,
+                "pesquisa":e.target.pesquisa.value,
+                "title":e.target.titulo.value,
+                "url":e.target.url.value,
+                "ativo":true
+            }
+    
+            fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo/"+e.target.id.value+".json", {
+                method: "PUT",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Objeto)
+            });
+
         }
-
-        fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo/"+e.target.id.value+".json", {
-            method: "PUT",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(Objeto)
-        });
-
 
 /*
         fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json", {
@@ -106,6 +135,39 @@ class Aprovacao extends Component {
     }
 
 
+    
+
+    atualizaCodigo(){
+        var assunto = document.getElementById("assunto").value;
+        var codes = document.getElementById("resultado-conteudo").querySelectorAll("pre code");
+        for(var i=0; i < codes.length; i++){
+            if(codes[i].dataset.code == "node" || codes[i].dataset.code == "React")
+            {
+                CodeColor(codes[i], "js");
+                CodeColor(codes[i], "html");
+            } else if(codes[i].dataset.code == "javaScript" || codes[i].dataset.code == "Jquery" || codes[i].dataset.code == "SQL"){
+                CodeColor(codes[i], "js");
+            } else if(codes[i].dataset.code == "HTML"){
+                CodeColor(codes[i], "html");
+            } else if(codes[i].dataset.code == "HTML"){
+                CodeColor(codes[i], "css");
+            }
+
+/*
+                CodeColor(codes[i], "js");
+            if(this.javascript.indexOf(assunto) > -1)
+                CodeColor(codes[i], "js");
+            if(this.html.indexOf(assunto) > -1)
+                CodeColor(codes[i], "html");
+                */
+        }
+    }
+
+    handleKeyUp(e){
+        document.getElementById("resultado-conteudo").innerHTML = document.getElementById("conteudo").value;
+        this.atualizaCodigo();
+    }
+
     handleClickButton(e){
         var cursorPos = document.getElementById("conteudo").selectionStart;
         var v = document.getElementById("conteudo").value;
@@ -117,30 +179,32 @@ class Aprovacao extends Component {
             case "p":
             tipo = '<p>digite aqui...</p>';
             break;
-            case "c":
-            tipo = '<pre class="codigo"><code>Digite código aqui...</code></pre>';
+            case "node":
+            tipo = '<pre class="codigo"><code data-code="node">Digite código aqui...</code></pre>';
+            break;
+            case "javaScript":
+            tipo = '<pre class="codigo"><code data-code="javaScript">Digite código aqui...</code></pre>';
+            break;
+            case "SQL":
+            tipo = '<pre class="codigo"><code data-code="SQL">Digite código aqui...</code></pre>';
+            break;
+            case "Jquery":
+            tipo = '<pre class="codigo"><code data-code="Jquery">Digite código aqui...</code></pre>';
+            break;
+            case "React":
+            tipo = '<pre class="codigo"><code data-code="React">Digite código aqui...</code></pre>';
+            break;
+            case "HTML":
+            tipo = '<pre class="codigo"><code data-code="HTML">Digite código aqui...</code></pre>';
+            break;
+            case "CSS":
+            tipo = '<pre class="codigo"><code data-code="CSS">Digite código aqui...</code></pre>';
             break;
             case "l":
             tipo = '<a href="Digite link aqui..." title="Digite título..." target="_blank" rel="nofollow">Digite o texto link</a>';
             break;
         }
         document.getElementById("conteudo").value = textBefore+ tipo +textAfter;
-        document.getElementById("resultado-conteudo").innerHTML = document.getElementById("conteudo").value;
-        this.atualizaCodigo();
-    }
-
-    atualizaCodigo(){
-        var assunto = document.getElementById("assunto").value;
-        var codes = document.getElementById("resultado-conteudo").querySelectorAll("pre code");
-        for(var i=0; i < codes.length; i++){
-            if(this.javascript.indexOf(assunto) > -1)
-                CodeColor(codes[i], "js");
-            if(this.html.indexOf(assunto) > -1)
-                CodeColor(codes[i], "html");
-        }
-    }
-
-    handleKeyUp(e){
         document.getElementById("resultado-conteudo").innerHTML = document.getElementById("conteudo").value;
         this.atualizaCodigo();
     }
@@ -181,7 +245,7 @@ class Aprovacao extends Component {
             {conteudos}
             <div className="form-conteudo">
                 <form id="form" onSubmit={this.handleSubmit}>
-                    <input id="id" name="id" type="hidden"/>
+                    <input id="id" name="id" type="text"/><button type="button" onClick={this.handleClickBuscarAlteracao}>Buscar</button>
 
                     <label>Título</label>
                     <input type="text" name="titulo" autoComplete="off" className="form-input" />
@@ -212,7 +276,19 @@ class Aprovacao extends Component {
 
                     <div className="container-botoes">
                         <button type="button" data-tipo="p" onClick={this.handleClickButton}>Parágrafo</button>
-                        <button type="button" data-tipo="c" onClick={this.handleClickButton}>Código</button>
+                        <button type="button" data-tipo="c" onClick={this.handleClickButton}>Código
+                        </button>
+                        <button className="dropdown"><div className="dropbtn-button">Código</div>
+                            <div className="dropdown-content">
+                                <a href="javascript:void(0)" data-tipo="node" onClick={this.handleClickButton}>Node.js</a>
+                                <a href="javascript:void(0)" data-tipo="javaScript" onClick={this.handleClickButton}>javaScript</a>
+                                <a href="javascript:void(0)" data-tipo="SQL" onClick={this.handleClickButton}>SQL Server</a>
+                                <a href="javascript:void(0)" data-tipo="Jquery" onClick={this.handleClickButton}>Jquery</a>
+                                <a href="javascript:void(0)" data-tipo="React" onClick={this.handleClickButton}>React js</a>
+                                <a href="javascript:void(0)" data-tipo="HTML" onClick={this.handleClickButton}>HTML</a>
+                                <a href="javascript:void(0)" data-tipo="CSS" onClick={this.handleClickButton}>CSS</a>
+                            </div>
+                        </button>
                         <button type="button" data-tipo="l" onClick={this.handleClickButton}>Link</button>
                     </div>
                     <textarea id="conteudo" name="conteudo" rows="30" className="form-text" onKeyUp={this.handleKeyUp}>

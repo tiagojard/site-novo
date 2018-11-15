@@ -21,7 +21,7 @@ pre.codigo {
 }
 
 .conteudo{
-	width: 67%;
+	width: 64%;
     min-height: 400px;
     margin-top: 10px;
     margin-left: 2%;
@@ -30,52 +30,64 @@ pre.codigo {
     border-top: 1px dotted #cccccc;
 }
 
-
-@media only screen and (max-width: 1290px) {
+@media only screen and (max-width: 1320px) {
 	.conteudo{
-		width: 66%;
+		width: 63%;
 	}
 }
 
-@media only screen and (max-width: 1249px) {
-	.conteudo{
-		width: 65%;
-	}
-}
 
-@media only screen and (max-width: 1240px) {
-	.conteudo{
-		width: 64%;
-	}
-}
-
-@media only screen and (max-width: 1174px) {
+@media only screen and (max-width: 1281px) {
 	.conteudo{
 		width: 62%;
 	}
 }
 
+@media only screen and (max-width: 1249px) {
+	.conteudo{
+		width: 61%;
+	}
+}
+
+@media only screen and (max-width: 1240px) {
+	.conteudo{
+		width: 59%;
+	}
+}
+
+@media only screen and (max-width: 1155px) {
+	.conteudo{
+		width: 57%;
+	}
+}
+
 @media only screen and (max-width: 1108px) {
 	.conteudo{
-		width: 60%;
+		width: 56%;
 	}
 }
 
-@media only screen and (max-width: 1049px) {
-	.conteudo{
-		width: 58%;
-	}
-}
-
-@media only screen and (max-width: 996px) {
+@media only screen and (max-width: 1065px) {
 	.conteudo{
 		width: 55%;
 	}
 }
 
+@media only screen and (max-width: 1049px) {
+	.conteudo{
+		width: 53%;
+	}
+}
+
+@media only screen and (max-width: 996px) {
+	.conteudo{
+		width: 50%;
+	}
+}
+
 @media only screen and (max-width: 927px) {
 	.conteudo {
-		width: 77%;
+		width: 75%;
 	}
 	.destaque-direito{
 		border-left: 0!important;
@@ -85,9 +97,9 @@ pre.codigo {
 	}
 }
 
-@media only screen and (max-width: 816px) {
+@media only screen and (max-width: 835px) {
 	.conteudo {
-		width: 74%;
+		width: 72%;
 	}
 	.destaque-direito{
 		width: 78% !important;
@@ -185,10 +197,8 @@ pre.codigo {
 
 .destaque-direito{
 	width: 220px;
-	margin-top: 10px;
+    margin-right: 30px;
 	float: right;
-	border-left: 1px dotted #b1b0b0;
-	margin-right: 1px;
 }
 
 .item-destaque{

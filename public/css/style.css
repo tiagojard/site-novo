@@ -283,7 +283,7 @@ body{
     background-color:#4e5682;
     width: 100%;
     display: inline-block;
-    margin-top: 100px;
+    margin-top: 122px;
     font-size: 14px;
 }
 
@@ -337,9 +337,10 @@ body{
 
 .anuncio-esquerdo{
 	width: 160px;
-	height: 600px;
-	margin-top: 10px;
-	float: left;
+    height: 600px;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
 }
 
 /********************** auto complete ******************************************/
@@ -499,6 +500,11 @@ body{
 
   .dropbtn {
     color: #ffff;
+    cursor: pointer;
+}
+
+.dropbtn-button {
+    color: #24292e;
     cursor: pointer;
 }
 

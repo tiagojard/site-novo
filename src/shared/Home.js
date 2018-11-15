@@ -64,16 +64,6 @@ class Home extends Component {
         return (<div className="corpo-pagina">
                     <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
                     <div className="container-esquerdo">
-                        <div className="menu-esquerdo">
-                            <div className="menu-esquerdo-titulo">Assuntos</div>
-                            <ul>
-                                <li><a href="/busca/assunto/Node.js" title="Node.js">Node.js</a></li>
-                                <li><a href="/busca/assunto/JavaScript" title="javaScript">javaScript</a></li>
-                                <li><a href="/busca/assunto/SQL Server" title="SQL Server">SQL Server</a></li>
-                                <li><a href="/busca/assunto/Jquery" title="Jquery">Jquery</a></li>
-                                <li><a href="/busca/assunto/React js" title="React js">React js</a></li>
-                            </ul>
-                        </div>
                         <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
                     </div>
                     <div className="conteudo-home">

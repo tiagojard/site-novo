@@ -70,8 +70,7 @@ class Busca extends Component {
             <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
         </div>
         <div className="conteudo-home">
-        <h3 className="titulo-home">Resultados encontrados para "{this.props.match.params.pesquisa}"</h3>
-        <h1 className="sub-titulo-home">Guia desenvolvedor</h1>
+        <h3 className="titulo-home"><strong>{repos.length}</strong> Resultados encontrados para <strong><h1>{this.props.match.params.pesquisa}</h1></strong></h3>
             {
                         repos.map((item, index) =>
                         <div key={index}>
