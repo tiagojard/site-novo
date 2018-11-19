@@ -57,7 +57,8 @@ class Pagina extends Component {
     //repos = Object.values(repos)[0];
     var adsTopo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="1911584022" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
     var adsEsquerdo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="4048762396" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
-		return (<div className="corpo-pagina">
+    var adsDireito = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="2538022566" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+    return (<div className="corpo-pagina">
                     <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
                     <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
                     <div className="conteudo">
@@ -72,10 +73,11 @@ class Pagina extends Component {
                       <Produto />
                     </div>
                     <div className="destaque-direito">
-                    <div className="titulo-destaque">
-                     Destaque
-                    </div>
-                    <Destaque idPagina={repos.id} />
+                      <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }}/>
+                      <div className="titulo-destaque">
+                      Destaque
+                      </div>
+                      <Destaque idPagina={repos.id} />
                     </div>
                 </div>);
 	}

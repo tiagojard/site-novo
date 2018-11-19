@@ -19,14 +19,16 @@ class AutoComplete extends Component {
             }
         }
     }
+
     componentDidUpdate (prevProps, prevState) {
         if(this.props.pesquisa != prevProps.pesquisa){
-            fetch('https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy="pesquisa"&endAt="'+this.props.pesquisa.toLowerCase()+'\uf8ff"&limitToLast=5')
+            var pesquisa = this.props.pesquisa.toLowerCase();
+            fetch('https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy="pesquisa"&endAt="'+pesquisa+'\uf8ff"&limitToLast=5')
             .then(res => res.json())
             .then(
             (result) => {
                 this.setState({
-                    resultado: result != null ? Object.values(result): null
+                    resultado: result != null ? Object.values(result).filter(function(value, index, self){ var encontrou = true; pesquisa.split(' ').forEach(function(v){ if(value.pesquisa.indexOf(v) == -1) encontrou = false;   }); return encontrou == true;  }): null
                 });
             },
             (error) => {
