@@ -10,12 +10,19 @@ import { fetchBuscaAssuntoRepos } from './apiBuscaAssunto'
 import { fetchBuscaRepos } from './apiBusca'
 import { fetchCursoRepos } from './apiCurso'
 
+/*
+{
+  path: '/',
+  exact: true,
+  component: Home,
+  fetchInitialData: (path = '') => fetchHomeRepos(0)
+},
+*/
 const routes =  [
   {
     path: '/',
     exact: true,
-    component: Home,
-    fetchInitialData: (path = '') => fetchHomeRepos(0)
+    component: Home
   },
   {
     path: '/pagina/:id/:titulo',

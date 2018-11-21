@@ -16,7 +16,9 @@ app.use(cors())
 app.use(express.static("public"))
 
 app.get("*", (req, res, next) => {
-  
+  // Simulating async operation
+  setImmediate(function () {
+  try {
   const activeRoute = routes.find((route) => matchPath(req.url, route)) || {}
 
   const promise = activeRoute.fetchInitialData
@@ -35,6 +37,7 @@ app.get("*", (req, res, next) => {
     var titulo = "";
     var description = "";
     var script = "";
+    
     if(data != null){
       //var dataObject = Object.values(data)[0];
       titulo = data.title +" - Guia desenvolvedor";
@@ -46,7 +49,8 @@ app.get("*", (req, res, next) => {
       titulo = "Guia desenvolvedor";
       description = "Com o guia do desenvolvedor você aprende a programar react js, c#, javaScript, jQuery, sql server, seo, html, e css. Aqui você encontra melhores cursos online de programação.";
       style += '<link async rel="stylesheet" type="text/css" href="/css/home.min.css">';
-    }else if(req.url.indexOf("/pagina/") > -1){
+    }
+    else if(req.url.indexOf("/pagina/") > -1){
         style += '<link async rel="stylesheet" type="text/css" href="/css/pagina.min.css">';
         if(data == null){
           indexing = "noindex";
@@ -133,6 +137,10 @@ app.get("*", (req, res, next) => {
       </html>
     `)
   }).catch(next)
+  } catch (e) {
+    res.status(400).send('Erro ao acessar a página');
+  }
+})
 })
 
 app.listen(port, () => {
