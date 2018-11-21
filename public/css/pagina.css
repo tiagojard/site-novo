@@ -388,6 +388,6 @@ pre.codigo {
 
 .anuncio-direito{
     width: 250px;
-	height: 250px;
+	height: auto;
 	margin-top: 10px;
 }
