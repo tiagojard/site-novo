@@ -22,9 +22,7 @@
 }
 
 .conteudo-home-img{
-    width: 100px;
-    height: 100px;
-    float: left;
+    width: 30px;
 }
 
 .hr-margin{
@@ -102,8 +100,7 @@
 
 /* destaque */
 .img-destaque{
-    width: 50px;
-    margin: 20px;
+    margin-top: 10px;
 }
 
 .container-esquerdo{
@@ -251,6 +248,9 @@
     }
     .conteudo-home{ 
         margin-left: 10px;
+    }
+    .item-descricao {
+        min-height: 233px!important;
     }
 }
 

@@ -91,7 +91,7 @@ class Aprovacao extends Component {
         if(e.target.id.value != ""){
             var conteudo = document.getElementById("resultado-conteudo").innerHTML;
             var Objeto = { 
-                "assunto":[{"nome":e.target.assunto.value, "imagem": e.target.assunto.selectedOptions[0].dataset.imagem}],
+                "assunto":[{"nome":e.target.assunto.value, "imagem": e.target.assunto.selectedOptions[0].dataset.imagem, "svg": svg[e.target.assunto.value]}],
                 "conteudo_site": conteudo,
                 "conteudo":e.target.conteudo.value,
                 "descricao": e.target.descricao.value,

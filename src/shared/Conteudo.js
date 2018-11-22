@@ -78,7 +78,7 @@ class Conteudo extends Component {
 
                     <label>Assunto</label>
                     <select name="assunto" className="form-input">
-                        <option data-imagem="/img/csharp.svg" value="C#">C#</option>
+                        <option data-imagem="/img/csharp.svg" value="CSharp">C#</option>
                         <option data-imagem="/img/javascript.svg" value="JavaScript">JavaScript</option>
                         <option data-imagem="/img/jquery.svg" value="Jquery">Jquery</option>
                         <option data-imagem="/img/php.svg" value="PHP">PHP</option>
