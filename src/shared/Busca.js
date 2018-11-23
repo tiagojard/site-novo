@@ -63,6 +63,19 @@ class Busca extends Component {
         return result
 */
         return <div className="corpo-pagina">
+        <ol itemScope itemType="http://schema.org/BreadcrumbList" className="breadcrumbs">
+      <li itemProp="itemListElement" itemScope
+      itemType="http://schema.org/ListItem">
+      <a itemType="http://schema.org/Thing" itemProp="item" href="/"><span itemProp="name">Página inicial</span></a>
+      <meta itemProp="position" content="1" />
+      </li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><rect width="100%" height="100%" fill="none"/><g className="currentLayer"><path d="M2.842 7.79c-.053.053-.12.08-.192.08s-.138-.027-.191-.08a.27.27 0 0 1 0-.383l3.365-3.365L2.46.676a.27.27 0 0 1 .383-.383L6.398 3.85a.27.27 0 0 1 0 .383L2.842 7.79z" fill="#ccc"/></g></svg>
+                 <li itemProp="itemListElement" itemScope
+      itemType="http://schema.org/ListItem"> 
+                        <span itemProp="name">{this.props.match.params.pesquisa}</span>
+                        <meta itemProp="position" content="2" />
+                   </li>
+                    </ol>
         <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
         <div className="container-esquerdo">
             <div className="menu-esquerdo">
@@ -99,7 +112,7 @@ class Busca extends Component {
                             </div>
                                :<div></div> }
                             <hr className="hr-margin"/>
-                            { ((index+1) / 3) % 1 == 0 ?<div><div dangerouslySetInnerHTML={{__html:adsConteudo }}/><hr className="hr-margin"/></div>:"" }
+                            { ((index+1) / 3) % 1 == 0 ?<div className="anuncio-conteudo"><div dangerouslySetInnerHTML={{__html:adsConteudo }}/><hr className="hr-margin"/></div>:"" }
                         </div>
                         )
                     }
@@ -107,7 +120,6 @@ class Busca extends Component {
             <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }}/>
         </div>
     }
-
 }
 
 export default Busca;

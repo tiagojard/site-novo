@@ -540,3 +540,28 @@ body{
     color: #ffff;
     text-decoration: none;
 }
+
+.breadcrumbs{
+    margin-left: -30px;
+    margin-top: -8px;
+    font-size: 12px;
+}
+
+.breadcrumbs li{
+    display: inline;
+}
+
+.breadcrumbs a{
+    margin-right: 10px;
+    color: #7d7d7d;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover{
+    text-decoration: underline;
+}
+
+.breadcrumbs span{
+    margin-left: 10px;
+    color: #7d7d7d;
+}

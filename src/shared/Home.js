@@ -72,7 +72,7 @@ this.loadJson = () => fetch("https://guiadesenvolvedor-78a46.firebaseio.com/cont
         var adsConteudo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="5901851801" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
  
 
-/*<img src={item.assunto[0].imagem} className="img-destaque" alt={item.title} />*/
+/*   { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo" dangerouslySetInnerHTML={{__html:adsConteudo }}/><hr className="hr-margin"/></div>:"" }*/
 return <div className="corpo-pagina">
 <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
 <div className="container-esquerdo">
@@ -106,7 +106,7 @@ return <div className="corpo-pagina">
                         </div>
                     </div>
                     <hr className="hr-margin"/>
-                      { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo" dangerouslySetInnerHTML={{__html:adsConteudo }}/><hr className="hr-margin"/></div>:"" }
+                   
                 </div>
                 )
             }
