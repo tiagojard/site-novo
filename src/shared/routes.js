@@ -4,7 +4,7 @@ import Busca from './Busca'
 import Conteudo from './Conteudo'
 import Aprovacao from './Aprovacao'
 import Curso from './Curso'
-import { fetchHomeRepos } from './apiHome'
+//import { fetchHomeRepos } from './apiHome'
 import { fetchPaginaRepos } from './apiPagina'
 import { fetchBuscaAssuntoRepos } from './apiBuscaAssunto'
 import { fetchBuscaRepos } from './apiBusca'
@@ -21,8 +21,8 @@ import { fetchCursoRepos } from './apiCurso'
 const routes =  [
   {
     path: '/',
-    exact: true,
-    component: Home
+  exact: true,
+  component: Home
   },
   {
     path: '/pagina/:id/:titulo',

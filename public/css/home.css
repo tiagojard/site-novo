@@ -1,3 +1,71 @@
+.introducao{
+    background-color: #84bec5;
+    margin-top: -46px;
+    padding-bottom: 45px;
+    color: white;
+    padding-left: 15%;
+}
+
+.introducao h1{
+    padding-top: 31px;
+    font-size: 45px;
+    text-shadow: 2px 0 0 #756363;
+}
+
+.introducao h2{
+    margin-top: -33px;
+    color: #3a4061;
+    font-weight: 500;
+    font-size: 24px;
+    text-shadow: 2px 0 0 #389aa7;
+}
+
+.intro-conhecimento{
+    max-width: 762px;
+}
+.btn-intro{
+    text-decoration: none;
+    background-color: #e91e63;
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+.btn-intro:hover{
+    background-color:white;
+    color: #e91e63;
+}
+.btn-curso{
+    text-decoration: none;
+    background-color:#3a4061;
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+.btn-curso:hover{
+    color:#3a4061;
+    background-color:white;
+}
+.introducao h3{
+    font-weight: 200;
+}
+
+
+
+.introducao div{
+    width: 45%;
+    position: relative;
+    min-width: 400px;
+    display: inline-table;
+    margin-right: 35px;
+    margin-bottom: 20px;
+}
+
 .conteudo-home{
     width: 70%;
     min-height: 400px;
@@ -47,12 +115,6 @@
 .titulo-home h1{
     font-size: 20px;
     display: inline;
-}
-
-.sub-titulo-home{
-    font-size: 14px;
-    font-weight: 400;
-    margin: 0;
 }
 
 .conteudo-home-detalhe h3,h4{
@@ -194,6 +256,9 @@
 	.conteudo-home{ 
         width: 60% !important;
     }
+    .introducao div{
+        width: auto;
+    }
 }
 
 
@@ -231,6 +296,9 @@
 	.conteudo-home{ 
         width: 71% !important;
     }
+    .introducao{
+        margin-top: -56px;
+    }
 }
 
 @media only screen and (max-width: 710px) {
@@ -252,6 +320,13 @@
     .item-descricao {
         min-height: 233px!important;
     }
+    .introducao div{
+        margin-right:0;
+        min-width: 350px;
+    }
+    .introducao h3 {
+        max-width: 87%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -267,7 +342,17 @@
     .container-esquerdo,.anuncio-direito{
         display: none;
     }
+    .introducao{
+        padding-left: 25px;
+    }
 
+    .introducao h1{
+        font-size: 30px;
+    }
+    .introducao h2 {
+        margin-top: -23px;
+        font-size: 18px;
+    }
 }
 
 

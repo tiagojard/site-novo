@@ -26,7 +26,8 @@ class Conteudo extends Component {
                 "assunto":[{"nome":e.target.assunto.value, "imagem": e.target.assunto.selectedOptions[0].dataset.imagem}],
                 "conteudo": e.target.conteudo.value,
                 "title":e.target.titulo.value,
-                "ativo":false
+                "ativo":false,
+                "pesquisa":e.target.titulo.value
             }
     
             fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json", {

@@ -4,9 +4,7 @@ import Async from "react-async"
 class Home extends Component {
     constructor(props) {
         super(props);
-
-        /*
-        let repos
+        /*let repos
         if (__isBrowser__) {
           repos = window.__INITIAL_DATA__
           delete window.__INITIAL_DATA__
@@ -21,7 +19,7 @@ class Home extends Component {
     
         this.fetchRepos = this.fetchRepos.bind(this)
 */
-this.loadJson = () => fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22ativo%22&equalTo=true").then(res => res.json())
+        this.loadJson = () => fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22ativo%22&equalTo=true").then(res => res.json())
     }
 
     /*
@@ -55,11 +53,8 @@ this.loadJson = () => fetch("https://guiadesenvolvedor-78a46.firebaseio.com/cont
         const { loading, repos } = this.state;
         if (loading === true) {
           return <p>LOADING</p>
-        }
-        */
+        }*/
         //var result =Object.values(repos);
-
-
 
         //<li><a href="/pagina/1/como-criar-site-react-js" title="React js">React js</a></li>
         //<li><a href="/pagina/3/jquery-ready-documentacao" title="Jquery">Jquery</a></li>
@@ -74,13 +69,26 @@ this.loadJson = () => fetch("https://guiadesenvolvedor-78a46.firebaseio.com/cont
 
 /*   { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo" dangerouslySetInnerHTML={{__html:adsConteudo }}/><hr className="hr-margin"/></div>:"" }*/
 return <div className="corpo-pagina">
+<div className="introducao">
+    <h1>Guia do Desenvolvedor</h1>
+    <h2>Plataforma para programadoes</h2>
+    <div>
+        <h3 className="intro-conhecimento">Ajude a plataforma crescer, compartilhe seu conhecimento e faça parte desse guia. Ajudamos programadores iniciantes com conteúdos de qualidade.</h3>
+        <a  className="btn-intro" href="/cadastro/conteudo">Compartilhar conhecimento</a>
+    </div>
+    <div>
+        <h3>Está com dúvida em algum assundo ou não esta conseguindo fazer algo?</h3>
+        <a className="btn-intro" href="/cadastro/conteudo">Envie sua pergunta</a>
+    </div>
+    <h3>Confira alguns cursos que fará muita diferença em seu aprendizado!</h3>
+    <a className="btn-curso" href="/curso">Veja alguns cursos</a>
+</div>
 <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
 <div className="container-esquerdo">
     <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
 </div>
 <div className="conteudo-home">
 <h3 className="titulo-home">Conteúdos mais acessados</h3>
-<h1 className="sub-titulo-home">Guia desenvolvedor</h1>
 <Async promiseFn={this.loadJson}>
         {({ data, error, isLoading }) => {
           if (isLoading) return "Carregando..."
