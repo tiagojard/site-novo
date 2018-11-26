@@ -23,11 +23,50 @@
 }
 .form-conteudo-pergunta{
     width: 50%;
-    margin: auto;
+    margin-top: 25px;
+    margin-left: 42px;
+    display: inline-table;
+}
+.info{
+    width: 30%;
+    display: inline-table;
+    border: solid #e2e2e2 1px;
+    color: gray;
+    border-radius: 3px;
+    padding-bottom: 12px;
+    float: right;
+    margin: 30px;
+}
+
+.info div{
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.info-cabecalho{
+    font-weight: 500;
+    font-size: 18px;
+    border-bottom: solid #e2e2e2 1px;
+    padding-top: 0px !important;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.info-titulo{
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+}
+
+.icon-svg{
+    position: relative;
+    top: 7px;
+    margin-right: 10px;
 }
 
 .form-conteudo label, .form-conteudo-pergunta label{
     margin-left: 10px;
+    font-weight: 700;
 }
 
 .form-conteudo-pergunta button{
@@ -49,7 +88,7 @@
     width: 95%;
     margin: 10px;
     border-radius: 4px;
-    border: solid gray 1px;
+    border: solid #d4d1d1  1px;
     height: 25px;
     padding-left: 5px;
     outline: 0;
@@ -59,7 +98,7 @@
     width: 95%;
     margin: 10px;
     border-radius: 4px;
-    border: solid gray 1px;
+    border: solid #d4d1d1 1px;
     outline: 0;
     padding-left: 5px;
 }
@@ -79,10 +118,10 @@
 
 .form-conteudo-pergunta h1{
     margin-left: 10px;
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 29px;
+    font-weight: 600;
     color: black;
-    margin-bottom: 50px;
+    margin-bottom: 27px;
     margin-top: -20px;
 }
 
@@ -91,6 +130,12 @@
     .form-conteudo-pergunta {
         width: 95%!important;
         margin: 0;
+    }
+    .info{
+        float: none;
+        width: 95.5%;
+        margin: 10px;
+        margin-bottom: 30px;
     }
 }
 
