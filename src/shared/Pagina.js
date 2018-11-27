@@ -66,7 +66,6 @@ class Pagina extends Component {
         "name": "${repos.title}",
         "description": "${repos.description}",
         "about": "${repos.assunto[0].nome}",
-        "text",
         "publisher": {
             "@type": "CollegeOrUniversity",
             "name": "Guia do desenvolvedor"
@@ -75,6 +74,7 @@ class Pagina extends Component {
     </script>`);
     
     return (<div className="corpo-pagina">
+    <div dangerouslySetInnerHTML={{__html:metadata}}/>
           <ol itemScope itemType="http://schema.org/BreadcrumbList" className="breadcrumbs">
               <li itemProp="itemListElement" itemScope
                   itemType="http://schema.org/ListItem">
@@ -100,14 +100,15 @@ class Pagina extends Component {
                       <meta itemProp="position" content="3" />
               </li>
           </ol>
+          
                     <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
                     <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
-                    <div itemScope="" itemType="http://schema.org/WebPage" className="conteudo">
-                      <h1 itemProp="name">{repos.title}</h1>
+                    <div className="conteudo">
+                      <h1>{repos.title}</h1>
                       <div className="tag">
-                        <a href={"/busca/assunto/"+repos.assunto[0].nome} title={repos.assunto[0].nome} className="assunto"><h4 itemProp="about">{repos.assunto[0].nome}</h4></a>
+                        <a href={"/busca/assunto/"+repos.assunto[0].nome} title={repos.assunto[0].nome} className="assunto"><h4>{repos.assunto[0].nome}</h4></a>
                       </div>
-                      <div id="conteudo" itemProp="text" dangerouslySetInnerHTML={{__html:repos.conteudo_site }} />
+                      <div id="conteudo" dangerouslySetInnerHTML={{__html:repos.conteudo_site }} />
                       <br/>
                     <hr className="hr"/>
                     <p className="titulo-produto"><strong>Top cursos</strong> tá todo mundo clicando</p>
