@@ -260,6 +260,9 @@ body{
         width: 23px;
         margin: 8px;
     }
+    .anuncio-topo{
+        max-width: 250px!important;
+    }
 }
 
 @media only screen and (max-width: 518px) {

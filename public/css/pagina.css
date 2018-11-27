@@ -98,7 +98,8 @@ pre.codigo {
     .anuncio-direito {
         width: 95%;
         margin-left: 25px;
-        height: auto;
+		height: auto;
+		margin: auto;
     }
 }
 

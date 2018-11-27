@@ -58,6 +58,22 @@ class Pagina extends Component {
     var adsTopo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="1911584022" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
     var adsEsquerdo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="4048762396" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
     var adsDireito = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="2538022566" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+    
+    var metadata = (`<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "name": "${repos.title}",
+        "description": "${repos.description}",
+        "about": "${repos.assunto[0].nome}",
+        "text",
+        "publisher": {
+            "@type": "CollegeOrUniversity",
+            "name": "Guia do desenvolvedor"
+        }
+    }
+    </script>`);
+    
     return (<div className="corpo-pagina">
           <ol itemScope itemType="http://schema.org/BreadcrumbList" className="breadcrumbs">
               <li itemProp="itemListElement" itemScope
@@ -86,12 +102,12 @@ class Pagina extends Component {
           </ol>
                     <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
                     <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
-                    <div className="conteudo">
-                      <h1>{repos.title}</h1>
+                    <div itemScope="" itemType="http://schema.org/WebPage" className="conteudo">
+                      <h1 itemProp="name">{repos.title}</h1>
                       <div className="tag">
-                        <a href={"/busca/assunto/"+repos.assunto[0].nome} title={repos.assunto[0].nome} className="assunto"><h4>{repos.assunto[0].nome}</h4></a>
+                        <a href={"/busca/assunto/"+repos.assunto[0].nome} title={repos.assunto[0].nome} className="assunto"><h4 itemProp="about">{repos.assunto[0].nome}</h4></a>
                       </div>
-                      <div id="conteudo" dangerouslySetInnerHTML={{__html:repos.conteudo_site }} />
+                      <div id="conteudo" itemProp="text" dangerouslySetInnerHTML={{__html:repos.conteudo_site }} />
                       <br/>
                     <hr className="hr"/>
                     <p className="titulo-produto"><strong>Top cursos</strong> tá todo mundo clicando</p>
