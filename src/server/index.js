@@ -19,7 +19,7 @@ app.use(cors())
 app.use(express.static("public"))
 //cache
 var oneYear = 60 * 1000 * 60 * 24 * 365;
-app.use(express.static('public_cache', { maxAge: oneYear }));
+//app.use(express.static('public_cache', { maxAge: oneYear }));
 
 app.get("*", (req, res, next) => {
   // Simulating async operation
