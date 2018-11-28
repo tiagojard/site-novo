@@ -107,7 +107,7 @@ render(){
  <div className="item-destaque">
                                 <a href={"/pagina"+item.url} title={item.title}>
                                     <p>
-                                        <img src={item.assunto[0].imagem} className="img-pagina-destaque" align="left" alt={item.title}/>{item.title}. {item.descricao}
+                                    <div dangerouslySetInnerHTML={{__html:item.assunto[0].svg }} />{item.title}. {item.descricao}
                                     </p>
                                 </a>
                             </div>
