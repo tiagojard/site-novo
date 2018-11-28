@@ -117,9 +117,9 @@ class Pagina extends Component {
                     <div className="destaque-direito">
                       <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }}/>
                       <div className="titulo-destaque">
-                      Destaque
+                      <h2>Veja mais sobre {repos.assunto[0].nome}</h2>
                       </div>
-                      <Destaque idPagina={repos.id} />
+                      <Destaque idPagina={repos.id} assunto={repos.assunto[0].nome} />
                     </div>
                 </div>);
 	}

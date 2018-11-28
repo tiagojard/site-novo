@@ -227,9 +227,12 @@ pre.codigo {
 .titulo-destaque{
 	border-bottom: 1px dotted #c3c4c5;
     width: 88%;
-	margin-left: 5%;
-	padding: 7px;
+    font-size: 10px;
+}
+
+.titulo-destaque h2{
 	font-weight: 400;
+	margin-bottom: 5px;
 }
 
 .hr-destaque{

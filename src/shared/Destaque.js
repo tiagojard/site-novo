@@ -8,13 +8,12 @@ class Destaque extends Component {
             result: null,
             loading: true,
           }
-          this.loadJson = () => fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22ativo%22&equalTo=true").then(res => res.json())
+          //this.loadJson = () => fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22ativo%22&equalTo=true").then(res => res.json())
 	}
 
     componentDidMount() {
-        /*
         //+this.props.idPagina
-        fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22ativo%22&equalTo=true")
+        fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22assunto/0/nome%22&equalTo=%22"+this.props.assunto+"%22&limitToLast=10")
         .then(res => res.json())
         .then(
             (result) => {
@@ -29,21 +28,20 @@ class Destaque extends Component {
             });
             }
         );
-        */
     }
 
 	componentDidUpdate(prevProps){
-        /*
+
         if(this.props.idPagina != prevProps.idPagina){
-            //+this.props.idPagina
-            fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22ativo%22&equalTo=true")
+            console.log("teste");
+            fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22assunto/0/nome%22&equalTo=%22"+this.props.assunto+"%22&limitToLast=10")
         .then(res => res.json())
         .then(
             (result) => {
-            this.setState({
-                loading: result ? false : true,
-                result:  Object.values(result)
-            });
+                this.setState({
+                    loading: result ? false : true,
+                    result: Object.values(result)
+                });
             },
             (error) => {
             this.setState({
@@ -52,10 +50,11 @@ class Destaque extends Component {
             }
         );
         }
-        */
+        
 	}
 /*  <img src={item.assunto[0].imagem} className="img-pagina-destaque" align="left" alt={item.title}/>{item.title}. {item.descricao} */
-    render(){
+/*    
+render(){
         return <Async promiseFn={this.loadJson}>
         {({ data, error, isLoading }) => {
           if (isLoading) return ""
@@ -92,14 +91,13 @@ class Destaque extends Component {
         }}
       </Async>
     }
-/*
+    */
+
 	render(){
-      
-           // return <div></div>;
-     
         if(this.state.loading == true || Object.keys(this.state.result).length == 0){
             return <div></div>;
         }
+        this.state.result = this.state.result.filter(function(value, index, self){ return value.ativo == true });
 		return (<div>{
             this.state.result.map((item, index) =>
                             <div key={index}>
@@ -124,6 +122,5 @@ class Destaque extends Component {
         }
                 </div>);
     }	
-    */
 }
 export default Destaque;
