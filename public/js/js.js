@@ -18,8 +18,11 @@ function onSignIn(googleUser) {
         "nome": profile.getName(),
         "imagem":profile.getImageUrl(),
         "email":profile.getEmail(),
-    }  
-    VerificarUsuario(Objeto);
+    } 
+    console.log(profile); 
+    console.log(Objeto); 
+    //if(profile.getId() != Uncaught)
+    //VerificarUsuario(Objeto);
 }
 
 function VerificarUsuario(Objeto){
