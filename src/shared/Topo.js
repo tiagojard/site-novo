@@ -92,7 +92,7 @@ class Topo extends Component {
                               <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><rect width="100%" height="100%" fill="none"/><g className="currentLayer"><path d="M7.797 2.012a.47.47 0 0 0-.345-.145H.591a.47.47 0 0 0-.345.145.471.471 0 0 0-.146.345c0 .133.049.248.146.345l3.43 3.43c.098.097.213.146.345.146s.248-.049.345-.146l3.43-3.43a.471.471 0 0 0 .146-.345.472.472 0 0 0-.145-.345z" fill="#fff"/></g></svg>
                             </div>
                               <div className="dropdown-content content-user">
-                                <a href="javascript:void(0)" onclick="signOut();">Sair</a>
+                                <a href="javascript:void(0)" id="sair" >Sair</a>
                               </div>
                           </div>
                           

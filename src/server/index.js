@@ -130,9 +130,34 @@ app.get("*", (req, res, next) => {
         </head>
         <body>
           <div id="app">${markup}</div>
-          <script defer src="/js/js.js"></script>
+          <script>
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        
+        function RetornaUsuario(){
+            var usuario = getCookie("usuario");
+            if(usuario != "")
+                return JSON.parse(usuario);
+            return null;
+        }
+          </script>
           <script src="/bundle.js" defer></script>
-          <script src="https://apis.google.com/js/platform.js" async defer></script>
+          <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+          <script defer src="/js/js.js"></script>
+          
           ${script}
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <script>
