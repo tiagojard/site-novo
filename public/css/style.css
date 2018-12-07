@@ -11,6 +11,18 @@ body{
     margin-right: 10px;
 }
 
+.user-foto{
+    margin-top: -9px;
+}
+
+.user-foto img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #3a4061;
+    border: none;
+}
+
 .login a{
     color: #ffffff;
     text-decoration: none;

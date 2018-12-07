@@ -19,10 +19,23 @@ function onSignIn(googleUser) {
         "imagem":profile.getImageUrl(),
         "email":profile.getEmail(),
     }  
-    AdicionarUsuario(Objeto)
+    VerificarUsuario(Objeto);
 }
 
-
+function VerificarUsuario(Objeto){
+    fetch("https://guiadesenvolvedor-78a46.firebaseio.com/usuario.json?orderBy=%22id%22&equalTo=%22"+Objeto.id+"%22")
+    .then(res => res.json())
+    .then(
+        (result) => {
+            if(Object.keys(result).length == 0){
+                AdicionarUsuario(Objeto)
+            }
+        },
+        (error) => {
+       
+        }
+    );
+}
 
 function AdicionarUsuario(Objeto){
     fetch("https://guiadesenvolvedor-78a46.firebaseio.com/usuario.json", {
@@ -37,7 +50,9 @@ function AdicionarUsuario(Objeto){
     .then(
         (result) => {
             try {
-                console.log(result.name);
+                if(result.name.length > 0){
+                    setCookie("usuario", Objeto,1);
+                }
             } catch (error) {
                 console.log(error);
             }
@@ -47,3 +62,33 @@ function AdicionarUsuario(Objeto){
         }
     );
 }   
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function RetornaUsuario(){
+    var usuario = getCookie("usuario");
+    if(usuario != "")
+        return JSON.parse(usuario);
+    return null;
+}

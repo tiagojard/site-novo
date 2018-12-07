@@ -1,12 +1,29 @@
 
-.login-h1{
+.login-h2{
     margin: auto;
-    width: 50%;
+    width: 29%;
     margin-top: 123px;
+    font-size: 23px;
+    font-weight: 300;
+}
+
+.login-card h1{
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 39px;
 }
 
 .login-card{
-    width: 50%;
+    width: 23%;
     margin: auto;
     margin-top: 24px;
+    padding: 35px;
+    height: 200px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.abcRioButton {
+    width: 100% !important;
 }

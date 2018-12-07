@@ -130,8 +130,8 @@ app.get("*", (req, res, next) => {
         </head>
         <body>
           <div id="app">${markup}</div>
-          <script src="/bundle.js" defer></script>
           <script defer src="/js/js.js"></script>
+          <script src="/bundle.js" defer></script>
           <script src="https://apis.google.com/js/platform.js" async defer></script>
           ${script}
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
