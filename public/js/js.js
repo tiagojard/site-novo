@@ -29,7 +29,11 @@ function VerificarUsuario(Objeto){
         (result) => {
             if(Object.keys(result).length == 0){
                 AdicionarUsuario(Objeto)
+            }else{
+                setCookie("usuario", Objeto,1);
+                window.location.href = "/";
             }
+
         },
         (error) => {
        
@@ -52,6 +56,7 @@ function AdicionarUsuario(Objeto){
             try {
                 if(result.name.length > 0){
                     setCookie("usuario", Objeto,1);
+                    window.location.href = "/";
                 }
             } catch (error) {
                 console.log(error);
