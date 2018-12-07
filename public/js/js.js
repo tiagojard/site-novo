@@ -19,10 +19,7 @@ function onSignIn(googleUser) {
         "imagem":profile.getImageUrl(),
         "email":profile.getEmail(),
     } 
-    console.log(profile); 
-    console.log(Objeto); 
-    //if(profile.getId() != Uncaught)
-    //VerificarUsuario(Objeto);
+    VerificarUsuario(Objeto);
 }
 
 function VerificarUsuario(Objeto){
@@ -33,7 +30,7 @@ function VerificarUsuario(Objeto){
             if(Object.keys(result).length == 0){
                 AdicionarUsuario(Objeto)
             }else{
-                setCookie("usuario", Objeto,1);
+                setCookie("usuario", JSON.stringify(Objeto),1);
                 window.location.href = "/";
             }
 
@@ -58,7 +55,7 @@ function AdicionarUsuario(Objeto){
         (result) => {
             try {
                 if(result.name.length > 0){
-                    setCookie("usuario", Objeto,1);
+                    setCookie("usuario", JSON.stringify(Objeto),1);
                     window.location.href = "/";
                 }
             } catch (error) {
