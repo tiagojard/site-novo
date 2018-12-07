@@ -14,11 +14,17 @@ class Topo extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.timeout = null;
-    this.usuario = null;
+    this.state = {
+        usuario: null
+    }
   }
 
   componentDidMount() {
-    this.usuario =  RetornaUsuario();
+    var usuario =  RetornaUsuario();
+    this.setState(() => ({
+      usuario: usuario
+    }))
+    
   }
 
   handleSubmit(e){
@@ -76,7 +82,7 @@ class Topo extends Component {
                     </div>
                     <div className="login">
                    
-                      {this.usuario == null ?  <a href="/entrar" title="Entrar">Entrar</a> : <div className="user-foto"><img src={this.usuario.imagem} alt={this.usuario.nome} /></div> }
+                      {this.state.usuario == null ?  <a href="/entrar" title="Entrar">Entrar</a> : <div className="user-foto"><img src={this.state.usuario.imagem} alt={this.state.usuario.nome} /></div> }
                     
                     </div>
                     <svg id="topo-busca-search-icon" className="topo-busca-search-icon" xmlns="http://www.w3.org/2000/svg" fill="#fff" height="24" width="24"><rect width="100%" height="100%" fill="none"/><g className="currentLayer"><path d="M16.867 14.788h-1.052l-.373-.36a8.616 8.616 0 0 0 2.09-5.631c0-4.78-3.874-8.654-8.654-8.654S.224 4.017.224 8.797 4.1 17.45 8.878 17.45a8.616 8.616 0 0 0 5.632-2.09l.36.372v1.052l6.657 6.644 1.983-1.984-6.643-6.657zm-7.989 0c-3.315 0-5.99-2.676-5.99-5.991s2.675-5.991 5.99-5.991 5.992 2.676 5.992 5.99-2.676 5.992-5.992 5.992z"/></g></svg>
