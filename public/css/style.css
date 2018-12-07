@@ -11,6 +11,16 @@ body{
     margin-right: 10px;
 }
 
+.drop-user{
+    top: -13px;
+    left: 10px;
+}
+
+.content-user{
+    margin-left: -24px;
+    min-width: 20px;
+}
+
 .user-foto{
     margin-top: -9px;
 }

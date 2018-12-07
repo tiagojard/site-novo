@@ -82,7 +82,22 @@ class Topo extends Component {
                     </div>
                     <div className="login">
                    
-                      {this.state.usuario == null ?  <a href="/entrar" title="Entrar">Entrar</a> : <div className="user-foto"><img src={this.state.usuario.imagem} alt={this.state.usuario.nome} /></div> }
+                      {
+                        this.state.usuario == null ?  
+                        <a href="/entrar" title="Entrar">Entrar</a> : 
+                        <div className="user-foto">
+                          <img src={this.state.usuario.imagem} alt={this.state.usuario.nome} />
+                          <div className="dropdown drop-user">
+                            <div className="dropbtn">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><rect width="100%" height="100%" fill="none"/><g className="currentLayer"><path d="M7.797 2.012a.47.47 0 0 0-.345-.145H.591a.47.47 0 0 0-.345.145.471.471 0 0 0-.146.345c0 .133.049.248.146.345l3.43 3.43c.098.097.213.146.345.146s.248-.049.345-.146l3.43-3.43a.471.471 0 0 0 .146-.345.472.472 0 0 0-.145-.345z" fill="#fff"/></g></svg>
+                            </div>
+                              <div className="dropdown-content content-user">
+                                <a href="javascript:void(0)" onclick="signOut();">Sair</a>
+                              </div>
+                          </div>
+                          
+                        </div> 
+                    }
                     
                     </div>
                     <svg id="topo-busca-search-icon" className="topo-busca-search-icon" xmlns="http://www.w3.org/2000/svg" fill="#fff" height="24" width="24"><rect width="100%" height="100%" fill="none"/><g className="currentLayer"><path d="M16.867 14.788h-1.052l-.373-.36a8.616 8.616 0 0 0 2.09-5.631c0-4.78-3.874-8.654-8.654-8.654S.224 4.017.224 8.797 4.1 17.45 8.878 17.45a8.616 8.616 0 0 0 5.632-2.09l.36.372v1.052l6.657 6.644 1.983-1.984-6.643-6.657zm-7.989 0c-3.315 0-5.99-2.676-5.99-5.991s2.675-5.991 5.99-5.991 5.992 2.676 5.992 5.99-2.676 5.992-5.992 5.992z"/></g></svg>
