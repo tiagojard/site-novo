@@ -1,12 +1,12 @@
 import Home from './Home'
-import Pagina from './Pagina'
 import Busca from './Busca'
 import Conteudo from './Conteudo'
+import Pergunta from './Pergunta'
 import Aprovacao from './Aprovacao'
 import Curso from './Curso'
 import Entrar from './Entrar'
 //import { fetchHomeRepos } from './apiHome'
-import { fetchPaginaRepos } from './apiPagina'
+import { fetchPerguntaRepos } from './apiPergunta'
 import { fetchBuscaAssuntoRepos } from './apiBuscaAssunto'
 import { fetchBuscaRepos } from './apiBusca'
 import { fetchCursoRepos } from './apiCurso'
@@ -26,9 +26,9 @@ const routes =  [
   component: Home
   },
   {
-    path: '/pagina/:id/:titulo',
-    component: Pagina,
-    fetchInitialData: (path = '') => fetchPaginaRepos(path.replace("/"+path.split('/').pop(),'').split('/').pop())
+    path: '/pergunta/:id/:titulo',
+    component: Pergunta,
+    fetchInitialData: (path = '') => fetchPerguntaRepos(path.replace("/"+path.split('/').pop(),'').split('/').pop())
   },
   {
     path: '/busca/assunto/:pesquisa',

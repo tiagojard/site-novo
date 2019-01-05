@@ -370,7 +370,7 @@ body{
 
 /**********************  banner *************************************/
 .anuncio-topo{
-    height: auto;
+    height: 90px;
     max-width: 728px;
     width: 90%;
     margin: auto;

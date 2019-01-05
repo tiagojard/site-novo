@@ -293,15 +293,16 @@ class Aprovacao extends Component {
                     </div>
                     <textarea id="conteudo" name="conteudo" rows="30" className="form-text" onKeyUp={this.handleKeyUp}>
                     </textarea>
+                    <div className="resultado-conteudo">
+                        <div id="resultado-conteudo" className="conteudo">
+
+                        </div>
+
+                    </div>
                     <button type="submit">Enviar</button>
                 </form>
             </div>
-            <div className="resultado-conteudo">
-                <div id="resultado-conteudo" className="conteudo">
-
-                </div>
-
-            </div>
+           
         </div>
     }
 }

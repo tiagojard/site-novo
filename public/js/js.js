@@ -2,20 +2,17 @@ function EscondeLimparBusca(){document.getElementById("limpar-input-mobile").sty
 
 
 
-document.getElementById("sair").addEventListener("click", signOut);
-
-
+if(document.getElementById("sair") != null)
+    document.getElementById("sair").addEventListener("click", signOut);
 
 function init() {
     gapi.load('auth2', function() {  
         gapi.auth2.init();
-        console.log('ok');
      });
   }
   window.onload = function(){
     init();
   }
-
 
   function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
@@ -51,9 +48,11 @@ function VerificarUsuario(Objeto){
                 AdicionarUsuario(Objeto)
             }else{
                 setCookie("usuario", JSON.stringify(Objeto),1);
-                window.location.href = "/";
+                if(window.location.search == "")
+                    window.location.href = "/";
+                else
+                    window.location.href = window.location.search.replace("?referrer=","");
             }
-
         },
         (error) => {
        
@@ -76,7 +75,10 @@ function AdicionarUsuario(Objeto){
             try {
                 if(result.name.length > 0){
                     setCookie("usuario", JSON.stringify(Objeto),1);
+                    if(window.location.search == "")
                     window.location.href = "/";
+                else
+                    window.location.href = window.location.search.replace("?referrer=","");
                 }
             } catch (error) {
                 console.log(error);
@@ -95,3 +97,18 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}

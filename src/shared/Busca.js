@@ -86,10 +86,11 @@ class Busca extends Component {
             <div className="menu-esquerdo">
                 <div className="menu-esquerdo-titulo">Assuntos</div>
                 <ul>
-                    <li><a href="/busca/assunto/Node.js" title="Node.js">Node.js</a></li>
+                <li><a href="/busca/assunto/CSharp" title="CSharp">CSharp</a></li>
                     <li><a href="/busca/assunto/JavaScript" title="javaScript">javaScript</a></li>
-                    <li><a href="/busca/assunto/SQL Server" title="SQL Server">SQL Server</a></li>
                     <li><a href="/busca/assunto/Jquery" title="Jquery">Jquery</a></li>
+                    <li><a href="/busca/assunto/Node.js" title="Node.js">Node.js</a></li>
+                    <li><a href="/busca/assunto/SQL Server" title="SQL Server">SQL Server</a></li>
                     <li><a href="/busca/assunto/React js" title="React js">React js</a></li>
                 </ul>
             </div>
@@ -103,12 +104,12 @@ class Busca extends Component {
                             { item.ativo == true ? 
                             <div className="conteudo-home-container">
                                 <div className="conteudo-home-img">
-                                    <div className="img-destaque" dangerouslySetInnerHTML={{__html:item.assunto[0].svg }} />
+                                    <img className="img-destaque" src={item.assunto[0].imagem} alt={item.assunto[0].nome}/>
                                 </div>
                                 <div className="conteudo-home-detalhe">
-                                    <a href={"/pagina"+item.url}><h2>{item.title}</h2></a>
+                                    <a href={item.url}><h2>{item.pergunta}</h2></a>
                                     <div>
-                                    <h3>{item.descricao}</h3>
+                                    <h3>{item.pergunta}</h3>
                                     </div>
                                     <div className="conteudo-home-info">
                                     <a href={"/busca/assunto/"+item.assunto[0].nome} title={item.assunto[0].nome} className="assunto"><h4>{item.assunto[0].nome}</h4></a>

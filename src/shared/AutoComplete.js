@@ -23,7 +23,7 @@ class AutoComplete extends Component {
     componentDidUpdate (prevProps, prevState) {
         if(this.props.pesquisa != prevProps.pesquisa){
             var pesquisa = this.props.pesquisa.toLowerCase();
-            fetch('https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy="pesquisa"&endAt="'+pesquisa+'\uf8ff"&limitToLast=5')
+            fetch('https://guiadesenvolvedor-78a46.firebaseio.com/pergunta.json?orderBy="pesquisa"&endAt="'+pesquisa+'\uf8ff"&limitToLast=5')
             .then(res => res.json())
             .then(
             (result) => {
@@ -58,7 +58,7 @@ class AutoComplete extends Component {
                 {this.state.resultado.map((item, index) => (
                     <div key={item.id}>
                         <div className="resultado">
-                            <a href={"/pagina"+item.url}>
+                            <a href={item.url}>
                                 <div className="img-resultado"><img src={item.assunto[0].imagem} /></div>
                                 <div className='pesquisa-resultado' dangerouslySetInnerHTML={
                                     {
