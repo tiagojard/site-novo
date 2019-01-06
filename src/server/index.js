@@ -68,6 +68,7 @@ app.get("*", (req, res, next) => {
         res.status(404);
       }
     }else if(req.url.indexOf("/pagina/") > -1){
+      res.status(404);
       res.writeHead(301,
         {Location: req.url.replace("/pagina/","/pergunta/")}
       );
