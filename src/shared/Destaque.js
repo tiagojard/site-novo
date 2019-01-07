@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Async from "react-async"
 
 class Destaque extends Component {
 	constructor(props) {
@@ -13,7 +12,7 @@ class Destaque extends Component {
 
     componentDidMount() {
         //+this.props.idPagina
-        fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22assunto/0/nome%22&equalTo=%22"+this.props.assunto+"%22&limitToLast=10")
+        fetch("https://guiadesenvolvedor-78a46.firebaseio.com/pergunta.json?orderBy=%22assunto/0/nome%22&equalTo=%22"+this.props.assunto+"%22&limitToLast=10")
         .then(res => res.json())
         .then(
             (result) => {
@@ -34,7 +33,7 @@ class Destaque extends Component {
 
         if(this.props.idPagina != prevProps.idPagina){
             console.log("teste");
-            fetch("https://guiadesenvolvedor-78a46.firebaseio.com/conteudo.json?orderBy=%22assunto/0/nome%22&equalTo=%22"+this.props.assunto+"%22&limitToLast=10")
+            fetch("https://guiadesenvolvedor-78a46.firebaseio.com/pergunta.json?orderBy=%22assunto/0/nome%22&equalTo=%22"+this.props.assunto+"%22&limitToLast=10")
         .then(res => res.json())
         .then(
             (result) => {
@@ -98,21 +97,23 @@ render(){
             return <div></div>;
         }
         this.state.result = this.state.result.filter(function(value, index, self){ return value.ativo == true });
-		return (<div>{
+        return (<div>
+            <div className="titulo-assunto">Assuntos relacionados</div>
+            {
             this.state.result.map((item, index) =>
                             <div key={index}>
                             { 
-                            this.props.idPagina != 0 ? 
+                            this.props.idPagina != item.id ? 
                             <div>
  <div className="item-destaque">
-                                <a href={"/pagina"+item.url} title={item.title}>
+                                <a href={item.url} title={item.pergunta}>
                                     <p>
-                                    <div dangerouslySetInnerHTML={{__html:item.assunto[0].svg }} />{item.title}. {item.descricao}
+                                        <img src={item.assunto[0].imagem} alt={item.assunto[0].nome} />
+                                    {item.pergunta}
                                     </p>
                                 </a>
                             </div>
                             <hr className="hr-destaque"/>
-
                             </div>:
                             <div></div>
                             }

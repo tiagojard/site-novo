@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Destaque from "./Destaque"
 
 class Pergunta extends Component {
     constructor(props) {
@@ -166,7 +167,10 @@ class Pergunta extends Component {
                         }
                         
                 </div>
-                
+                <div className="bloco-direito">
+                      <Destaque assunto={repos.assunto[0].nome} idPagina={repos.id}/>
+                      <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }}/>
+                </div>
         </div>
       }
 }
