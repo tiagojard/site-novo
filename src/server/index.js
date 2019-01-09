@@ -69,7 +69,7 @@ app.get("*", (req, res, next) => {
         indexing = "noindex";
         res.status(404);
       }else{
-        schema_img = '<meta property="og:image" itemprop="image primaryImageOfPage" content="'+data.assunto[0].imagem+'" />';
+        schema_img = '<meta property="og:image" itemprop="image primaryImageOfPage" content="https://www.guiadesenvolvedor.com'+data.assunto[0].imagem+'" />';
       }
     }else if(req.url.indexOf("/pagina/") > -1){
       res.writeHead(301,

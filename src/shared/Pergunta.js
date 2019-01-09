@@ -93,7 +93,9 @@ class Pergunta extends Component {
                 <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
                 <div className="conteudo" itemProp="mainEntity" itemScope itemType="http://schema.org/Question">
                     <div className="pergunta">
-                        <h1 itemProp="name">{repos.pergunta}</h1>
+                        <h1 itemProp="name">
+                        <a href={this.props.location.pathname} itemProp="url">{repos.pergunta}</a>
+                        </h1>
                         <div className="info">
                             <div itemProp="author" itemScope itemType="http://schema.org/Person">
                             <span itemProp="name">
@@ -128,6 +130,7 @@ class Pergunta extends Component {
                                </div>
                                <h2 className="resposta-conteudo">
                                   <div className="info">
+                                  <a href={this.props.location.pathname+"#id_"+repos.id} itemProp="url" id={"id_"+repos.id}>{"Resposta "+(index+1)}&nbsp;</a>
                                   <div itemProp="author" itemScope itemType="http://schema.org/Person">
                                     <span itemProp="name">{item.usuario_nome}</span>&nbsp;&nbsp;
                                   </div>
