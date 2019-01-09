@@ -92,7 +92,7 @@ class Conteudo extends Component {
                         <option data-imagem="/logo/html.svg" value="HTML">HTML</option>
                         <option data-imagem="/logo/javascript.svg" value="JavaScript">JavaScript</option>
                         <option data-imagem="/logo/jquery.svg" value="Jquery">Jquery</option>
-                        <option data-imagem="/logo/Mongodb.svg" value="MongoDb">MongoDb</option>
+                        <option data-imagem="/logo/mongodb.svg" value="MongoDb">MongoDb</option>
                         <option data-imagem="/logo/php.svg" value="PHP">PHP</option>
                         <option data-imagem="/logo/sql-server.svg" value="SQL Server">SQL Server</option>
                         <option data-imagem="/logo/MySQL.svg" value="MySQL">MySQL</option>
