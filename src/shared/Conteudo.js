@@ -88,15 +88,17 @@ class Conteudo extends Component {
                     </textarea>
                     <label>Assunto</label>
                     <select name="assunto" className="form-input">
-                        <option data-imagem="/img/csharp.svg" value="CSharp">C#</option>
-                        <option data-imagem="/img/javascript.svg" value="JavaScript">JavaScript</option>
-                        <option data-imagem="/img/jquery.svg" value="Jquery">Jquery</option>
-                        <option data-imagem="/img/php.svg" value="PHP">PHP</option>
-                        <option data-imagem="/img/sql-server.svg" value="SQL Server">SQL Server</option>
-                        <option data-imagem="/img/MySQL.svg" value="MySQL">MySQL</option>
-                        <option data-imagem="/img/node.js.svg" value="Node.js">Node.js</option>
-                        <option data-imagem="/img/react.svg" value="React js">React js</option>
-                        <option data-imagem="/img/outro.svg" value="React js">Outro</option>
+                        <option data-imagem="/logo/csharp.svg" value="CSharp">C#</option>
+                        <option data-imagem="/logo/html.svg" value="HTML">HTML</option>
+                        <option data-imagem="/logo/javascript.svg" value="JavaScript">JavaScript</option>
+                        <option data-imagem="/logo/jquery.svg" value="Jquery">Jquery</option>
+                        <option data-imagem="/logo/Mongodb.svg" value="MongoDb">MongoDb</option>
+                        <option data-imagem="/logo/php.svg" value="PHP">PHP</option>
+                        <option data-imagem="/logo/sql-server.svg" value="SQL Server">SQL Server</option>
+                        <option data-imagem="/logo/MySQL.svg" value="MySQL">MySQL</option>
+                        <option data-imagem="/logo/node.js.svg" value="Node.js">Node.js</option>
+                        <option data-imagem="/logo/react.svg" value="React js">React js</option>
+                        <option data-imagem="/logo/outro.svg" value="React js">Outro</option>
                     </select>
                     <label>Prévia</label>
                     <div className="resultado-conteudo">
