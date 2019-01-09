@@ -10,6 +10,7 @@
 .bloco-direito{
     width: 20%;
     float: right;
+    margin-right: 20px;
 }
 
 .titulo-assunto{
@@ -31,8 +32,9 @@
 }
 
 .item-destaque p{
-    margin-top: -4px;
+    margin-top: -10px;
     margin-bottom: -4px;
+    font-size: 12px;
 }
 
 .item-destaque a:hover{
@@ -42,9 +44,12 @@
 
 .item-destaque img{
     padding-right: 10px;
+    position: relative;
+    top: 7px;
 }
 
 .hr-destaque{
+    border: none;
     border-top: 1px dotted #ccc;
 }
 
@@ -135,7 +140,6 @@
     display: inline;
 }
 
-.bloco-direito
 
 .pergunta-conteudo{
     margin-top: 11px;
@@ -232,3 +236,72 @@
     position: relative;
     top: 0px;
 }
+
+@media only screen and (max-width: 1266px) {
+    .conteudo {
+        width: 60%;
+    }
+  }
+
+  @media only screen and (max-width: 1193px) {
+    .conteudo {
+        width: 59%;
+    }
+  }
+
+  @media only screen and (max-width: 1127px) {
+    .conteudo {
+        width: 58%;
+    }
+  }
+  
+  @media only screen and (max-width: 1069px) {
+    .conteudo {
+        width: 57%;
+    }
+  }
+
+  @media only screen and (max-width: 1016px) {
+    .conteudo {
+        width: 56%;
+    }
+  }
+
+  @media only screen and (max-width: 969px) {
+    .conteudo {
+        width: 54%;
+    }
+  }
+
+
+@media only screen and (max-width: 886px) {
+    .bloco-direito {
+        width: 75%;
+        margin-top: 30px;
+    }
+
+    .conteudo {
+        width: 74%;
+    }
+  }
+
+  @media only screen and (max-width: 799px) {
+    .conteudo {
+        width: 72%;
+    }
+    .bloco-direito {
+        width: 73%;
+    }
+  }
+
+  @media only screen and (max-width: 744px) {
+    .conteudo {
+        width: 89%;
+        margin-left: 20px;
+    }
+    .bloco-direito {
+        float: left;
+        margin-left: 20px;
+        width: 90%;
+    }
+  }

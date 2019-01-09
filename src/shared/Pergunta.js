@@ -91,7 +91,7 @@ class Pergunta extends Component {
                 </ol>
                 <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
                 <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
-                <div className="conteudo" itemScope itemType="http://schema.org/Question">
+                <div className="conteudo" itemProp="mainEntity" itemScope itemType="http://schema.org/Question">
                     <div className="pergunta">
                         <h1 itemProp="name">{repos.pergunta}</h1>
                         <div className="info">
@@ -107,12 +107,11 @@ class Pergunta extends Component {
                           <h3 className="tag">{repos.assunto[0].nome}</h3>
                         </a>
                         <br/>
-                        {repos.Respostas == undefined ? <strong ><span itemProp="answerCount">0</span>Respostas</strong> : <strong className="qtde"><span itemProp="answerCount">{repos.Respostas.length}</span> Respostas</strong> }
+                        {repos.Respostas == undefined ? <strong className="qtde"><span itemProp="answerCount">0</span>&nbsp;Respostas</strong> : <strong className="qtde"><span itemProp="answerCount">{repos.Respostas.length}</span>&nbsp;Respostas</strong> }
                     </div>
                     {(repos.Respostas == undefined ? <div></div> :
                     <div className="respostas">
                         {
-                           
                             repos.Respostas.map((item, index) =>
                             <div className="resposta" itemProp="suggestedAnswer acceptedAnswer" itemScope itemType="http://schema.org/Answer" key={index}>
                                <div className={"votos" + (item.votos == 0 ? "":( item.votos > 0 ? " positivo" : " negativo" ) )}>
