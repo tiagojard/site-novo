@@ -62,8 +62,8 @@ app.get("*", (req, res, next) => {
     } else if(req._parsedOriginalUrl.pathname == "/entrar"){
       style += '<link async rel="stylesheet" type="text/css" href="/css/entrar.css">';
     } else if(req.url.indexOf("/pergunta/") > -1){
-      style += '<link rel="stylesheet" type="text/css" href="/css-cache/pergunta.css">';
-      style += '<link rel="stylesheet" type="text/css" href="/css-cache/hilight.css">';
+      style += '<link rel="stylesheet" type="text/css" href="/css-cache/pergunta-1.css">';
+      style += '<link rel="stylesheet" type="text/css" href="/css-cache/hilight-1.css">';
       script += '<script async src="/js-cache/pergunta.js"></script>';
       script += '<script async src="/js-cache/hilight.js"></script>';
       schema = 'itemscope itemtype="http://schema.org/QAPage"';
