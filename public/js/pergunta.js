@@ -201,8 +201,9 @@ function Teste(){
                for(var i = 0; i < array.length; i++){
                     var obj = array[i];
                     obj.url = PadronisaURL(obj.pergunta,obj.id);
-                    obj.description = obj.pergunta+". Guia completo de programação onde esta tudo que você procura.";
-                    obj.assunto[0].imagem = obj.assunto[0].imagem.replace("img","logo");
+                    obj.usuario_imagem = "https://lh3.googleusercontent.com/-hUdY6-4vHVc/AAAAAAAAAAI/AAAAAAAAARY/AKxrwcYhauXix4qeNBv1iUGiYi9_4JwIqQ/s96-c-mo/photo.jpg";
+                    obj.usuario_nome = "Tiago Jardim Carvalho";
+                    obj.usuario = "108080380858689151778";
                     console.log(obj.url);
                     fetch(`https://guiadesenvolvedor-78a46.firebaseio.com/pergunta/${obj.id}.json`, {
                         method: "PUT",

@@ -101,7 +101,6 @@ class Busca extends Component {
             {
                         repos.map((item, index) =>
                         <div key={index}>
-                            { item.ativo == true ? 
                             <div className="conteudo-home-container">
                                 <div className="conteudo-home-img">
                                     <img className="img-destaque" src={item.assunto[0].imagem} alt={item.assunto[0].nome}/>
@@ -116,9 +115,8 @@ class Busca extends Component {
                                     </div>
                                 </div>
                             </div>
-                               :<div></div> }
                             <hr className="hr-margin"/>
-                            { ((index+1) / 3) % 1 == 0 ?<div className="anuncio-conteudo"><div dangerouslySetInnerHTML={{__html:adsConteudo }}/><hr className="hr-margin"/></div>:"" }
+                            { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo"><div dangerouslySetInnerHTML={{__html:adsConteudo }}/></div><hr className="hr-margin"/></div>:"" }
                         </div>
                         )
                     }

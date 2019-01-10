@@ -161,7 +161,7 @@ return (<div className="corpo-pagina">
                         </div>
                     </div>
                     <hr className="hr-margin"/>
-                   
+                    { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo"><div dangerouslySetInnerHTML={{__html:adsConteudo }}/></div><hr className="hr-margin"/></div>:"" }
                 </div>
                 )
             }

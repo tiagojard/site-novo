@@ -106,7 +106,9 @@ class Pergunta extends Component {
                         </div>
                         <h2 className="pergunta-conteudo" itemProp="text" dangerouslySetInnerHTML={{__html:repos.pergunta_site }} />
                         <a href={"/busca/assunto/"+repos.assunto[0].nome} title={repos.assunto[0].nome}>
-                          <h3 className="tag">{repos.assunto[0].nome}</h3>
+                          <h3 className="tags">
+                          <img src={repos.assunto[0].imagem} alt={repos.assunto[0].nome} />
+                          {repos.assunto[0].nome}</h3>
                         </a>
                         <br/>
                         {repos.Respostas == undefined ? <strong className="qtde"><span itemProp="answerCount">0</span>&nbsp;Respostas</strong> : <strong className="qtde"><span itemProp="answerCount">{repos.Respostas.length}</span>&nbsp;Respostas</strong> }

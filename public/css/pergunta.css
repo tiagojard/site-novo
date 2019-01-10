@@ -128,7 +128,7 @@
     color: #333;
 }
 
-.tag{
+.tags{
     background-color: #3a4061;
     border-radius: 4px;
     color: #ffffff;
@@ -141,6 +141,16 @@
     display: inline;
 }
 
+.tags:hover{
+    background-color: #4e5682;
+}
+
+.tags img{
+    width: 15px;
+    position: relative;
+    top: 3px;
+    left: -2px;
+}
 
 .pergunta-conteudo{
     margin-top: 11px;

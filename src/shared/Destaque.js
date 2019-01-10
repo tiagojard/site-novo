@@ -93,10 +93,10 @@ render(){
     */
 
 	render(){
-        if(this.state.loading == true || Object.keys(this.state.result).length == 0){
+        if(this.state.loading == true || Object.keys(this.state.result).length < 2){
             return <div></div>;
         }
-        this.state.result = this.state.result.filter(function(value, index, self){ return value.ativo == true });
+        //this.state.result = this.state.result.filter(function(value, index, self){ return value.ativo == true });
         return (<div>
             <div className="titulo-assunto">Assuntos relacionados</div>
             {
