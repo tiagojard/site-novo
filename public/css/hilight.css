@@ -8,25 +8,22 @@ https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+j
 
  code[class*="language-"],
  pre[class*="language-"] {
-     color: white;
-     background: none;
-     text-shadow: 0 -.1em .2em black;
-     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-     text-align: left;
-     white-space: pre;
-     word-spacing: normal;
-     word-break: normal;
-     word-wrap: normal;
-     line-height: 1.5;
- 
-     -moz-tab-size: 4;
-     -o-tab-size: 4;
-     tab-size: 4;
- 
-     -webkit-hyphens: none;
-     -moz-hyphens: none;
-     -ms-hyphens: none;
-     hyphens: none;
+    color: #303336;
+    background: 0 0;
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
  }
  
  @media print {
@@ -36,18 +33,17 @@ https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+j
      }
  }
  
- pre[class*="language-"],
- :not(pre) > code[class*="language-"] {
-     background: #2e3152;
- }
+ :not(pre)>code[class*=language-], pre[class*=language-] {
+    background: #F0F0F0;
+}
  
  /* Code blocks */
  pre[class*="language-"] {
-     padding: 1em;
-     margin: .5em 0;
-     overflow: auto;
-     border-radius: .3em;
-     box-shadow: 1px 1px .5em black inset;
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    border: solid #efecec 1px;
+    border-left: solid #4e5682 2px;
  }
  
  /* Inline code */
@@ -74,13 +70,17 @@ https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+j
      opacity: .7;
  }
  
+.class-name{
+    color: #2B91AF;
+}
+
  .token.property,
  .token.tag,
  .token.boolean,
  .token.number,
  .token.constant,
  .token.symbol {
-     color: rgb(252, 146, 158);
+     color: #7D2727;
  }
  
  .token.selector,
@@ -89,7 +89,7 @@ https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+j
  .token.builtin,
  .token.inserted,
  .token.keyword {
-     color:  rgb(197, 165, 197);
+     color:  #101094;
  }
  
  .token.operator,
@@ -98,7 +98,7 @@ https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+j
  .language-css .token.string,
  .style .token.string,
  .token.variable {
-     color: rgb(215, 222, 234);
+     color: #303336;
  }
  
  .token.atrule {
@@ -107,12 +107,12 @@ https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+j
 
 
  .token.function {
-    color: rgb(121, 182, 242);
+    color: #2B91AF;
 }
 
  .token.attr-value,
  .token.string{
-    color: rgb(141, 200, 145);
+    color: #7D2727;
  }
  
  .token.regex,

@@ -97,12 +97,20 @@ class Pergunta extends Component {
                         <a href={this.props.location.pathname} itemProp="url">{repos.pergunta}</a>
                         </h1>
                         <div className="info">
-                            <div itemProp="author" itemScope itemType="http://schema.org/Person">
-                            <span itemProp="name">
-                              {repos.usuario_nome}&nbsp;&nbsp;
-                            </span>
+                            <div className="info-foto">
+                              <img src={repos.usuario_imagem} alt={repos.usuario_nome} />                            
                             </div>
-                             perguntou dia &nbsp;&nbsp;<time itemProp="dateCreated" dateTime={repos.data}>{repos.data_formatada.replace(" "," às ")}</time> 
+                            <div className="bloco">
+                            <div className="info-nome" itemProp="author" itemScope itemType="http://schema.org/Person">
+                              <span itemProp="name">
+                                {repos.usuario_nome}&nbsp;&nbsp;
+                              </span>
+                            </div>
+                            <div className="info-data">
+                            perguntou dia &nbsp;<time itemProp="dateCreated" dateTime={repos.data}>{repos.data_formatada.replace(" "," às ")}</time> 
+                            </div>
+                            </div>
+                           
                         </div>
                         <h2 className="pergunta-conteudo" itemProp="text" dangerouslySetInnerHTML={{__html:repos.pergunta_site }} />
                         <a href={"/busca/assunto/"+repos.assunto[0].nome} title={repos.assunto[0].nome}>
@@ -131,13 +139,20 @@ class Pergunta extends Component {
                                 </div>
                                </div>
                                <h2 className="resposta-conteudo">
+                                <a href={this.props.location.pathname+"#id_"+repos.id} className="a-resp" itemProp="url" id={"id_"+repos.id}>{"Resposta "+(index+1)}&nbsp;</a>
                                   <div className="info">
-                                  <a href={this.props.location.pathname+"#id_"+repos.id} itemProp="url" id={"id_"+repos.id}>{"Resposta "+(index+1)}&nbsp;</a>
-                                  <div itemProp="author" itemScope itemType="http://schema.org/Person">
+                                  <div className="info-foto">
+                                    <img src={repos.usuario_imagem} alt={repos.usuario_nome} />                            
+                                  </div>
+                                  <div className="bloco">
+                                  <div className="info-nome" itemProp="author" itemScope itemType="http://schema.org/Person">
                                     <span itemProp="name">{item.usuario_nome}</span>&nbsp;&nbsp;
                                   </div>
+                                  <div className="info-data">
                                     respondeu dia &nbsp;&nbsp;
                                     <time itemProp="dateCreated" dateTime={item.data}>{item.data.replace(" "," às ")}</time>
+                                    </div>
+                                  </div>
                                   </div>
                                   <div itemProp="text" dangerouslySetInnerHTML={{__html:item.resposta }}/>
                                </h2>
@@ -178,7 +193,7 @@ class Pergunta extends Component {
                         <button id="btn-enviar" type="button" className="btn-perguntar" data-id={repos.id}>Enviar</button>
                       </div>
                         : 
-                        <button id="btn-perguntar" type="button" className="btn-perguntar">Perguntar</button>  
+                        <button id="btn-perguntar" type="button" className="btn-perguntar">Responder</button>  
                         }
                         
                 </div>
