@@ -62,9 +62,9 @@ app.get("*", (req, res, next) => {
     } else if(req._parsedOriginalUrl.pathname == "/entrar"){
       style += '<link async rel="stylesheet" type="text/css" href="/css/entrar.css">';
     } else if(req.url.indexOf("/pergunta/") > -1){
-      style += '<link rel="stylesheet" type="text/css" href="/css-cache/pergunta-1.css">';
+      style += '<link rel="stylesheet" type="text/css" href="/css-cache/pergunta-2.css">';
       style += '<link rel="stylesheet" type="text/css" href="/css-cache/hilight-1.css">';
-      script += '<script async src="/js-cache/pergunta.js"></script>';
+      script += '<script async src="/js-cache/pergunta-1.js"></script>';
       script += '<script async src="/js-cache/hilight.js"></script>';
       schema = 'itemscope itemtype="http://schema.org/QAPage"';
       if(data == null){
@@ -116,7 +116,7 @@ app.get("*", (req, res, next) => {
       script += '<script defer src="/js/aprovacao.js"></script>';
       script += '<script defer src="/js/hilight.js"></script>';
       style += '<link async rel="stylesheet" type="text/css" href="/css/pergunta.css">';
-      script += '<script defer src="/js/pergunta.js"></script>';
+      script += '<script defer src="/js/pergunta-1.js"></script>';
       script += '<script defer src="/js/conteudo.js"></script>';
     }
     

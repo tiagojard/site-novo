@@ -10,6 +10,8 @@
     return campos;
 }
 
+
+
 function EnviarPergunta(e){
     var usuario = RetornaUsuario();
        
@@ -49,7 +51,7 @@ function EnviarPergunta(e){
                     console.log(result.name);
                     if(result.name != ""){
                         Objeto.id = result.name;
-                        Objeto.url = "/pergunta/"+result.name+"/"+ replaceAll(removeAcento(Objeto.pergunta), " ","-"),
+                        Objeto.url = PadronisaURL(Objeto.pergunta, Objeto.id);
                         fetch(`https://guiadesenvolvedor-78a46.firebaseio.com/pergunta/${result.name}.json`, {
                             method: "PUT",
                             headers: {

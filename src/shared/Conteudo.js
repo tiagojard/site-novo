@@ -70,9 +70,12 @@ class Conteudo extends Component {
                         </button>
                         <button className="dropdown"><div className="dropbtn-button">Código</div>
                             <div className="dropdown-content-code">
+                                <a href="javascript:void(0)" data-tipo="code" data-linguagem="csharp" onClick={this.handleClickButton}>ElasticSearch</a>
                                 <a href="javascript:void(0)" data-tipo="code" data-linguagem="javaScript" onClick={this.handleClickButton}>Node.js</a>
                                 <a href="javascript:void(0)" data-tipo="code" data-linguagem="javaScript" onClick={this.handleClickButton}>javaScript</a>
+                                <a href="javascript:void(0)" data-tipo="code" data-linguagem="javaScript" onClick={this.handleClickButton}>MongoDB</a>
                                 <a href="javascript:void(0)" data-tipo="code" data-linguagem="sql" onClick={this.handleClickButton}>SQL Server</a>
+                                <a href="javascript:void(0)" data-tipo="code" data-linguagem="sql" onClick={this.handleClickButton}>MySQL</a>
                                 <a href="javascript:void(0)" data-tipo="code" data-linguagem="javaScript" onClick={this.handleClickButton}>Jquery</a>
                                 <a href="javascript:void(0)" data-tipo="code" data-linguagem="javaScript" onClick={this.handleClickButton}>React js</a>
                                 <a href="javascript:void(0)" data-tipo="code" data-linguagem="markup" onClick={this.handleClickButton}>HTML</a>
@@ -88,6 +91,7 @@ class Conteudo extends Component {
                     </textarea>
                     <label>Assunto</label>
                     <select name="assunto" className="form-input">
+                        <option data-imagem="/logo/elasticsearch.svg" value="ElasticSearch">ElasticSearch</option>
                         <option data-imagem="/logo/csharp.svg" value="CSharp">C#</option>
                         <option data-imagem="/logo/html.svg" value="HTML">HTML</option>
                         <option data-imagem="/logo/javascript.svg" value="JavaScript">JavaScript</option>
