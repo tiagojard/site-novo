@@ -19,7 +19,7 @@ class Home extends Component {
     
         this.fetchRepos = this.fetchRepos.bind(this)
 
-        //this.loadJson = () => fetch("https://guiadesenvolvedor-78a46.firebaseio.com/pergunta.json").then(res => res.json())
+        //this.loadJson = () => fetch("https://guiadesenvolvedor-78a46.firebaseio.com/pergunta.json?shallow=true").then(res => res.json())
     }
 
     
@@ -53,13 +53,8 @@ class Home extends Component {
         if (loading === true) {
           return <p>LOADING</p>
         }
-        var result = Object.values(repos);
-
-        //<li><a href="/pagina/1/como-criar-site-react-js" title="React js">React js</a></li>
-        //<li><a href="/pagina/3/jquery-ready-documentacao" title="Jquery">Jquery</a></li>
-        //<li><a href="/pagina/2/como-utilizar-map-react-array-list" title="javaScript">javaScript</a></li>
-        //dangerouslySetInnerHTML={{__html:adsTopoGabriel }} 
-        //var adsTopoGabriel = "";//'<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5825646877386493" data-ad-slot="5291356734"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        var result = Object.values(repos).reverse();
+        result.pop();
         var adsTopo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="1911584022" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var adsEsquerdo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="4048762396" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var adsDireito = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="2538022566" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
@@ -67,6 +62,7 @@ class Home extends Component {
  
 
 /*   
+
 
 
 <Async promiseFn={this.loadJson}>
@@ -144,7 +140,7 @@ return (<div className="corpo-pagina">
 <div className="conteudo-home">
 <h3 className="titulo-home">Últimos postados</h3>
             {
-        result.reverse().map((item, index) =>
+        result.map((item, index) =>
                 <div key={index}>
                     <div className="conteudo-home-container">
                         <div className="conteudo-home-img">
@@ -165,11 +161,18 @@ return (<div className="corpo-pagina">
                 </div>
                 )
             }
-            
-
             </div>
             <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }}/>
         </div>)
     }
 }
 export default Home;
+
+
+/**
+ * 
+ * 
+                    <a href={"/ordem/"+result[0].data}>Anterior</a>
+                 <a href={"/ordem/"+result.reverse()[0].data}>Próximo</a>
+ * 
+ */

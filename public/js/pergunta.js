@@ -221,3 +221,23 @@ function Teste(){
             }
         );
 }
+
+function teste2(){
+    fetch(`https://guiadesenvolvedor-78a46.firebaseio.com/pergunta.json`)
+        .then(res => res.json())
+        .then(
+            (result) => { 
+               var array = Object.values(result);
+               var sitemaps = "";
+               for(var i = 0; i < array.length; i++){
+                  
+                sitemaps +=  "<url><loc>https://www.guiadesenvolvedor.com"+PadronisaURL(obj.pergunta,obj.id)+"</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>";
+                 
+               } 
+               console.log(sitemaps);
+            },
+            (error) => {
+           console.log("erro");
+            }
+        );
+}

@@ -138,7 +138,7 @@ class Pergunta extends Component {
                                 </div>
                                </div>
                                <h2 className="resposta-conteudo">
-                                <a href={this.props.location.pathname+"#id_"+repos.id} className="a-resp" itemProp="url" id={"id_"+repos.id}>{"Resposta "+(index+1)}&nbsp;</a>
+                                <a href={this.props.location.pathname+"#id_"+index} className="a-resp" itemProp="url" id={"id_"+index}>{"Resposta "+(index+1)}&nbsp;</a>
                                   <div className="info">
                                   <div className="info-foto">
                                     <img src={repos.usuario_imagem} alt={repos.usuario_nome} />                            

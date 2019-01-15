@@ -22,14 +22,20 @@ import { fetchCursoRepos } from './apiCurso'
 const routes =  [
   {
     path: '/',
-    exact: true,
-    component: Home,
-    fetchInitialData: (path = '') => fetchHomeRepos(0)
+  exact: true,
+  component: Home,
+  fetchInitialData: (path = '') => fetchHomeRepos("")
   },
   {
     path: '/pergunta/:id/:titulo',
     component: Pergunta,
     fetchInitialData: (path = '') => fetchPerguntaRepos(path.replace("/"+path.split('/').pop(),'').split('/').pop())
+  },
+  {
+    path: '/ordem/:data',
+    exact: true,
+    component: Home,
+    fetchInitialData: (path = '') => fetchHomeRepos(path.split('/').pop())
   },
   {
     path: '/busca/assunto/:pesquisa',
