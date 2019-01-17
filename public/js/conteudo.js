@@ -1,5 +1,5 @@
 
-   function Validacao(e){
+   function Validacao(e, usuario){
     var campos = "";
     if(e.target.titulo.value == "")
         campos += "<li>Título</li>";
@@ -7,6 +7,8 @@
         campos += "<li>Assunto</li>";
     if(e.target.conteudo.value == "" )
         campos += "<li>Pergunta</li>";
+    if(usuario == null)
+        campos += "<li>Para perguntar precisa estar logado.</li>";
     return campos;
 }
 
@@ -15,7 +17,7 @@
 function EnviarPergunta(e){
     var usuario = RetornaUsuario();
        
-    var validacao = Validacao(e);
+    var validacao = Validacao(e,usuario);
     if(validacao == ""){
         var Objeto = {};
         var data = new Date();
@@ -33,6 +35,7 @@ function EnviarPergunta(e){
             "usuario_nome": usuario.nome,
             "usuario_imagem":usuario.imagem,
             "Perguntas":[],
+            "votos": 0,
             "description":removeAcento(e.target.titulo.value)+". Guia do desenvolvedor."
         }
        

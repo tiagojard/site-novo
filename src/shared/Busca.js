@@ -86,10 +86,13 @@ class Busca extends Component {
             <div className="menu-esquerdo">
                 <div className="menu-esquerdo-titulo">Assuntos</div>
                 <ul>
-                <li><a href="/busca/assunto/CSharp" title="CSharp">CSharp</a></li>
+                    <li><a href="/busca/assunto/CSharp" title="CSharp">CSharp</a></li>
+                    <li><a href="/busca/assunto/ElasticSearch" title="ElasticSearch">ElasticSearch</a></li>
+                    <li><a href="/busca/assunto/HTML" title="HTML">HTML</a></li>
                     <li><a href="/busca/assunto/JavaScript" title="javaScript">javaScript</a></li>
                     <li><a href="/busca/assunto/Jquery" title="Jquery">Jquery</a></li>
                     <li><a href="/busca/assunto/Node.js" title="Node.js">Node.js</a></li>
+                    <li><a href="/busca/assunto/MongoDb" title="MongoDB">MongoDB</a></li>
                     <li><a href="/busca/assunto/SQL Server" title="SQL Server">SQL Server</a></li>
                     <li><a href="/busca/assunto/React js" title="React js">React js</a></li>
                 </ul>

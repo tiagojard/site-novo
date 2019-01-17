@@ -3,51 +3,57 @@ var elements = document.getElementsByName("btn-voto");
 for(var e = 0; e < elements.length; e++){
     elements[e].onclick = function() {
         //this.dataset.votos
-        Votar(this.dataset.id,this.dataset.user,this.dataset.like, this);
+        Votar(this.dataset.id,this.dataset.user,this.dataset.like, this,this.dataset.pos);
       };
 }
 
 
 
 
-function Votar(id, usuario, like, element){
+function Votar(id, usuario, like, element, pos){
     var usuarioVotos = getCookie("usuarioVotos");
     var podeVotar = true;
     var arrVotos = [];
     if(usuarioVotos != ""){
+        debugger;
         arrVotos = JSON.parse(usuarioVotos);
-        if(arrVotos.filter(function(value){ return value.id == id && value.usuario == usuario}).length > 0)
-            podeVotar = false;
+    if(arrVotos.filter(function(value){ return value.id == id && value.usuario == usuario && value.pos == pos && value.like == like}).length > 0)
+        podeVotar = false;
     }
    if(podeVotar){
     fetch(`https://guiadesenvolvedor-78a46.firebaseio.com/pergunta/${id}.json`)
     .then(res => res.json())
     .then(
         (result) => {
-            for(var i = 0; i <result.Respostas.length; i++){
-                if(result.Respostas[i].usuario == usuario){
+                if(result.Respostas[pos].usuario == usuario){
+                    debugger;
                     if(like == "true"){
-                        result.Respostas[i].votos = result.Respostas[i].votos + 1;
-                        if(result.Respostas[i].votos == 0)
+                        result.Respostas[pos].votos = result.Respostas[pos].votos + 1;
+                        if(result.Respostas[pos].votos == 0)
                             element.parentNode.parentNode.className = "votos";
-                        else if(result.Respostas[i].votos > 0)
+                        else if(result.Respostas[pos].votos > 0)
                             element.parentNode.parentNode.className = "votos positivo";
                         else
                             element.parentNode.parentNode.className = "votos negativo";
-                        element.parentNode.children[1].innerHTML = result.Respostas[i].votos;
+                        element.parentNode.children[1].innerHTML = result.Respostas[pos].votos;
                     }
                     else{
-                        result.Respostas[i].votos = result.Respostas[i].votos - 1;
-                        if(result.Respostas[i].votos == 0)
+                        result.Respostas[pos].votos = result.Respostas[pos].votos - 1;
+                        if(result.Respostas[pos].votos == 0)
                             element.parentNode.parentNode.className = "votos";
-                        else if(result.Respostas[i].votos > 0)
+                        else if(result.Respostas[pos].votos > 0)
                             element.parentNode.parentNode.className = "votos positivo";
                         else
                             element.parentNode.parentNode.className = "votos negativo";
-                        element.parentNode.children[1].innerHTML = result.Respostas[i].votos;
+                        element.parentNode.children[1].innerHTML = result.Respostas[pos].votos;
                     }
                 }
-            }
+                var count = 0;
+                for(var i = 0; i < result.Respostas.length; i++)
+                {
+                    count = parseInt(count) + parseInt(result.Respostas[i].votos);
+                }
+                result.votos = count;
             fetch(`https://guiadesenvolvedor-78a46.firebaseio.com/pergunta/${id}.json`, {
                 method: "PUT",
                 headers: {
@@ -56,9 +62,19 @@ function Votar(id, usuario, like, element){
                 },
                 body: JSON.stringify(result)
             });
-            
-            arrVotos.push({id: id, usuario: usuario});
-            setCookie("usuarioVotos", JSON.stringify(arrVotos), 1);
+           
+            var objVotos = arrVotos.filter(function(e){ return e.id == id && e.usuario == usuario && e.pos == pos});
+            if(objVotos[0] != undefined){
+                if(objVotos[0].like != like){
+                    arrVotos = arrVotos.filter(function(e){ return e.id != id && e.usuario != e && e.pos != pos });
+                    if(arrVotos == undefined)
+                        arrVotos = [];
+                }
+                setCookie("usuarioVotos", JSON.stringify(arrVotos), 1);
+            }else{
+                arrVotos.push({id: id, usuario: usuario, pos: pos, like: like});
+                setCookie("usuarioVotos", JSON.stringify(arrVotos), 1);
+            }
         },
         (error) => {
        
@@ -143,6 +159,7 @@ if(btnEnvio != null){
                             data : data.toLocaleString(),
                             usuario: usuario.id,  
                             usuario_nome:usuario.nome,
+                            usuario_imagem:usuario.imagem,
                             votos:0,
                             resposta:document.getElementById("previa").innerHTML
                         }
@@ -153,6 +170,7 @@ if(btnEnvio != null){
                         data : data.toLocaleString(),
                         usuario: usuario.id,  
                         usuario_nome:usuario.nome,
+                        usuario_imagem:usuario.imagem,
                         votos:0,
                         resposta:document.getElementById("previa").innerHTML
                     };

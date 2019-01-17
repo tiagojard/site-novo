@@ -128,12 +128,12 @@ class Pergunta extends Component {
                             <div className="resposta" itemProp="suggestedAnswer acceptedAnswer" itemScope itemType="http://schema.org/Answer" key={index}>
                                <div className={"votos" + (item.votos == 0 ? "":( item.votos > 0 ? " positivo" : " negativo" ) )}>
                                 <div className="qtde">
-                                  <button type="button" name="btn-voto" data-id={repos.id} data-like="true" data-pos={index} data-user={item.usuario} data-votos={item.votos}>
-                                    <img src="\imagens\up.svg" alt="Voto positivo" />
+                                  <button type="button" name="btn-voto" data-id={repos.id} data-like="true" data-pos={index} data-user={item.usuario}>
+                                    <img src="\imagens\icone-up.svg" alt="Voto positivo" />
                                   </button>
                                   <span itemProp="upvoteCount">{item.votos}</span>
-                                  <button type="button" name="btn-voto" data-id={repos.id} data-like="false" data-pos={index} data-user={item.usuario} data-votos={item.votos}>
-                                    <img src="\imagens\down.svg" alt="Voto negativo" />
+                                  <button type="button" name="btn-voto" data-id={repos.id} data-like="false" data-pos={index} data-user={item.usuario}>
+                                    <img src="\imagens\icone-down.svg" alt="Voto negativo" />
                                   </button> 
                                 </div>
                                </div>
@@ -141,7 +141,7 @@ class Pergunta extends Component {
                                 <a href={this.props.location.pathname+"#id_"+index} className="a-resp" itemProp="url" id={"id_"+index}>{"Resposta "+(index+1)}&nbsp;</a>
                                   <div className="info">
                                   <div className="info-foto">
-                                    <img src={repos.usuario_imagem} alt={repos.usuario_nome} />                            
+                                    <img src={item.usuario_imagem} alt={item.usuario_nome} />                            
                                   </div>
                                   <div className="bloco">
                                   <div className="info-nome" itemProp="author" itemScope itemType="http://schema.org/Person">

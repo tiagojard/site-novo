@@ -54,7 +54,7 @@ class Home extends Component {
           return <p>LOADING</p>
         }
         var result = Object.values(repos).reverse();
-        result.pop();
+        //result.pop();
         var adsTopo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="1911584022" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var adsEsquerdo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="4048762396" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var adsDireito = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="2538022566" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
@@ -118,6 +118,7 @@ class Home extends Component {
 
 
 { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo" dangerouslySetInnerHTML={{__html:adsConteudo }}/><hr className="hr-margin"/></div>:"" }*/
+
 return (<div className="corpo-pagina">
 <div className="introducao">
     <h1>Guia do Desenvolvedor</h1>
@@ -143,18 +144,28 @@ return (<div className="corpo-pagina">
         result.map((item, index) =>
                 <div key={index}>
                     <div className="conteudo-home-container">
-                        <div className="conteudo-home-img">
-                        <img className="img-destaque" src={item.assunto[0].imagem} />
-                        </div>
                         <div className="conteudo-home-detalhe">
                             <a href={item.url}><h2>{item.pergunta}</h2></a>
-                            <div>
-                            <h3>{item.pergunta}</h3>
+                        <div className="info">
+                            <div className="info-bloco">
+                                <div className="info-qtde">{item.Respostas != undefined ? item.Respostas.length: 0}</div>
+                                <div>respostas</div>
                             </div>
-                            <div className="conteudo-home-info">
-                            <a href={"/busca/assunto/"+item.assunto[0].nome} title={item.assunto[0].nome} className="assunto"><h4>{item.assunto[0].nome}</h4></a>
+                            <div className={"info-bloco" + (item.votos > 0 ? " up" :item.votos < 0 ? " down" : "" )}>
+                                <div className="info-qtde">{item.votos}</div>
+                                <div>votos</div>
+                            </div>
+                            <div className="info-usuario">
+                                <div>{item.usuario_nome}</div>
+                                <div>{item.data_formatada}</div>
                             </div>
                         </div>
+                    <div className="conteudo-home-info">
+                            <a href={"/busca/assunto/"+item.assunto[0].nome} title={item.assunto[0].nome}><h4 className="tags">
+                            <img src={item.assunto[0].imagem} alt={item.assunto[0].nome}/>
+                            {item.assunto[0].nome}</h4></a>
+                    </div>
+                </div>
                     </div>
                     <hr className="hr-margin"/>
                     { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo"><div dangerouslySetInnerHTML={{__html:adsConteudo }}/></div><hr className="hr-margin"/></div>:"" }
