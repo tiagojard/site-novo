@@ -171,7 +171,7 @@ app.get("*", (req, res, next) => {
             return null;
         }
           </script>
-          <script src="/js-cache/bundle-1.js" defer></script>
+          <script src="/js-cache/bundle-2.js" defer></script>
           <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
           <script defer src="/js-cache/js.js"></script>
           

@@ -47,6 +47,7 @@ class Busca extends Component {
         if (loading === true) {
           return <p>LOADING</p>
         }
+        var result = Object.values(repos);
         //<a href="https://go.hotmart.com/K9423178A" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-templates.png" alt="template" /></a>
         //<a href="https://go.hotmart.com/H9422393Q" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-javascript.png" alt="javascript"/></a>
         //<a href="https://go.hotmart.com/K9423178A" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-templates.png" alt="template" /></a>
@@ -101,28 +102,38 @@ class Busca extends Component {
         </div>
         <div className="conteudo-home">
         <h3 className="titulo-home"><strong>{repos.length}</strong> Resultados encontrados para <strong><h1>{this.props.match.params.pesquisa}</h1></strong></h3>
-            {
-                        repos.map((item, index) =>
-                        <div key={index}>
-                            <div className="conteudo-home-container">
-                                <div className="conteudo-home-img">
-                                    <img className="img-destaque" src={item.assunto[0].imagem} alt={item.assunto[0].nome}/>
-                                </div>
-                                <div className="conteudo-home-detalhe">
-                                    <a href={item.url}><h2>{item.pergunta}</h2></a>
-                                    <div>
-                                    <h3>{item.pergunta}</h3>
-                                    </div>
-                                    <div className="conteudo-home-info">
-                                    <a href={"/busca/assunto/"+item.assunto[0].nome} title={item.assunto[0].nome} className="assunto"><h4>{item.assunto[0].nome}</h4></a>
-                                    </div>
-                                </div>
+        {
+        result.map((item, index) =>
+                <div key={index}>
+                    <div className="conteudo-home-container">
+                        <div className="conteudo-home-detalhe">
+                            <a href={item.url}><h2>{item.pergunta}</h2></a>
+                        <div className="info">
+                            <div className="info-bloco">
+                                <div className="info-qtde">{item.Respostas != undefined ? item.Respostas.length: 0}</div>
+                                <div>respostas</div>
                             </div>
-                            <hr className="hr-margin"/>
-                            { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo"><div dangerouslySetInnerHTML={{__html:adsConteudo }}/></div><hr className="hr-margin"/></div>:"" }
+                            <div className={"info-bloco" + (item.votos > 0 ? " up" :item.votos < 0 ? " down" : "" )}>
+                                <div className="info-qtde">{item.votos}</div>
+                                <div>votos</div>
+                            </div>
+                            <div className="info-usuario">
+                                <div>{item.usuario_nome}</div>
+                                <div>{item.data_formatada}</div>
+                            </div>
                         </div>
-                        )
-                    }
+                    <div className="conteudo-home-info">
+                            <a href={"/busca/assunto/"+item.assunto[0].nome} title={item.assunto[0].nome}><h4 className="tags">
+                            <img src={item.assunto[0].imagem} alt={item.assunto[0].nome}/>
+                            {item.assunto[0].nome}</h4></a>
+                    </div>
+                </div>
+                    </div>
+                    <hr className="hr-margin"/>
+                    { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo"><div dangerouslySetInnerHTML={{__html:adsConteudo }}/></div><hr className="hr-margin"/></div>:"" }
+                </div>
+                )
+            }
             </div>
             <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }}/>
         </div>

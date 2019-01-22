@@ -122,7 +122,7 @@ class Home extends Component {
 return (<div className="corpo-pagina">
 <div className="introducao">
     <h1>Guia do Desenvolvedor</h1>
-    <h2>Plataforma para programadoes</h2>
+    <h2>Plataforma para programadores</h2>
     <div>
         <h3 className="intro-conhecimento">Ajude a plataforma crescer, compartilhe seu conhecimento e faça parte desse guia. Ajudamos programadores iniciantes com conteúdos de qualidade.</h3>
         <a  className="btn-intro" href="/cadastro/conteudo">Compartilhar conhecimento</a>
