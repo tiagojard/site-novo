@@ -7,7 +7,7 @@ export default function Rodape () {
       <a href="/" title="Guia do desenvolvedor">Guia do desenvolvedor</a>
     </div>
     <ul>
-      <li><a href="/curso" title="Cursos">Cursos</a></li>
+      <li><a href="/cursos" title="Cursos">Cursos</a></li>
     </ul>
     <ul>
       <li><a href="/cadastro/conteudo" title="Perguntar">Perguntar</a></li>

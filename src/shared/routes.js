@@ -3,6 +3,7 @@ import Busca from './Busca'
 import Conteudo from './Conteudo'
 import Pergunta from './Pergunta'
 import Aprovacao from './Aprovacao'
+import Cursos from './Cursos'
 import Curso from './Curso'
 import Entrar from './Entrar'
 import { fetchHomeRepos } from './apiHome'
@@ -10,7 +11,7 @@ import { fetchPerguntaRepos } from './apiPergunta'
 import { fetchBuscaAssuntoRepos } from './apiBuscaAssunto'
 import { fetchBuscaRepos } from './apiBusca'
 import { fetchCursoRepos } from './apiCurso'
-
+import { fetchCursosRepos } from './apiCursos'
 /*
 {
     path: '/',
@@ -56,9 +57,14 @@ const routes =  [
     component: Aprovacao
   },
   {
-    path: '/curso',
+    path: '/cursos',
+    component: Cursos,
+    fetchInitialData: (path = '') => fetchCursosRepos()
+  },
+  {
+    path: '/curso/:id/:titulo',
     component: Curso,
-    fetchInitialData: (path = '') => fetchCursoRepos()
+    fetchInitialData: (path = '') => fetchCursoRepos(path.replace("/"+path.split('/').pop(),'').split('/').pop())
   },
   {
     path: '/entrar',

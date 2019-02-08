@@ -1,10 +1,10 @@
 import fetch from 'isomorphic-fetch'
 
-export function fetchCursoRepos (id) {
-  const encodedURI = encodeURI(`https://guiadesenvolvedor-78a46.firebaseio.com/produtos/${id}.json`)
+export function fetchCursosRepos () {
+  const encodedURI = encodeURI(`https://guiadesenvolvedor-78a46.firebaseio.com/produto.json`)
   return fetch(encodedURI)
     .then((data) => data.json())
-    .then((repos) => repos)
+    .then((repos) => Object.values(repos))
     .catch((error) => {
       console.warn(error)
       return null
