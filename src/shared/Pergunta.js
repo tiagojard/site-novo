@@ -153,7 +153,10 @@ class Pergunta extends Component {
                                     </div>
                                   </div>
                                   </div>
-                                  <div itemProp="text" dangerouslySetInnerHTML={{__html:item.resposta }}/>
+                                  <div itemProp="text">
+                                  <span className="text-pergunta">{repos.pergunta}</span>
+                                    <div dangerouslySetInnerHTML={{__html:item.resposta }}/>
+                                  </div>
                                </h2>
                             </div>)
                         }

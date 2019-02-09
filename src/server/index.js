@@ -67,7 +67,7 @@ app.get("*", (req, res, next) => {
      else if(req._parsedOriginalUrl.pathname == "/entrar"){
       style += '<link async rel="stylesheet" type="text/css" href="/css/entrar.css">';
     } else if(req.url.indexOf("/pergunta/") > -1){
-      style += '<link rel="stylesheet" type="text/css" href="/css-cache/pergunta-3.css">';
+      style += '<link rel="stylesheet" type="text/css" href="/css-cache/pergunta-4.css">';
       style += '<link rel="stylesheet" type="text/css" href="/css-cache/hilight-1.css">';
       script += '<script async src="/js-cache/pergunta-2.js"></script>';
       script += '<script async src="/js-cache/hilight.js"></script>';
@@ -176,7 +176,7 @@ app.get("*", (req, res, next) => {
             return null;
         }
           </script>
-          <script src="/js-cache/bundle-3.js" defer></script>
+          <script src="/js-cache/bundle-4.js" defer></script>
           <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
           <script defer src="/js-cache/js.js"></script>
           
