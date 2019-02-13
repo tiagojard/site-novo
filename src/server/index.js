@@ -113,6 +113,11 @@ app.get("*", (req, res, next) => {
       description = "Com o guia do desenvolvedor você encontra os melhores cursos de programação, para aprender programar e se destacar no mercado de trabalho. Cursos Online e ebooks";
       style += '<link async rel="stylesheet" type="text/css" href="/css/curso.min.css">';
       style += '<link async rel="stylesheet" type="text/css" href="/css/pagina.min.css">';
+    }else if(req.url == "/verificar"){
+      titulo = "Guia desenvolvedor";
+      description = "Com o guia do desenvolvedor você aprende a programar react js, c#, javaScript e jQuery";
+      indexing = "noindex";
+      script += '<script defer src="/js/verificacao.js"></script>';
     }
     else {
       titulo = "Guia desenvolvedor";
@@ -176,7 +181,7 @@ app.get("*", (req, res, next) => {
             return null;
         }
           </script>
-          <script src="/js-cache/bundle-4.js" defer></script>
+          <script src="/js-cache/bundle-5.js" defer></script>
           <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
           <script defer src="/js-cache/js.js"></script>
           

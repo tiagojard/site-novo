@@ -6,12 +6,14 @@ import Aprovacao from './Aprovacao'
 import Cursos from './Cursos'
 import Curso from './Curso'
 import Entrar from './Entrar'
+import Verificar from './Verificar'
 import { fetchHomeRepos } from './apiHome'
 import { fetchPerguntaRepos } from './apiPergunta'
 import { fetchBuscaAssuntoRepos } from './apiBuscaAssunto'
 import { fetchBuscaRepos } from './apiBusca'
 import { fetchCursoRepos } from './apiCurso'
 import { fetchCursosRepos } from './apiCursos'
+
 /*
 {
     path: '/',
@@ -69,6 +71,10 @@ const routes =  [
   {
     path: '/entrar',
     component: Entrar
+  },
+  {
+    path: '/verificar',
+    component: Verificar
   }
 ]
 export default routes
