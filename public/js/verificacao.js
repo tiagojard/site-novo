@@ -27,27 +27,32 @@ window.onload = function(e){
                             ip: result.ip,
                             data:data
                         };
-                        fetch(`https://guiadesenvolvedor-78a46.firebaseio.com/ips.json`, {
-                            method: "POST",
-                            headers: {
-                                'Accept': 'application/json',
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(ips)
-                        });
+                        try {
+                            fetch(`https://guiadesenvolvedor-78a46.firebaseio.com/ips.json`, {
+                                method: "POST",
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify(ips)
+                            });
+                        }catch{
+                            document.getElementById("status").innerHTML = `<div style='color:red'>erro salvar</div>`;
+                        }
+                        
                     }else{
                         document.getElementById("status").innerHTML = `<div style='color:red'>${result.ip} não pode</div>`;
                     }
                 },
                 (err) => {
         
-                   console.log('erro')
+                    document.getElementById("status").innerHTML = `<div style='color:red'>erro busca banco</div>`;
                 }
             );
         },
         (error) => {
 
-           console.log('erro')
+            document.getElementById("status").innerHTML = `<div style='color:red'>erro api</div>`;
         }
     );
 }
