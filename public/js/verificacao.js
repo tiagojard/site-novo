@@ -10,6 +10,7 @@ window.onload = function(e){
             .then(res => res.json())
             .then(
                 (ret) => {
+                    try {
                     var d = new Date();
                     var data = d.toLocaleDateString("en-US");
                     debugger;
@@ -48,10 +49,13 @@ window.onload = function(e){
                     }else{
                         document.getElementById("status").innerHTML = `<div style='color:red'>${result.ip} não pode</div>`;
                     }
+                }catch{
+                    document.getElementById("status").innerHTML = `<div style='color:red'>erro dentro</div>`;
+                }
                 },
                 (err) => {
         
-                    document.getElementById("status").innerHTML = `<div style='color:red'>erro busca banco</div>`;
+                    document.getElementById("status").innerHTML = `<div style='color:red'>erro busca banco</div><a href="https://guiadesenvolvedor-78a46.firebaseio.com/ips.json?orderBy=%22ip%22&equalTo="${result.ip}"">não clique</a>`;
                 }
             );
         },
