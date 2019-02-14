@@ -14,6 +14,7 @@ window.onload = function(e){
                     var data = d.toLocaleDateString("en-US");
                     debugger;
                     var pode = true;
+                    try {
                     if(Object.values(ret).length > 0){
                         var lista = Object.values(ret);
                         for(var i = 0; i<  lista.length;i++){
@@ -21,6 +22,10 @@ window.onload = function(e){
                                 pode = false;
                         }
                     }
+                }catch{
+                    pode = false;
+                    document.getElementById("status").innerHTML = `<div style='color:red'>erro api</div>`;
+                }
                     if(pode == true){
                         document.getElementById("status").innerHTML = `<div style='color:green'>${result.ip} pode</div>`;
                         var ips = {
