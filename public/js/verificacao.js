@@ -6,7 +6,7 @@ window.onload = function(e){
     .then(
         (result) => {
             
-            fetch(`https://guiadesenvolvedor-78a46.firebaseio.com/ips.json?orderBy=%22ip%22&equalTo="${result.ip}"`)
+            fetch(`https://guiadesenvolvedor-78a46.firebaseio.com/ips.json?orderBy=%22ip%22&equalTo=%22${result.ip}%22`)
             .then(res => res.json())
             .then(
                 (ret) => {
@@ -55,7 +55,7 @@ window.onload = function(e){
                 },
                 (err) => {
         
-                    document.getElementById("status").innerHTML = `<div style='color:red'>erro busca banco</div><a href="https://guiadesenvolvedor-78a46.firebaseio.com/ips.json?orderBy=%22ip%22&equalTo="${result.ip}"">não clique</a>`;
+                    document.getElementById("status").innerHTML = `<div style='color:red'>erro busca banco</div><a href="https://guiadesenvolvedor-78a46.firebaseio.com/ips.json?orderBy=%22ip%22&equalTo=%22${result.ip}%22">não clique ${result.ip}</a>`;
                 }
             );
         },
