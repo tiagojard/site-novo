@@ -53,6 +53,7 @@ class Home extends Component {
         if (loading === true) {
           return <p>LOADING</p>
         }
+
         var result = Object.values(repos).reverse();
         //result.pop();
         var adsTopo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="1911584022" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
@@ -175,6 +176,7 @@ return (<div className="corpo-pagina">
             </div>
             <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }}/>
         </div>)
+    
     }
 }
 export default Home;
