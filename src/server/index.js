@@ -70,7 +70,7 @@ app.get("*", (req, res, next) => {
       style += '<link rel="stylesheet" type="text/css" href="/css-cache/pergunta-4.css">';
       style += '<link rel="stylesheet" type="text/css" href="/css-cache/hilight-1.css">';
       script += '<script async src="/js-cache/pergunta-2.js"></script>';
-      script += '<script async src="/js-cache/hilight.js"></script>';
+      script += '<script async src="/js-cache/hilight-1.js"></script>';
       schema = 'itemscope itemtype="http://schema.org/QAPage"';
       if(data == null){
         indexing = "noindex";
@@ -127,7 +127,7 @@ app.get("*", (req, res, next) => {
       style += '<link async rel="stylesheet" type="text/css" href="/css/pagina.min.css">';
       style += '<link async rel="stylesheet" type="text/css" href="/css/hilight.css">';
       script += '<script defer src="/js/aprovacao.js"></script>';
-      script += '<script defer src="/js/hilight.js"></script>';
+      script += '<script defer src="/js-cache/hilight-1.js"></script>';
       style += '<link async rel="stylesheet" type="text/css" href="/css/pergunta.css">';
       script += '<script defer src="/js-cache/pergunta-2.js"></script>';
       script += '<script defer src="/js/conteudo.js"></script>';
@@ -181,7 +181,7 @@ app.get("*", (req, res, next) => {
             return null;
         }
           </script>
-          <script src="/js-cache/bundle-7.js" defer></script>
+          <script src="/js-cache/bundle-8.js" defer></script>
           <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
           <script defer src="/js-cache/js.js"></script>
           

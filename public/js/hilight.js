@@ -23,11 +23,13 @@ function formataCodigo(){
                     if(linhas[j] != "" && j > 0){
                         var code = linhas[j];
                         debugger;
+                        /*
                         code = replaceAll(code, ";", "&#59;");
                         code = replaceAll(code, "<", "&#60;");
                         code = replaceAll(code, ">", "&#62;");
                         code = replaceAll(code, "{", "&#123;");
                         code = replaceAll(code, "}","&#125;");
+                        */
                         resultado += '<code class="language-'+html.children[i].dataset.code+'">'+code+'</code></br>';
                     }
                 }
