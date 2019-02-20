@@ -1,6 +1,8 @@
-window.onload = function(e){ 
+function datediff(inicio, fim) {
+    return Math.round((fim-inicio)/(1000*60*60*24));
+}
 
-  
+window.onload = function(e){ 
     fetch("https://api.ipify.org/?format=json")
     .then(res => res.json())
     .then(
@@ -19,7 +21,9 @@ window.onload = function(e){
                     if(Object.values(ret).length > 0){
                         var lista = Object.values(ret);
                         for(var i = 0; i<  lista.length;i++){
-                            if(lista[i].data == data)
+                            debugger;
+                            var dt = new Date(lista[i].data.split('/')[2], lista[i].data.split('/')[0]-1,lista[i].data.split('/')[1]);
+                            if(datediff(dt,d) <= 2)
                                 pode = false;
                         }
                     }
@@ -28,7 +32,7 @@ window.onload = function(e){
                     document.getElementById("status").innerHTML = `<div style='color:red'>erro api</div>`;
                 }
                     if(pode == true){
-                        document.getElementById("status").innerHTML = `<div style='color:green'>${result.ip} pode</div>`;
+                        document.getElementById("status").innerHTML = `<div style='color:green'> pode</div>`;
                         var ips = {
                             ip: result.ip,
                             data:data
@@ -47,7 +51,7 @@ window.onload = function(e){
                         }
                         
                     }else{
-                        document.getElementById("status").innerHTML = `<div style='color:red'>${result.ip} não pode</div>`;
+                        document.getElementById("status").innerHTML = `<div style='color:red'> não pode</div>`;
                     }
                 }catch{
                     document.getElementById("status").innerHTML = `<div style='color:red'>erro dentro</div>`;
