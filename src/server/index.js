@@ -189,7 +189,7 @@ app.get("*", (req, res, next) => {
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <script>
             (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-9280026867797270",
+              google_ad_client: "ca-pub-8019971282281713",
               enable_page_level_ads: true
             });
           </script>
