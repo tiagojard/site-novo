@@ -56,15 +56,13 @@ class Home extends Component {
 
         var result = Object.values(repos).reverse();
         //result.pop();
-        var adsTopo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="7668851004" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
-        var adsEsquerdo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="8738390094" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
-        var adsDireito = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="4830579455" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        var adsTopo = '<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="8091665402"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        var adsEsquerdo = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="2067669765"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        var adsDireito = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="1538306282"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var adsConteudo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="5901851801" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
  
 
 /*   
-
-
 
 <Async promiseFn={this.loadJson}>
         {({ data, error, isLoading }) => {
@@ -120,6 +118,10 @@ class Home extends Component {
 
 { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo" dangerouslySetInnerHTML={{__html:adsConteudo }}/><hr className="hr-margin"/></div>:"" }*/
 
+
+
+//{ ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo"><div dangerouslySetInnerHTML={{__html:adsConteudo }}/></div><hr className="hr-margin"/></div>:"" }
+
 return (<div className="corpo-pagina">
 <div className="introducao">
     <h1>Guia do Desenvolvedor</h1>
@@ -169,7 +171,6 @@ return (<div className="corpo-pagina">
                 </div>
                     </div>
                     <hr className="hr-margin"/>
-                    { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo"><div dangerouslySetInnerHTML={{__html:adsConteudo }}/></div><hr className="hr-margin"/></div>:"" }
                 </div>
                 )
             }

@@ -181,17 +181,17 @@ app.get("*", (req, res, next) => {
             return null;
         }
           </script>
-          <script src="/js-cache/bundle-11.js" defer></script>
+          <script src="/js-cache/bundle-12.js" defer></script>
           <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
           <script defer src="/js-cache/js.js"></script>
           
           ${script}
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <script>
-            (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-8019971282281713",
-              enable_page_level_ads: true
-            });
+               (adsbygoogle = window.adsbygoogle || []).push({
+                    google_ad_client: "ca-pub-8019971282281713",
+                    enable_page_level_ads: true
+               });
           </script>
           <!-- Global site tag (gtag.js) - Google Analytics -->
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127383120-1"></script>
