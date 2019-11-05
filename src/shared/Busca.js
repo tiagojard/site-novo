@@ -52,9 +52,9 @@ class Busca extends Component {
         //<a href="https://go.hotmart.com/H9422393Q" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-javascript.png" alt="javascript"/></a>
         //<a href="https://go.hotmart.com/K9423178A" title="Clique aqui e saiba mais." rel="nofollow" target="_blank"><img src="/banner-templates.png" alt="template" /></a>
         //var adsTopoGabriel = "";//'<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5825646877386493" data-ad-slot="5291356734"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
-        var adsTopo = '<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="8091665402"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
-        var adsEsquerdo = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="2067669765"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
-        var adsDireito = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="1538306282"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        //var adsTopo = '<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="8091665402"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        //var adsEsquerdo = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="2067669765"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        //var adsDireito = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="1538306282"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         //var adsConteudo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="5901851801" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
       
         /*
@@ -82,7 +82,7 @@ class Busca extends Component {
                         <meta itemProp="position" content="2" />
                    </li>
                 </ol>
-        <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
+        <div className="anuncio-topo" />
         <div className="container-esquerdo">
             <div className="menu-esquerdo">
                 <div className="menu-esquerdo-titulo">Assuntos</div>
@@ -98,7 +98,7 @@ class Busca extends Component {
                     <li><a href="/busca/assunto/React js" title="React js">React js</a></li>
                 </ul>
             </div>
-            <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
+            <div className="anuncio-esquerdo" />
         </div>
         <div className="conteudo-home">
         <h3 className="titulo-home"><strong>{repos.length}</strong> Resultados encontrados para <strong><h1>{this.props.match.params.pesquisa}</h1></strong></h3>
@@ -135,7 +135,7 @@ class Busca extends Component {
                 )
             }
             </div>
-            <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }}/>
+            <div className="anuncio-direito"/>
         </div>
         // { ((index+1) / 3) % 1 == 0 ?<div><div className="anuncio-conteudo"><div dangerouslySetInnerHTML={{__html:adsConteudo }}/></div><hr className="hr-margin"/></div>:"" }
     }

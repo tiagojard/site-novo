@@ -51,9 +51,9 @@ class Curso extends Component {
         if(repos == null){
           return <div></div>
         }
-        var adsTopo = '<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="8091665402"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
-        var adsEsquerdo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="4048762396" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
-        var adsDireito = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="1538306282"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        //var adsTopo = '<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="8091665402"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        //var adsEsquerdo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="4048762396" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        //var adsDireito = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="1538306282"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         //var adsConteudo = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9280026867797270" data-ad-slot="5901851801" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         return <div className="container">
         <ol itemScope itemType="http://schema.org/BreadcrumbList" className="breadcrumbs">
@@ -81,8 +81,8 @@ class Curso extends Component {
                             <meta itemProp="position" content="3" />
                     </li>
                 </ol>
-            <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
-            <div className="anuncio-esquerdo" dangerouslySetInnerHTML={{__html:adsEsquerdo }}/>
+            <div className="anuncio-topo" />
+            <div className="anuncio-esquerdo"/>
             <div className="produto">
             <div className="titulo">
               <h1>{repos.descricao}</h1>
@@ -100,7 +100,7 @@ class Curso extends Component {
              
             </div>
             </div>
-            <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }}/>
+            <div className="anuncio-direito"/>
         </div>
     }
     // <div className="anuncio-conteudo" dangerouslySetInnerHTML={{__html:adsConteudo }}/>
