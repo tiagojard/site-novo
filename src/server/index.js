@@ -11,7 +11,7 @@ import routes from '../shared/routes'
 const app = express()
 const port = process.env.PORT || 5000
 
-//gzip
+//gzip npm run build
 const compress = require('compression');
 
 app.use(compress())
@@ -152,6 +152,7 @@ app.get("*", (req, res, next) => {
           <meta property="og:title" itemprop="name" content="${titulo}">
           <meta property="og:description" itemprop="description" content="${description}">
           <meta name="google-signin-client_id" content="1058839646981-9dumm6h1tdosk1cugjkt1n7s9ajbonpm.apps.googleusercontent.com">
+          <script data-ad-client="ca-pub-9280026867797270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           ${style}
           <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
         </head>
@@ -181,18 +182,14 @@ app.get("*", (req, res, next) => {
             return null;
         }
           </script>
-          <script src="/js-cache/bundle-14.js" defer></script>
+          <script src="/js-cache/bundle-15.js" defer></script>
           <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
           <script defer src="/js-cache/js.js"></script>
           
           ${script}
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <script>
-              (adsbygoogle = window.adsbygoogle || []).push({
-                    google_ad_client: "ca-pub-8019971282281713",
-                    enable_page_level_ads: true
-              });
-          </script>
+
+
           <!-- Global site tag (gtag.js) - Google Analytics -->
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127383120-1"></script>
           <script>
