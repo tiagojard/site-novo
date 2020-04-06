@@ -60,7 +60,7 @@ class Pergunta extends Component {
         if(repos == null){
           return <div></div>
         }
-
+        var bannerMagalu = '<div data-mvc-banner="leaderboard"></div><script type="text/javascript"> (function(storeName) { var b = document.createElement("script"); b.type = "text/javascript"; b.async = true; b.src = "https://www.magazinevoce.com.br/js/banner.js?store="+ storeName; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(b, s); })("listapromocoes"); </script>';
         //var adsTopo = '<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="8091665402"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         //var adsEsquerdo = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="2067669765"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         //var adsDireito = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="1538306282"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
@@ -129,6 +129,9 @@ class Pergunta extends Component {
                            
                         </div>
                         <h2 className="pergunta-conteudo" itemProp="text" dangerouslySetInnerHTML={{__html:repos.pergunta_site }} />
+
+                        <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:bannerMagalu }}/>
+
                         <a href={"/busca/assunto/"+repos.assunto[0].nome} title={repos.assunto[0].nome}>
                           <h3 className="tags">
                           <img src={repos.assunto[0].imagem} alt={repos.assunto[0].nome} />

@@ -152,7 +152,7 @@ app.get("*", (req, res, next) => {
           <meta property="og:title" itemprop="name" content="${titulo}">
           <meta property="og:description" itemprop="description" content="${description}">
           <meta name="google-signin-client_id" content="1058839646981-9dumm6h1tdosk1cugjkt1n7s9ajbonpm.apps.googleusercontent.com">
-          <script data-ad-client="ca-pub-9280026867797270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <script data-ad-client="ca-pub-8019971282281713" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           ${style}
           <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
         </head>
@@ -182,7 +182,7 @@ app.get("*", (req, res, next) => {
             return null;
         }
           </script>
-          <script src="/js-cache/bundle-16.js" defer></script>
+          <script src="/js-cache/bundle-17.js" defer></script>
           <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
           <script defer src="/js-cache/js.js"></script>
           
