@@ -3,3 +3,64 @@
 @media only screen and (max-width:518px){.topo-busca{width:87%!important}}
 @media only screen and (max-width:384px){.topo-busca{width:84%!important}}
 .corpo-pagina{top:102px;position:relative}.rodape{background-color:#4e5682;width:100%;display:inline-block;margin-top:122px;font-size:14px}.link{display:inline;margin-left:15px;font-weight:500;margin-right:10px}.rodape ul{padding-left:0;display:inline-block;font-weight:400;margin-top:10px;margin-bottom:10px}.rodape li{display:inline;border-left:1px solid rgba(255,255,255,.3);padding:0 11px}.input-busca,.result-mobile ul{padding-left:10px}.rodape a{color:#fff;text-decoration:none}.rodape a:hover{color:#333958}.rodape-info{background-color:#2f2f2f;width:100%;height:35px;text-align:center;color:#fff;padding-top:13px}.anuncio-topo{height:90px;max-width:728px;width:90%;margin:auto}.anuncio-esquerdo{width:160px;height:600px;margin-top:10px;margin-left:20px;float:left}.autocomplete-items .resultado:hover{background-color:#e7e7e8}.img-resultado{width:60px;float:left;height:60px}.img-resultado img{width:33px;margin-top:5px;margin-left:10px}.resultado{display:inline-block;width:100%;cursor:pointer;padding-top:10px;border-bottom:solid #e0e0e0 1px}.pesquisa-resultado{float:left;width:75%;color:#000}.pesquisa-assunto{float:left;width:75%;color:red}.busca{margin-left:30%;width:30%}.input-busca{width:100%;height:30px;border-radius:5px;outline:0;border:0;background-color:#24292e;color:#fff}.input-busca:focus{background-color:#fff;color:#333}.hr{border:0;border-top:1px dotted #ccc}.autocomplete{position:relative;display:inline-block}.autocomplete-items{position:relative;border:1px solid #d4d4d4;border-top:none;z-index:99;width:102.4%;margin-top:-4px;background-color:#fff;border-bottom-left-radius:5px;border-bottom-right-radius:5px}.autocomplete-active{background-color:#1e90ff!important;color:#fff}.result-mobile ul li a{text-decoration:none;color:#333;font-size:23px;line-height:39px;font-weight:100}.logo-nome a,.menu ul li a{color:#ffff;text-decoration:none}a h4{background-color:#a2a7c7;padding-left:7px;padding-right:7px;border-radius:3px;font-weight:400;margin:0}a h4:hover{background-color:#9199d0}.logo-nome{font-size:19px;font-family:sans-serif;position:absolute;margin-top:5px;margin-left:-5%}.menu{background-color:#a85d8a;height:24px;margin-top:60px;border-bottom:solid #d06363 2px}.menu ul{display:inline-flex;margin:3px}.menu li{padding-right:60px}.menu ul li a{font-weight:400}.menu ul li a:hover{color:#4e5682}.dropbtn{color:#ffff;cursor:pointer}.dropbtn-button{color:#24292e;cursor:pointer}.dropdown{position:relative;display:inline-block}.dropdown-content{display:none;position:absolute;background-color:#f9f9f9;min-width:160px;box-shadow:0 8px 16px 0 rgba(0,0,0,.2);z-index:1}.dropdown-content a{color:#000!important;padding:12px 16px;text-decoration:none;display:block}.dropdown-content a:hover{background-color:#f1f1f1}.dropdown:hover .dropdown-content{display:block}.topo-busca-nome-site a{color:#ffff;text-decoration:none}.breadcrumbs{margin-left:-30px;margin-top:-8px;font-size:12px}.breadcrumbs li{display:inline}.breadcrumbs a{margin-right:10px;color:#7d7d7d;text-decoration:none}.breadcrumbs a:hover{text-decoration:underline}.breadcrumbs span{margin-left:10px;color:#7d7d7d}
+.tit{font-size: 24px;}.sub-tit{color: #8a8a8a;margin-top: -18px;font-size: 18px;}.tit-2{color: black;font-size: 18px;font-weight: 500;}.text{font-size: 17px;}
+
+.introducao{
+    background-color: #84bec5;
+    margin-top: -46px;
+    padding-bottom: 45px;
+    color: white;
+    padding-left: 15%;
+    margin-bottom: 10px;
+}
+
+.introducao h1{
+    padding-top: 31px;
+    font-size: 45px;
+    text-shadow: 2px 0 0 #756363;
+}
+
+.introducao h2{
+    margin-top: -33px;
+    color: #3a4061;
+    font-weight: 500;
+    font-size: 24px;
+    text-shadow: 2px 0 0 #389aa7;
+}
+
+.intro-conhecimento{
+    max-width: 762px;
+}
+
+
+.btn-intro{
+    text-decoration: none;
+    background-color: #e91e63;
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+.btn-intro:hover{
+    background-color:white;
+    color: #e91e63;
+}
+.btn-curso{
+    text-decoration: none;
+    background-color:#3a4061;
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+.btn-curso:hover{
+    color:#3a4061;
+    background-color:white;
+}
+.introducao h3{
+    font-weight: 200;
+}

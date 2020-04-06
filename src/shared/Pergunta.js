@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Destaque from "./Destaque"
+import ConteudoAdicional from './ConteudoAdicional';
+import Produto from './Produto';
 
 class Pergunta extends Component {
     constructor(props) {
@@ -64,6 +66,20 @@ class Pergunta extends Component {
         //var adsDireito = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8019971282281713" data-ad-slot="1538306282"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         var editorValue = "<p>\nTexto...\n</p>\n";
         return <div className="corpo-pagina">
+          <div className="introducao">
+    <h1>Guia do Desenvolvedor</h1>
+    <h2>Plataforma para programadores</h2>
+    <div>
+        <h3 className="intro-conhecimento">Ajude a plataforma crescer, compartilhe seu conhecimento e faça parte desse guia. Ajudamos programadores iniciantes com conteúdos de qualidade.</h3>
+        <a  className="btn-intro" href="/cadastro/conteudo" title="Compartilhar conhecimento">Compartilhar conhecimento</a>
+    </div>
+    <div>
+        <h3>Está com dúvida em algum assundo ou não esta conseguindo fazer algo?</h3>
+        <a className="btn-intro" href="/cadastro/conteudo" title="Envie sua pergunta">Envie sua pergunta</a>
+    </div>
+    <h3>Confira alguns cursos que fará muita diferença em seu aprendizado!</h3>
+    <a className="btn-curso" href="/curso" title="Veja alguns cursos">Veja alguns cursos</a>
+</div>
                 <ol itemScope itemType="http://schema.org/BreadcrumbList" className="breadcrumbs">
                     <li itemProp="itemListElement" itemScope
                         itemType="http://schema.org/ListItem">
@@ -197,7 +213,11 @@ class Pergunta extends Component {
                         : 
                         <button id="btn-perguntar" type="button" className="btn-perguntar">Responder</button>  
                         }
-                        
+                        <br/> <br/>
+                        <h3 className="tit">Cursos recomendados especialmente para você!</h3>
+                        <br/>
+                       <Produto />
+                        <ConteudoAdicional assunto={repos.assunto[0].nome} link={"/busca/assunto/"+repos.assunto[0].nome}/>
                 </div>
                 <div className="bloco-direito">
                       <Destaque assunto={repos.assunto[0].nome} idPagina={repos.id}/>

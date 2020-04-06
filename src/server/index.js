@@ -51,23 +51,23 @@ app.get("*", (req, res, next) => {
       description = data.description;
     }
     var indexing = "index, follow";
-    var style = '<link rel="stylesheet" type="text/css" href="/css-cache/style-1.css">';
+    var style = '<link rel="stylesheet" type="text/css" href="/css-cache/style-2.css">';
     var schema = "";
     var schema_img = "";
     if(req.url == "/"){
       titulo = "Guia desenvolvedor";
       description = "Com o guia do desenvolvedor você aprende a programar react js, c#, javaScript, jQuery, sql server, seo, html, e css. Aqui você encontra melhores cursos online de programação.";
-      style += '<link rel="stylesheet" type="text/css" href="/css-cache/home-1.css">';
+      style += '<link rel="stylesheet" type="text/css" href="/css-cache/home-2.css">';
     }else if(req.url.indexOf("/ordem/") > -1){
       titulo = "Guia desenvolvedor";
       description = "Com o guia do desenvolvedor você aprende a programar react js, c#, javaScript, jQuery, sql server, seo, html, e css. Aqui você encontra melhores cursos online de programação.";
-      style += '<link rel="stylesheet" type="text/css" href="/css-cache/home-1.css">';
+      style += '<link rel="stylesheet" type="text/css" href="/css-cache/home-2.css">';
       indexing = "noindex";
     }
      else if(req._parsedOriginalUrl.pathname == "/entrar"){
       style += '<link async rel="stylesheet" type="text/css" href="/css/entrar.css">';
     } else if(req.url.indexOf("/pergunta/") > -1){
-      style += '<link rel="stylesheet" type="text/css" href="/css-cache/pergunta-4.css">';
+      style += '<link rel="stylesheet" type="text/css" href="/css-cache/pergunta-5.css">';
       style += '<link rel="stylesheet" type="text/css" href="/css-cache/hilight-1.css">';
       script += '<script async src="/js-cache/pergunta-2.js"></script>';
       script += '<script async src="/js-cache/hilight-2.js"></script>';
@@ -85,7 +85,7 @@ app.get("*", (req, res, next) => {
       res.end();
     }
     else if(req.url.indexOf("/assunto/") > -1){
-      style += '<link async rel="stylesheet" type="text/css" href="/css-cache/home-1.css">';
+      style += '<link async rel="stylesheet" type="text/css" href="/css-cache/home-2.css">';
       if(data != null && data.length > 0)
       {
         titulo = data[0].assunto[0].nome+" - Guia desenvolvedor";
@@ -101,7 +101,7 @@ app.get("*", (req, res, next) => {
     else if(req.url.indexOf("/busca/") > -1){
       titulo = "Guia desenvolvedor";
       description = "Com o guia do desenvolvedor você aprende a programar react js, c#, javaScript e jQuery";
-      style += '<link async rel="stylesheet" type="text/css" href="/css-cache/home-1.css">';
+      style += '<link async rel="stylesheet" type="text/css" href="/css-cache/home-2.css">';
       indexing = "noindex";
     } else if(req.url.indexOf("/curso/") > -1){
       titulo = `Curso ${data.descricao} - Guia desenvolvedor`;
@@ -182,7 +182,7 @@ app.get("*", (req, res, next) => {
             return null;
         }
           </script>
-          <script src="/js-cache/bundle-15.js" defer></script>
+          <script src="/js-cache/bundle-16.js" defer></script>
           <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
           <script defer src="/js-cache/js.js"></script>
           

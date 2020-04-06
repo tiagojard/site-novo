@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Produto from './Produto'
-import Async from "react-async"
+import ConteudoAdicional from './ConteudoAdicional';
+import Produto from './Produto';
+import Async from "react-async";
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -128,14 +129,14 @@ return (<div className="corpo-pagina">
     <h2>Plataforma para programadores</h2>
     <div>
         <h3 className="intro-conhecimento">Ajude a plataforma crescer, compartilhe seu conhecimento e faça parte desse guia. Ajudamos programadores iniciantes com conteúdos de qualidade.</h3>
-        <a  className="btn-intro" href="/cadastro/conteudo">Compartilhar conhecimento</a>
+        <a  className="btn-intro" href="/cadastro/conteudo" title="Compartilhar conhecimento">Compartilhar conhecimento</a>
     </div>
     <div>
         <h3>Está com dúvida em algum assundo ou não esta conseguindo fazer algo?</h3>
-        <a className="btn-intro" href="/cadastro/conteudo">Envie sua pergunta</a>
+        <a className="btn-intro" href="/cadastro/conteudo" title="Envie sua pergunta">Envie sua pergunta</a>
     </div>
     <h3>Confira alguns cursos que fará muita diferença em seu aprendizado!</h3>
-    <a className="btn-curso" href="/curso">Veja alguns cursos</a>
+    <a className="btn-curso" href="/curso" title="Veja alguns cursos">Veja alguns cursos</a>
 </div>
 <div className="anuncio-topo" dangerouslySetInnerHTML={{__html:adsTopo }}/>
 <div className="container-esquerdo">
@@ -148,7 +149,7 @@ return (<div className="corpo-pagina">
                 <div key={index}>
                     <div className="conteudo-home-container">
                         <div className="conteudo-home-detalhe">
-                            <a href={item.url}><h2>{item.pergunta}</h2></a>
+                            <a href={item.url} title={item.pergunta}><h2>{item.pergunta}</h2></a>
                         <div className="info">
                             <div className="info-bloco">
                                 <div className="info-qtde">{item.Respostas != undefined ? item.Respostas.length: 0}</div>
@@ -174,6 +175,8 @@ return (<div className="corpo-pagina">
                 </div>
                 )
             }
+          <ConteudoAdicional assunto="React Js" link="/busca/assunto/React%20js" />
+
             </div>
             <div className="anuncio-direito" dangerouslySetInnerHTML={{__html:adsDireito }}/>
         </div>)
